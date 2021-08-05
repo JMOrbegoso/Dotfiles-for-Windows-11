@@ -15,5 +15,7 @@ Write-Host "Updating PackageManagement module:" -ForegroundColor "Green";
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12;
 Install-Module -Name "PackageManagement" -Force -MinimumVersion 1.4.6 -Scope CurrentUser -AllowClobber -Repository "PSGallery";
 
+# Run scripts
+
 # Remove Dotfiles folder
 Remove-Item $DotfilesFolder -Recurse -Force -ErrorAction SilentlyContinue;
