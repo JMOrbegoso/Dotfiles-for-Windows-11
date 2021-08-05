@@ -1,4 +1,4 @@
-# Dotfiles-for-Windows-11
+# Dotfiles for Microsoft Windows 11
 Dotfiles script to setup a development environment in Microsoft Windows 11.
 
 ## Usage
@@ -11,3 +11,5 @@ $GitHubRepositoryName = "Dotfiles-for-Windows-11"; `
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass; `
 Invoke-Expression (Invoke-RestMethod -Uri "https://raw.githubusercontent.com/${GitHubRepositoryAuthor}/${GitHubRepositoryName}/main/Download.ps1");
 ```
+
+## What does
