@@ -11,3 +11,5 @@ $GitHubRepositoryName = "Dotfiles-for-Windows-11"; `
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass; `
 Invoke-Expression (Invoke-RestMethod -Uri "https://raw.githubusercontent.com/${GitHubRepositoryAuthor}/${GitHubRepositoryName}/main/Download.ps1");
 ```
+
+## What does
