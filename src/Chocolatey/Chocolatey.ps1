@@ -5,4 +5,11 @@ function Install-Chocolatey
   Invoke-Expression ((New-Object System.Net.WebClient).DownloadString("https://chocolatey.org/install.ps1"));
 }
 
+function Set-Chocolatey-Configuration
+{
+  Write-Host "Configuring Chocolatey:" -ForegroundColor "Green";
+  choco feature enable -n=useRememberedArgumentsForUpgrades;
+}
+
 Install-Chocolatey;
+Set-Chocolatey-Configuration;
