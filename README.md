@@ -13,3 +13,6 @@ Invoke-Expression (Invoke-RestMethod -Uri "https://raw.githubusercontent.com/${G
 ```
 
 ## What does
+
+- Install Chocolatey.
+- Configure Chocolatey to remembered arguments for upgrades.
