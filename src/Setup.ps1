@@ -16,6 +16,7 @@ Write-Host "Updating PackageManagement module:" -ForegroundColor "Green";
 Install-Module -Name "PackageManagement" -Force -MinimumVersion 1.4.6 -Scope CurrentUser -AllowClobber -Repository "PSGallery";
 
 # Run scripts
+Invoke-Expression (Join-Path -Path $DotfilesWorkFolder -ChildPath "Chocolatey" | Join-Path -ChildPath "Chocolatey.ps1");
 
 # Remove Dotfiles folder
 Remove-Item $DotfilesFolder -Recurse -Force -ErrorAction SilentlyContinue;
