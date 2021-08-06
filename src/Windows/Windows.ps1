@@ -20,6 +20,26 @@ function Set-WindowsFileExplorer-StartFolder
   Set-ItemProperty -Path $RegPath -Name "LaunchTo" -Value 1; # [This PC: 1], [Quick access: 2], [Downloads: 3]
 }
 
+function Set-SetAsBackground-To-Extended-ContextMenu
+{
+  Write-Host "Configuring Context Menu to show the option 'Set as Background' just in Extended Context Menu:" -ForegroundColor "Green";
+
+  $Extensions = ".bmp", ".dib", ".gif", ".jfif", ".jpe", ".jpeg", ".jpg", ".png", ".tif", ".tiff", ".wdp";
+
+  foreach ($Extension in $Extensions)
+  {
+    $RegPath = "HKCR:\SystemFileAssociations\${Extension}\Shell\setdesktopwallpaper";
+
+    if (Test-Path $RegPath)
+    {
+      if (-not (Test-PathRegistryKey -Path $RegPath -Name "Extended"))
+      {
+        New-ItemProperty -Path $RegPath -Name "Extended" -PropertyType String;
+      }
+    }
+  }
+}
+
 function Set-Power-Configuration
 {
   Write-Host "Configuring power plan:" -ForegroundColor "Green";
@@ -60,5 +80,6 @@ function Rename-PC
 
 Set-WindowsExplorer-ShowFileExtensions;
 Set-WindowsFileExplorer-StartFolder;
+Set-SetAsBackground-To-Extended-ContextMenu;
 Set-Power-Configuration;
 Rename-PC;
