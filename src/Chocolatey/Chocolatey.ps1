@@ -11,5 +11,18 @@ function Set-Chocolatey-Configuration
   choco feature enable -n=useRememberedArgumentsForUpgrades;
 }
 
+function Enable-Chocolatey-Helpers
+{
+  Write-Host "Loading Chocolatey helpers:" -ForegroundColor "Green";
+
+  $ChocolateyProfile = Join-Path -Path $env:ChocolateyInstall -ChildPath "helpers" | Join-Path -ChildPath "chocolateyProfile.psm1";
+
+  if (Test-Path($ChocolateyProfile))
+  {
+    Import-Module $ChocolateyProfile;
+  };
+}
+
 Install-Chocolatey;
 Set-Chocolatey-Configuration;
+Enable-Chocolatey-Helpers;
