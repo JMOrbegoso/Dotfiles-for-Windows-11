@@ -18,6 +18,8 @@ Invoke-Expression (Invoke-RestMethod -Uri "https://raw.githubusercontent.com/${G
 - Install Chocolatey.
 - Configure Chocolatey to remembered arguments for upgrades.
 - Install Hack Nerd Font.
+- Install Git;
+- Configure Git.
 - Install Visual Studio Code.
 - Configure Visual Studio Code.
 - Install Visual Studio Code extensions.
