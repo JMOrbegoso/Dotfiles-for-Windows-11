@@ -20,6 +20,9 @@ Invoke-Expression (Invoke-RestMethod -Uri "https://raw.githubusercontent.com/${G
 - Install Hack Nerd Font.
 - Install Git;
 - Configure Git.
+- Install Vim;
+- Install Vim-Plug.
+- Install Vim plugins.
 - Install Visual Studio Code.
 - Configure Visual Studio Code.
 - Install Visual Studio Code extensions.
