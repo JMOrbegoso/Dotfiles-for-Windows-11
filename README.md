@@ -30,3 +30,4 @@ Invoke-Expression (Invoke-RestMethod -Uri "https://raw.githubusercontent.com/${G
 - Configure Oh My Posh theme.
 - Configure Windows Terminal.
 - Install TeraCopy.
+- Configure Windows 11 power plan.
