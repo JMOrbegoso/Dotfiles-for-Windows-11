@@ -40,6 +40,8 @@ Invoke-Expression (Join-Path -Path $DotfilesWorkFolder -ChildPath "VSCode" | Joi
 Invoke-Expression (Join-Path -Path $DotfilesWorkFolder -ChildPath "WindowsTerminal" | Join-Path -ChildPath "WindowsTerminal.ps1");
 Invoke-Expression (Join-Path -Path $DotfilesWorkFolder -ChildPath "TeraCopy" | Join-Path -ChildPath "TeraCopy.ps1");
 
+Invoke-Expression (Join-Path -Path $DotfilesWorkFolder -ChildPath "Windows" | Join-Path -ChildPath "Windows.ps1");
+
 # Remove Dotfiles folder
 Write-Host "Cleaning Dotfiles workspace:" -ForegroundColor "Green";
 Remove-Item $DotfilesFolder -Recurse -Force -ErrorAction SilentlyContinue;
