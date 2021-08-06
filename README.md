@@ -30,5 +30,17 @@ Invoke-Expression (Invoke-RestMethod -Uri "https://raw.githubusercontent.com/${G
 - Configure Oh My Posh theme.
 - Configure Windows Terminal.
 - Install TeraCopy.
+- Configure File Explorer:
+  - Show file extensions.
+  - Open file explorer to This PC.
+  - Set as background option only for extended Context Menu.
+  - Disable recently opened items from JumpList.
+- Microsoft Windows optional features:
+  - Disable Windows Media Player.
+  - Disable Internet Explorer.
+  - Disable Microsoft XPS Document Writer.
+  - Disable WorkFolders Client.
+  - Enable Microsoft Hyper-V.
+  - Enable Windows Sandbox.
 - Configure Windows 11 power plan.
 - Rename PC.
