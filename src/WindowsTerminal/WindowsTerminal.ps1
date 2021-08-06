@@ -43,7 +43,20 @@ function Set-WindowsTerminal-Settings
   Write-Host "Windows Terminal was successfully configured." -ForegroundColor "Green";
 }
 
+function Open-Close-WindowsTerminal
+{
+  # Open and close Windows Terminal as admin to load the profile
+  Write-Host "Opening Windows Terminal for 10 seconds:" -ForegroundColor "Green";
+  Start-Process "wt" -Verb RunAs;
+
+  Start-Sleep -Seconds 10;
+
+  Write-Host "Closing Windows Terminal:" -ForegroundColor "Green";
+  Stop-Process -Name "WindowsTerminal" -Force;
+}
+
 Install-Module -Name "oh-my-posh";
 Set-OhMyPosh-Theme;
 Set-PowerShell-Profile;
 Set-WindowsTerminal-Settings;
+Open-Close-WindowsTerminal;
