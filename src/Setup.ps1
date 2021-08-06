@@ -41,4 +41,5 @@ Invoke-Expression (Join-Path -Path $DotfilesWorkFolder -ChildPath "WindowsTermin
 Invoke-Expression (Join-Path -Path $DotfilesWorkFolder -ChildPath "TeraCopy" | Join-Path -ChildPath "TeraCopy.ps1");
 
 # Remove Dotfiles folder
+Write-Host "Cleaning Dotfiles workspace:" -ForegroundColor "Green";
 Remove-Item $DotfilesFolder -Recurse -Force -ErrorAction SilentlyContinue;
