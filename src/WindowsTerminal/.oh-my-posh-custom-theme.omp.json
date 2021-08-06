@@ -1,0 +1,95 @@
+{
+	"$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+	"blocks": [
+		{
+			"type": "prompt",
+			"alignment": "left",
+			"segments": [
+				{
+					"type": "os",
+					"style": "powerline",
+					"foreground": "#26C6DA",
+					"background": "#546E7A"
+				},
+				{
+					"type": "root",
+					"style": "powerline",
+					"powerline_symbol": "",
+					"background": "#ffe9aa",
+					"foreground": "#100e23"
+				},
+				{
+					"type": "path",
+					"style": "powerline",
+					"powerline_symbol": "",
+					"background": "#91ddff",
+					"foreground": "#100e23",
+					"properties": {
+						"folder_icon": "",
+						"folder_separator_icon": "  ",
+						"style": "full"
+					}
+				},
+				{
+					"type": "git",
+					"style": "powerline",
+					"powerline_symbol": "",
+					"foreground": "#100e23",
+					"background": "#5CFF5C",
+					"properties": {
+						"display_status": true,
+						"display_stash_count": true,
+						"display_upstream_icon": true,
+						"status_colors_enabled": true,
+						"local_changes_color": "#ffeb3b"
+					}
+				},
+				{
+					"type": "exit",
+					"style": "powerline",
+					"powerline_symbol": "",
+					"background": "#ff8080",
+					"foreground": "#ffffff",
+					"properties": {
+						"prefix": " "
+					}
+				}
+			]
+		},
+		{
+			"type": "prompt",
+			"alignment": "right",
+			"segments": [
+				{
+					"type": "executiontime",
+					"style": "powerline",
+					"foreground": "#D4E157",
+					"background": "transparent",
+					"properties": {
+						"threshold": 200,
+						"style": "roundrock",
+						"prefix": " [ ",
+						"postfix": " ]"
+					}
+				}
+			]
+		},
+		{
+			"type": "prompt",
+			"alignment": "left",
+			"newline": true,
+			"segments": [
+				{
+					"type": "text",
+					"style": "plain",
+					"foreground": "#007ACC",
+					"properties": {
+						"prefix": "",
+						"text": "❯"
+					}
+				}
+			]
+		}
+	],
+	"final_space": false
+}

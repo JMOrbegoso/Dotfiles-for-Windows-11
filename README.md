@@ -1,4 +1,5 @@
 # Dotfiles for Microsoft Windows 11
+
 Dotfiles script to setup a development environment in Microsoft Windows 11.
 
 ## Usage
@@ -20,3 +21,6 @@ Invoke-Expression (Invoke-RestMethod -Uri "https://raw.githubusercontent.com/${G
 - Install Visual Studio Code.
 - Configure Visual Studio Code.
 - Install Visual Studio Code extensions.
+- Install Oh My Posh for PowerShell.
+- Configure Oh My Posh theme.
+- Configure Windows Terminal.
