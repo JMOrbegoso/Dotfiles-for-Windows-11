@@ -24,3 +24,4 @@ Invoke-Expression (Invoke-RestMethod -Uri "https://raw.githubusercontent.com/${G
 - Install Oh My Posh for PowerShell.
 - Configure Oh My Posh theme.
 - Configure Windows Terminal.
+- Install TeraCopy.
