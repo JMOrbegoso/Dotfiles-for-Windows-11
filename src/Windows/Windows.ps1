@@ -1,3 +1,11 @@
+function Set-WindowsExplorer-ShowFileExtensions
+{
+  Write-Host "Configuring Windows File Explorer to show file extensions:" -ForegroundColor "Green";
+
+  $RegPath = "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced";
+  Set-ItemProperty -Path $RegPath -Name "HideFileExt" -Value 0;
+}
+
 function Set-Power-Configuration
 {
   Write-Host "Configuring power plan:" -ForegroundColor "Green";
@@ -25,7 +33,7 @@ function Rename-PC
   if ($env:COMPUTERNAME -ne $Config.ComputerName)
   {
     Write-Host "Renaming PC:" -ForegroundColor "Green";
-    
+
     Rename-Computer -NewName $Config.ComputerName -Force;
 
     Write-Host "PC renamed, restart it to see the changes." -ForegroundColor "Green";
@@ -36,5 +44,6 @@ function Rename-PC
   }
 }
 
+Set-WindowsExplorer-ShowFileExtensions;
 Set-Power-Configuration;
 Rename-PC;
