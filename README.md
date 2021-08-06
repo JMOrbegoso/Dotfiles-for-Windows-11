@@ -30,6 +30,9 @@ Invoke-Expression (Invoke-RestMethod -Uri "https://raw.githubusercontent.com/${G
 - Configure Oh My Posh theme.
 - Configure Windows Terminal.
 - Install TeraCopy.
+- Install Notepad++.
+- Configure Notepad++.
+- Set Notepad ++ as the default program to open txt and xml files.
 - Configure File Explorer:
   - Show file extensions.
   - Open file explorer to This PC.
