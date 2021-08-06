@@ -34,6 +34,7 @@ function Set-Vim-Configuration
   Write-Host "Vim was successfully configured." -ForegroundColor "Green";
 }
 
-choco install -y vim --params "/NoDesktopShortcuts /NoContextmenu /InstallDir:${env:ProgramFiles}";
+choco install -y "vim" --params "/NoDesktopShortcuts /NoContextmenu /InstallDir:${env:ProgramFiles}";
+refreshenv;
 Install-VimPlug;
 Set-Vim-Configuration;
