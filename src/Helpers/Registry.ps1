@@ -21,3 +21,9 @@ function Test-PathRegistryKey
     Return $FALSE;
   }
 }
+
+function Set-PSDrive-HKCR
+{
+  Write-Host "Setting alias of HKEY_CLASSES_ROOT:" -ForegroundColor "Green";
+  New-PSDrive -PSProvider "registry" -Root "HKEY_CLASSES_ROOT" -Name "HKCR" -Scope global;
+}
