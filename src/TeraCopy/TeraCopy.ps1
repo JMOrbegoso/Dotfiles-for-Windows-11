@@ -19,9 +19,20 @@ function Install-TeraCopy
 
 function Set-TeraCopy-As-Default-Copy-Handler
 {
-  Write-Host "Setting TeraCopy as default copy and move handler:" -ForegroundColor "Green";
-  reg import "${env:ProgramFiles}\TeraCopy\DefaultHandler.reg";
-  Write-Host "TeraCopy was successfully configured as default copy and move handler." -ForegroundColor "Green";
+  $TeraCopyRegPath = "${env:ProgramFiles}\TeraCopy\DefaultHandler.reg";
+
+  if (Test-Path $TeraCopyRegPath)
+  {
+    Write-Host "Setting TeraCopy as default copy and move handler:" -ForegroundColor "Green";
+    
+    reg import $TeraCopyRegPath;
+
+    Write-Host "TeraCopy was successfully configured as default copy and move handler." -ForegroundColor "Green";
+  }
+  else
+  {
+    Write-Host "${TeraCopyRegPath} was not found." -ForegroundColor "Green";
+  }
 }
 
 function Set-TeraCopy-Configuration
