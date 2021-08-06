@@ -47,7 +47,7 @@ function Open-Close-WindowsTerminal
 {
   # Open and close Windows Terminal as admin to load the profile
   Write-Host "Opening Windows Terminal for 10 seconds:" -ForegroundColor "Green";
-  Start-Process "wt" -Verb RunAs;
+  wt new-tab PowerShell -c "Set-ExecutionPolicy Unrestricted;";
 
   Start-Sleep -Seconds 10;
 
