@@ -36,6 +36,7 @@ Invoke-Expression (Join-Path -Path $DotfilesWorkFolder -ChildPath "Chocolatey" |
 Invoke-Expression (Join-Path -Path $DotfilesWorkFolder -ChildPath "Fonts" | Join-Path -ChildPath "Fonts.ps1");
 Invoke-Expression (Join-Path -Path $DotfilesWorkFolder -ChildPath "VSCode" | Join-Path -ChildPath "VSCode.ps1");
 Invoke-Expression (Join-Path -Path $DotfilesWorkFolder -ChildPath "WindowsTerminal" | Join-Path -ChildPath "WindowsTerminal.ps1");
+Invoke-Expression (Join-Path -Path $DotfilesWorkFolder -ChildPath "TeraCopy" | Join-Path -ChildPath "TeraCopy.ps1");
 
 # Remove Dotfiles folder
 Remove-Item $DotfilesFolder -Recurse -Force -ErrorAction SilentlyContinue;
