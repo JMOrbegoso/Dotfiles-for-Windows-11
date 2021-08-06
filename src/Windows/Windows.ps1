@@ -40,6 +40,18 @@ function Set-SetAsBackground-To-Extended-ContextMenu
   }
 }
 
+function Disable-RecentlyOpenedItems-From-JumpList
+{
+  Write-Host "Configuring Jump List to do not show the list of recently opened items:" -ForegroundColor "Green";
+
+  $RegPath = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced";
+  if (-not (Test-PathRegistryKey -Path $RegPath -Name "Start_TrackDocs"))
+  {
+    New-ItemProperty -Path $RegPath -Name "Start_TrackDocs" -PropertyType DWord;
+  }
+  Set-ItemProperty -Path $RegPath -Name "Start_TrackDocs" -Value 0;
+}
+
 function Set-Power-Configuration
 {
   Write-Host "Configuring power plan:" -ForegroundColor "Green";
@@ -81,5 +93,6 @@ function Rename-PC
 Set-WindowsExplorer-ShowFileExtensions;
 Set-WindowsFileExplorer-StartFolder;
 Set-SetAsBackground-To-Extended-ContextMenu;
+Disable-RecentlyOpenedItems-From-JumpList;
 Set-Power-Configuration;
 Rename-PC;
