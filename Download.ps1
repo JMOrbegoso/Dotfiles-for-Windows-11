@@ -6,6 +6,16 @@ $DotfilesWorkFolder = Join-Path -Path $DotfilesFolder -ChildPath "${GitHubReposi
 
 $DownloadResult = $FALSE;
 
+# Request custom values
+$ValidDisks = Get-PSDrive -PSProvider "FileSystem" | Select-Object -ExpandProperty "Root";
+do
+{
+  Write-Host "Choose the location of your development workspace:" -ForegroundColor "Green";
+  Write-Host $ValidDisks -ForegroundColor "Green";
+  $WorkspaceDisk = Read-Host -Prompt "Please choose one of the available disks";
+}
+while (-not ($ValidDisks -Contains $WorkspaceDisk));
+
 # Create Dotfiles folder
 if (Test-Path $DotfilesFolder)
 {
