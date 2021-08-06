@@ -31,3 +31,4 @@ Invoke-Expression (Invoke-RestMethod -Uri "https://raw.githubusercontent.com/${G
 - Configure Windows Terminal.
 - Install TeraCopy.
 - Configure Windows 11 power plan.
+- Rename PC.
