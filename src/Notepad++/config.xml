@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<NotepadPlus>
+    <History nbMaxFile="10" inSubMenu="no" customLength="-1" />
+    <GUIConfigs>
+        <GUIConfig name="ToolBar" visible="yes">small</GUIConfig>
+        <GUIConfig name="globalOverride" fg="no" bg="no" font="yes" fontSize="yes" bold="no" italic="no" underline="no" />
+        <GUIConfig name="ScintillaGlobalSettings" enableMultiSelection="yes" />
+        <GUIConfig name="ScintillaPrimaryView" scrollBeyondLastLine="no" Wrap="yes" />
+    </GUIConfigs>
+</NotepadPlus>
