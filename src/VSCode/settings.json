@@ -1,0 +1,89 @@
+{
+	"diffEditor.ignoreTrimWhitespace": false,
+	"editor.autoIndent": "full",
+	"editor.cursorBlinking": "solid",
+	"editor.cursorSmoothCaretAnimation": true,
+	"editor.cursorStyle": "line",
+	"editor.fontFamily": "'Hack Nerd Font', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+	"editor.fontLigatures": true,
+	"editor.fontSize": 13,
+	"editor.letterSpacing": 0.3,
+	"editor.lineHeight": 25,
+	"editor.minimap.enabled": false,
+	"editor.multiCursorModifier": "ctrlCmd",
+	"editor.suggestSelection": "first",
+	"editor.tabCompletion": "on",
+	"editor.tabSize": 2,
+	"editor.wordWrap": "on",
+	"explorer.confirmDelete": false,
+	"prettier.arrowParens": "always",
+	"prettier.bracketSpacing": true,
+	"prettier.embeddedLanguageFormatting": "auto",
+	"prettier.htmlWhitespaceSensitivity": "css",
+	"prettier.insertPragma": false,
+	"prettier.jsxBracketSameLine": false,
+	"prettier.jsxSingleQuote": false,
+	"prettier.printWidth": 80,
+	"prettier.proseWrap": "preserve",
+	"prettier.quoteProps": "as-needed",
+	"prettier.requirePragma": false,
+	"prettier.resolveGlobalModules": true,
+	"prettier.semi": true,
+	"prettier.singleQuote": true,
+	"prettier.tabWidth": 2,
+	"prettier.trailingComma": "all",
+	"prettier.useTabs": true,
+	"prettier.vueIndentScriptAndStyle": false,
+	"search.showLineNumbers": true,
+	"terminal.integrated.fontFamily": "'Hack Nerd Font Mono'",
+	"window.restoreWindows": "none",
+	"window.zoomLevel": 1,
+	"workbench.colorCustomizations": {},
+	"workbench.colorTheme": "Atom One Dark",
+	"workbench.iconTheme": "material-icon-theme",
+	"zenMode.centerLayout": false,
+
+	"[json]": {
+		"editor.formatOnSave": true,
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[jsonc]": {
+		"editor.formatOnSave": true,
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[javascript]": {
+		"editor.formatOnSave": true,
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.rulers": [80]
+	},
+	"[typescript]": {
+		"editor.formatOnSave": true,
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.rulers": [80]
+	},
+	"[html]": {
+		"editor.formatOnSave": false,
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.rulers": [80]
+	},
+	"[css]": {
+		"editor.formatOnSave": true,
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[markdown]": {
+		"editor.formatOnSave": true,
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.wordWrap": "on",
+		"editor.renderWhitespace": "all",
+		"editor.acceptSuggestionOnEnter": "on",
+		"editor.quickSuggestions": {
+			"other": true,
+			"comments": true,
+			"strings": true
+		}
+	},
+	"[cpp]": {
+		"editor.formatOnSave": true
+	},
+	"C_Cpp.clang_format_fallbackStyle": "Google"
+}

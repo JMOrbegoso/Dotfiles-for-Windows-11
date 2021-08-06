@@ -18,6 +18,7 @@ Install-Module -Name "PackageManagement" -Force -MinimumVersion 1.4.6 -Scope Cur
 # Run scripts
 Invoke-Expression (Join-Path -Path $DotfilesWorkFolder -ChildPath "Chocolatey" | Join-Path -ChildPath "Chocolatey.ps1");
 Invoke-Expression (Join-Path -Path $DotfilesWorkFolder -ChildPath "Fonts" | Join-Path -ChildPath "Fonts.ps1");
+Invoke-Expression (Join-Path -Path $DotfilesWorkFolder -ChildPath "VSCode" | Join-Path -ChildPath "VSCode.ps1");
 
 # Remove Dotfiles folder
 Remove-Item $DotfilesFolder -Recurse -Force -ErrorAction SilentlyContinue;
