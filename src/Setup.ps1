@@ -2,8 +2,17 @@ $GitHubRepositoryAuthor = "JMOrbegoso";
 $GitHubRepositoryName = "Dotfiles-for-Windows-11";
 $DotfilesFolder = Join-Path -Path $HOME -ChildPath ".dotfiles";
 $DotfilesWorkFolder = Join-Path -Path $DotfilesFolder -ChildPath "${GitHubRepositoryName}-main" | Join-Path -ChildPath "src";
+$HelpersFolder = Join-Path -Path $DotfilesWorkFolder -ChildPath "Helpers";
 
 Write-Host "Welcome to Dotfiles for Microsoft Windows 11" -ForegroundColor "Yellow";
+
+# Load helpers
+Write-Host "Loading helpers:" -ForegroundColor "Green";
+$DotfilesHelpers = Get-ChildItem -Path "${HelpersFolder}\*" -Include *.ps1 -Recurse;
+foreach ($DotfilesHelper in $DotfilesHelpers)
+{
+  . $DotfilesHelper;
+};
 
 Write-Host "Installing NuGet as package provider:" -ForegroundColor "Green";
 Install-PackageProvider -Name "NuGet" -Force;
