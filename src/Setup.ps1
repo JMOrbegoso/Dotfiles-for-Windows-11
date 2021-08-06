@@ -21,6 +21,9 @@ Set-Configuration-File -DotfilesConfigFile $DotfilesConfigFile -ComputerName $Co
 # Load user configuration from persistence
 $Config = Get-Configuration-File -DotfilesConfigFile $DotfilesConfigFile;
 
+# Set alias for HKEY_CLASSES_ROOT
+Set-PSDrive-HKCR;
+
 Write-Host "Installing NuGet as package provider:" -ForegroundColor "Green";
 Install-PackageProvider -Name "NuGet" -Force;
 
@@ -39,6 +42,8 @@ Invoke-Expression (Join-Path -Path $DotfilesWorkFolder -ChildPath "Vim" | Join-P
 Invoke-Expression (Join-Path -Path $DotfilesWorkFolder -ChildPath "VSCode" | Join-Path -ChildPath "VSCode.ps1");
 Invoke-Expression (Join-Path -Path $DotfilesWorkFolder -ChildPath "WindowsTerminal" | Join-Path -ChildPath "WindowsTerminal.ps1");
 Invoke-Expression (Join-Path -Path $DotfilesWorkFolder -ChildPath "TeraCopy" | Join-Path -ChildPath "TeraCopy.ps1");
+
+Invoke-Expression (Join-Path -Path $DotfilesWorkFolder -ChildPath "Windows" | Join-Path -ChildPath "Windows.ps1");
 
 # Remove Dotfiles folder
 Write-Host "Cleaning Dotfiles workspace:" -ForegroundColor "Green";
