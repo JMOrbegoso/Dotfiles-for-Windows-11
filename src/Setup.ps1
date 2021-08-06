@@ -43,3 +43,5 @@ Invoke-Expression (Join-Path -Path $DotfilesWorkFolder -ChildPath "TeraCopy" | J
 # Remove Dotfiles folder
 Write-Host "Cleaning Dotfiles workspace:" -ForegroundColor "Green";
 Remove-Item $DotfilesFolder -Recurse -Force -ErrorAction SilentlyContinue;
+
+Write-Host "The process has finished." -ForegroundColor "Yellow";
