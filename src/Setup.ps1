@@ -21,6 +21,9 @@ Set-Configuration-File -DotfilesConfigFile $DotfilesConfigFile -ComputerName $Co
 # Load user configuration from persistence
 $Config = Get-Configuration-File -DotfilesConfigFile $DotfilesConfigFile;
 
+# Set alias for HKEY_CLASSES_ROOT
+Set-PSDrive-HKCR;
+
 Write-Host "Installing NuGet as package provider:" -ForegroundColor "Green";
 Install-PackageProvider -Name "NuGet" -Force;
 
