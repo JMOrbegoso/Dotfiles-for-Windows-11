@@ -90,6 +90,13 @@ function Rename-PC
   }
 }
 
+Disable-WindowsFeature "WindowsMediaPlayer" "Windows Media Player";
+Disable-WindowsFeature "Internet-Explorer-Optional-amd64" "Internet Explorer";
+Disable-WindowsFeature "Printing-XPSServices-Features" "Microsoft XPS Document Writer";
+Disable-WindowsFeature "WorkFolders-Client" "WorkFolders-Client";
+Enable-WindowsFeature "Microsoft-Hyper-V" "Microsoft Hyper-V";
+Enable-WindowsFeature "Containers-DisposableClientVM" "Windows Sandbox";
+
 Set-WindowsExplorer-ShowFileExtensions;
 Set-WindowsFileExplorer-StartFolder;
 Set-SetAsBackground-To-Extended-ContextMenu;
