@@ -6,6 +6,20 @@ function Set-WindowsExplorer-ShowFileExtensions
   Set-ItemProperty -Path $RegPath -Name "HideFileExt" -Value 0;
 }
 
+function Set-WindowsFileExplorer-StartFolder
+{
+  Write-Host "Configuring start folder of Windows File Explorer:" -ForegroundColor "Green";
+
+  $RegPath = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced";
+
+  if (-not (Test-PathRegistryKey -Path $RegPath -Name "LaunchTo"))
+  {
+    New-ItemProperty -Path $RegPath -Name "LaunchTo" -PropertyType DWord;
+  }
+
+  Set-ItemProperty -Path $RegPath -Name "LaunchTo" -Value 1; # [This PC: 1], [Quick access: 2], [Downloads: 3]
+}
+
 function Set-Power-Configuration
 {
   Write-Host "Configuring power plan:" -ForegroundColor "Green";
@@ -45,5 +59,6 @@ function Rename-PC
 }
 
 Set-WindowsExplorer-ShowFileExtensions;
+Set-WindowsFileExplorer-StartFolder;
 Set-Power-Configuration;
 Rename-PC;
