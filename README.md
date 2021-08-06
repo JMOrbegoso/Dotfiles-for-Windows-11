@@ -33,6 +33,7 @@ Invoke-Expression (Invoke-RestMethod -Uri "https://raw.githubusercontent.com/${G
 - Install Notepad++.
 - Configure Notepad++.
 - Set Notepad ++ as the default program to open txt and xml files.
+- Install .NET SDK.
 - Configure File Explorer:
   - Show file extensions.
   - Open file explorer to This PC.
