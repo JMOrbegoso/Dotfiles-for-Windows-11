@@ -1,6 +1,6 @@
 # Dotfiles for Microsoft Windows 11
 
-Dotfiles script to setup a development environment in Microsoft Windows 11.
+Repeatable, reboot resilient Dotfiles script to setup a development environment in Microsoft Windows 11.
 
 ## Usage
 
