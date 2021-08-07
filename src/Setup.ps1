@@ -46,6 +46,11 @@ Invoke-Expression (Join-Path -Path $DotfilesWorkFolder -ChildPath "Notepad++" | 
 Invoke-Expression (Join-Path -Path $DotfilesWorkFolder -ChildPath "Dotnet" | Join-Path -ChildPath "Dotnet.ps1");
 Invoke-Expression (Join-Path -Path $DotfilesWorkFolder -ChildPath "VisualStudio2019" | Join-Path -ChildPath "VisualStudio2019.ps1");
 
+# Register the script to start after reboot
+Register-DotfilesScript-As-RunOnce;
+
+Invoke-Expression (Join-Path -Path $DotfilesWorkFolder -ChildPath "WSL" | Join-Path -ChildPath "WSL.ps1");
+
 Invoke-Expression (Join-Path -Path $DotfilesWorkFolder -ChildPath "Windows" | Join-Path -ChildPath "Windows.ps1");
 
 # Remove Dotfiles folder
