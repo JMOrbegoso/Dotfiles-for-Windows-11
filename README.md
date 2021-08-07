@@ -37,6 +37,7 @@ Invoke-Expression (Invoke-RestMethod -Uri "https://raw.githubusercontent.com/${G
 - Install Visual Studio 2019.
 - Enable Windows Subsystem form Linux.
 - Install Ubuntu 20.04 LTS in WSL.
+- Install Docker Desktop.
 - Configure File Explorer:
   - Show file extensions.
   - Open file explorer to This PC.
