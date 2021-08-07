@@ -54,7 +54,13 @@ Invoke-Expression (Join-Path -Path $DotfilesWorkFolder -ChildPath "Docker" | Joi
 
 Invoke-Expression (Join-Path -Path $DotfilesWorkFolder -ChildPath "Windows" | Join-Path -ChildPath "Windows.ps1");
 
-# Remove Dotfiles folder
+# Clean
+# Unregister script from RunOnce
+Remove-DotfilesScript-From-RunOnce;
+
+Write-Host "Deleting Desktop shortcuts:" -ForegroundColor "Green";
+Remove-Desktop-Shortcuts;
+
 Write-Host "Cleaning Dotfiles workspace:" -ForegroundColor "Green";
 Remove-Item $DotfilesFolder -Recurse -Force -ErrorAction SilentlyContinue;
 
