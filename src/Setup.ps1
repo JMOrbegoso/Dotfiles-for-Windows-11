@@ -30,8 +30,11 @@ if (-not (Get-PackageProvider-Installation-Status -PackageProviderName "NuGet"))
   Install-PackageProvider -Name "NuGet" -Force;
 }
 
-Write-Host "Setting up PSGallery as PowerShell trusted repository:" -ForegroundColor "Green";
-Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted;
+if (-not (Get-PSRepository-Trusted-Status -PSRepositoryName "PSGallery"))
+{
+  Write-Host "Setting up PSGallery as PowerShell trusted repository:" -ForegroundColor "Green";
+  Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted;
+}
 
 if (-not (Get-Module-Installation-Status -ModuleName "PackageManagement" -ModuleMinimumVersion "1.4.6"))
 {
