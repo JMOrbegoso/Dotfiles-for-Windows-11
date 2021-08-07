@@ -24,15 +24,24 @@ $Config = Get-Configuration-File -DotfilesConfigFile $DotfilesConfigFile;
 # Set alias for HKEY_CLASSES_ROOT
 Set-PSDrive-HKCR;
 
-Write-Host "Installing NuGet as package provider:" -ForegroundColor "Green";
-Install-PackageProvider -Name "NuGet" -Force;
+if (-not (Get-PackageProvider-Installation-Status -PackageProviderName "NuGet"))
+{
+  Write-Host "Installing NuGet as package provider:" -ForegroundColor "Green";
+  Install-PackageProvider -Name "NuGet" -Force;
+}
 
-Write-Host "Setting up PSGallery as PowerShell trusted repository:" -ForegroundColor "Green";
-Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted;
+if (-not (Get-PSRepository-Trusted-Status -PSRepositoryName "PSGallery"))
+{
+  Write-Host "Setting up PSGallery as PowerShell trusted repository:" -ForegroundColor "Green";
+  Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted;
+}
 
-Write-Host "Updating PackageManagement module:" -ForegroundColor "Green";
-[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12;
-Install-Module -Name "PackageManagement" -Force -MinimumVersion 1.4.6 -Scope CurrentUser -AllowClobber -Repository "PSGallery";
+if (-not (Get-Module-Installation-Status -ModuleName "PackageManagement" -ModuleMinimumVersion "1.4.6"))
+{
+  Write-Host "Updating PackageManagement module:" -ForegroundColor "Green";
+  [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12;
+  Install-Module -Name "PackageManagement" -Force -MinimumVersion "1.4.6" -Scope "CurrentUser" -AllowClobber -Repository "PSGallery";
+}
 
 # Run scripts
 Invoke-Expression (Join-Path -Path $DotfilesWorkFolder -ChildPath "Chocolatey" | Join-Path -ChildPath "Chocolatey.ps1");
