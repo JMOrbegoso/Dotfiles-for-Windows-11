@@ -24,8 +24,11 @@ $Config = Get-Configuration-File -DotfilesConfigFile $DotfilesConfigFile;
 # Set alias for HKEY_CLASSES_ROOT
 Set-PSDrive-HKCR;
 
-Write-Host "Installing NuGet as package provider:" -ForegroundColor "Green";
-Install-PackageProvider -Name "NuGet" -Force;
+if (-not (Get-PackageProvider-Installation-Status -PackageProviderName "NuGet"))
+{
+  Write-Host "Installing NuGet as package provider:" -ForegroundColor "Green";
+  Install-PackageProvider -Name "NuGet" -Force;
+}
 
 Write-Host "Setting up PSGallery as PowerShell trusted repository:" -ForegroundColor "Green";
 Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted;
