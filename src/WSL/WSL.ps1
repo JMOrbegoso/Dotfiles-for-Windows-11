@@ -29,3 +29,7 @@ wsl git config --global user.email $Config.GitUserEmail;
 wsl git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/libexec/git-core/git-credential-manager-core.exe";
 wsl git config --list;
 Write-Host "Git was successfully configured in Ubuntu." -ForegroundColor "Green";
+
+Write-Host "Installing Visual Studio Code extensions in WSL:" -ForegroundColor "Green";
+wsl code --install-extension dbaeumer.vscode-eslint;
+wsl code --install-extension golang.go;
