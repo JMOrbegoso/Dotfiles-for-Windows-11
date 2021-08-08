@@ -1,5 +1,4 @@
-function Get-WindowsFeature-Installation-Status
-{
+function Get-WindowsFeature-Installation-Status {
   [CmdletBinding()]
   param(
     [Parameter(Position = 0, Mandatory = $TRUE)]
@@ -7,18 +6,15 @@ function Get-WindowsFeature-Installation-Status
     $FeatureName
   )
 
-  if ((Get-WindowsOptionalFeature -FeatureName $FeatureName -Online).State -eq "Enabled")
-  {
+  if ((Get-WindowsOptionalFeature -FeatureName $FeatureName -Online).State -eq "Enabled") {
     return $TRUE;
   }
-  else
-  {
+  else {
     return $FALSE;
   }
 }
 
-function Disable-WindowsFeature
-{
+function Disable-WindowsFeature {
   [CmdletBinding()]
   param (
     [Parameter( Position = 0, Mandatory = $TRUE)]
@@ -30,19 +26,16 @@ function Disable-WindowsFeature
     $FeatureName
   )
 
-  if (Get-WindowsFeature-Installation-Status $FeatureKey)
-  {
+  if (Get-WindowsFeature-Installation-Status $FeatureKey) {
     Write-Host "Disabling" $FeatureName ":" -ForegroundColor "Green";
     Disable-WindowsOptionalFeature -FeatureName $FeatureKey -Online -NoRestart;
   }
-  else
-  {
+  else {
     Write-Host $FeatureName "is already disabled." -ForegroundColor "Green";
   }
 }
 
-function Enable-WindowsFeature
-{
+function Enable-WindowsFeature {
   [CmdletBinding()]
   param (
     [Parameter( Position = 0, Mandatory = $TRUE)]
@@ -54,13 +47,11 @@ function Enable-WindowsFeature
     $FeatureName
   )
 
-  if (-not (Get-WindowsFeature-Installation-Status $FeatureKey))
-  {
+  if (-not (Get-WindowsFeature-Installation-Status $FeatureKey)) {
     Write-Host "Enabling" $FeatureName ":" -ForegroundColor "Green";
     Enable-WindowsOptionalFeature -FeatureName $FeatureKey -Online -All -NoRestart;
   }
-  else
-  {
+  else {
     Write-Host $FeatureName "is already enabled." -ForegroundColor "Green";
   }
 }

@@ -1,11 +1,8 @@
-function Set-OpenWithVSCommunity-To-Extended-ContextMenu
-{
+function Set-OpenWithVSCommunity-To-Extended-ContextMenu {
   $RegPaths = "HKCR:\Directory\Background\shell\AnyCode", "HKCR:\Directory\shell\AnyCode";
 
-  foreach ($RegPath in $RegPaths)
-  {
-    if (-not (Test-PathRegistryKey -Path $RegPath -Name "Extended"))
-    {
+  foreach ($RegPath in $RegPaths) {
+    if (-not (Test-PathRegistryKey -Path $RegPath -Name "Extended")) {
       Write-Host "Moving 'Open with Visual Studio' to extended context menu:" -ForegroundColor "Green";
       New-ItemProperty -Path $RegPath -Name "Extended" -PropertyType String;
     }

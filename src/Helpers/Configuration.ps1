@@ -1,5 +1,4 @@
-function Set-Configuration-File
-{
+function Set-Configuration-File {
   [CmdletBinding()]
   param (
     [Parameter( Position = 0, Mandatory = $TRUE)]
@@ -23,13 +22,12 @@ function Set-Configuration-File
     $WorkspaceDisk
   )
 
-  if (-not (Test-Path -Path $DotfilesConfigFile))
-  {
+  if (-not (Test-Path -Path $DotfilesConfigFile)) {
     Write-Host "Creating config.json file:" -ForegroundColor "Green";
     $ConfigJsonBody = [PSCustomObject]@{
-      ComputerName = $ComputerName
-      GitUserName = $GitUserName
-      GitUserEmail = $GitUserEmail
+      ComputerName  = $ComputerName
+      GitUserName   = $GitUserName
+      GitUserEmail  = $GitUserEmail
       WorkspaceDisk = $WorkspaceDisk
     };
 
@@ -39,8 +37,7 @@ function Set-Configuration-File
   }
 }
 
-function Get-Configuration-File
-{
+function Get-Configuration-File {
   [CmdletBinding()]
   param (
     [Parameter( Position = 0, Mandatory = $TRUE)]
@@ -53,8 +50,7 @@ function Get-Configuration-File
 
   Write-Host "Reading config.json file:" -ForegroundColor "Green";
 
-  foreach ($Property in $ConfigContent.PSObject.Properties)
-  {
+  foreach ($Property in $ConfigContent.PSObject.Properties) {
     $Config[$Property.Name] = $Property.Value;
   }
   

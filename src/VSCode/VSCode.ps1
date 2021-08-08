@@ -1,10 +1,8 @@
-function Set-VSCode-Configuration
-{
+function Set-VSCode-Configuration {
   $VSCodeSettingsPath = Join-Path -Path $env:appdata -ChildPath "Code" | Join-Path -ChildPath "User";
   $DotfilesVSCodeSettingsFolder = Join-Path -Path $DotfilesWorkFolder -ChildPath "VSCode";
   
-  if (-not (Test-Path -Path $VSCodeSettingsPath))
-  {
+  if (-not (Test-Path -Path $VSCodeSettingsPath)) {
     Write-Host "Configuring Visual Studio Code:" -ForegroundColor "Green";
     New-Item $VSCodeSettingsPath -ItemType directory;
   }

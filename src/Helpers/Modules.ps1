@@ -1,5 +1,4 @@
-function Get-Module-Installation-Status
-{
+function Get-Module-Installation-Status {
   [CmdletBinding()]
   param(
     [Parameter(Position = 0, Mandatory = $TRUE)]
@@ -11,28 +10,22 @@ function Get-Module-Installation-Status
     $ModuleMinimumVersion
   )
 
-  try
-  {
-    if (-not ([string]::IsNullOrEmpty($ModuleMinimumVersion)))
-    {
-      if ((Get-Module -ListAvailable -Name $ModuleName).Version -ge $ModuleMinimumVersion)
-      {
+  try {
+    if (-not ([string]::IsNullOrEmpty($ModuleMinimumVersion))) {
+      if ((Get-Module -ListAvailable -Name $ModuleName).Version -ge $ModuleMinimumVersion) {
         return $TRUE;
       }
       return $FALSE;
     }
 
-    if (Get-Module -ListAvailable -Name $ModuleName)
-    {
+    if (Get-Module -ListAvailable -Name $ModuleName) {
       return $TRUE;
     }
-    else
-    {
+    else {
       return $FALSE;
     }
   }
-  catch [Exception]
-  {
+  catch [Exception] {
     return $FALSE;
   }
 }

@@ -1,5 +1,4 @@
-function Remove-Desktop-Shortcuts
-{
+function Remove-Desktop-Shortcuts {
   $UserDesktopPath = [Environment]::GetFolderPath("Desktop");
   $PublicDesktopPath = "${env:Public}\Desktop";
 

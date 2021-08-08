@@ -10,8 +10,7 @@ Write-Host "Welcome to Dotfiles for Microsoft Windows 11" -ForegroundColor "Yell
 # Load helpers
 Write-Host "Loading helpers:" -ForegroundColor "Green";
 $DotfilesHelpers = Get-ChildItem -Path "${DotfilesHelpersFolder}\*" -Include *.ps1 -Recurse;
-foreach ($DotfilesHelper in $DotfilesHelpers)
-{
+foreach ($DotfilesHelper in $DotfilesHelpers) {
   . $DotfilesHelper;
 };
 
@@ -24,20 +23,17 @@ $Config = Get-Configuration-File -DotfilesConfigFile $DotfilesConfigFile;
 # Set alias for HKEY_CLASSES_ROOT
 Set-PSDrive-HKCR;
 
-if (-not (Get-PackageProvider-Installation-Status -PackageProviderName "NuGet"))
-{
+if (-not (Get-PackageProvider-Installation-Status -PackageProviderName "NuGet")) {
   Write-Host "Installing NuGet as package provider:" -ForegroundColor "Green";
   Install-PackageProvider -Name "NuGet" -Force;
 }
 
-if (-not (Get-PSRepository-Trusted-Status -PSRepositoryName "PSGallery"))
-{
+if (-not (Get-PSRepository-Trusted-Status -PSRepositoryName "PSGallery")) {
   Write-Host "Setting up PSGallery as PowerShell trusted repository:" -ForegroundColor "Green";
   Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted;
 }
 
-if (-not (Get-Module-Installation-Status -ModuleName "PackageManagement" -ModuleMinimumVersion "1.4.6"))
-{
+if (-not (Get-Module-Installation-Status -ModuleName "PackageManagement" -ModuleMinimumVersion "1.4.6")) {
   Write-Host "Updating PackageManagement module:" -ForegroundColor "Green";
   [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12;
   Install-Module -Name "PackageManagement" -Force -MinimumVersion "1.4.6" -Scope "CurrentUser" -AllowClobber -Repository "PSGallery";

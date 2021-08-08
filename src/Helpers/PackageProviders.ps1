@@ -1,5 +1,4 @@
-function Get-PackageProvider-Installation-Status
-{
+function Get-PackageProvider-Installation-Status {
   [CmdletBinding()]
   param(
     [Parameter(Position = 0, Mandatory = $TRUE)]
@@ -7,13 +6,11 @@ function Get-PackageProvider-Installation-Status
     $PackageProviderName
   )
 
-  try
-  {
+  try {
     Get-PackageProvider -Name $PackageProviderName;
     return $TRUE;
   }
-  catch [Exception]
-  {
+  catch [Exception] {
     return $FALSE;
   }
 }

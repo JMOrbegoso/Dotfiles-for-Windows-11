@@ -1,5 +1,4 @@
-function Set-Git-Configuration
-{
+function Set-Git-Configuration {
   Write-Host "Configuring Git:" -ForegroundColor "Green";
   git config --global init.defaultBranch "main";
   git config --global user.name $Config.GitUserName;
