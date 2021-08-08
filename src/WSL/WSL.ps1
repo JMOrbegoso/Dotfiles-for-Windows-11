@@ -21,3 +21,11 @@ wsl sudo apt install --yes --no-install-recommends vim;
 
 Write-Host "Installing Zsh in Ubuntu:" -ForegroundColor "Green";
 wsl sudo apt install --yes --no-install-recommends zsh;
+
+Write-Host "Configuring Git in Ubuntu:" -ForegroundColor "Green";
+wsl git config --global init.defaultBranch "main";
+wsl git config --global user.name $Config.GitUserName;
+wsl git config --global user.email $Config.GitUserEmail;
+wsl git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/libexec/git-core/git-credential-manager-core.exe";
+wsl git config --list;
+Write-Host "Git was successfully configured in Ubuntu." -ForegroundColor "Green";
