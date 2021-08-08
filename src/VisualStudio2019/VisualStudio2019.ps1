@@ -10,5 +10,5 @@ function Set-OpenWithVSCommunity-To-Extended-ContextMenu {
 }
 
 choco install -y "visualstudio2019community" --package-parameters "--passive --locale en-US";
-choco install -y "visualstudio2019-workload-netweb" --package-parameters "--passive --locale en-US";
+choco install -y "visualstudio2019-workload-netweb" --package-parameters "--passive --locale en-US" --execution-timeout 7200;
 Set-OpenWithVSCommunity-To-Extended-ContextMenu;
