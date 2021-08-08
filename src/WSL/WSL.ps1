@@ -33,3 +33,8 @@ Write-Host "Git was successfully configured in Ubuntu." -ForegroundColor "Green"
 Write-Host "Installing Visual Studio Code extensions in WSL:" -ForegroundColor "Green";
 wsl code --install-extension dbaeumer.vscode-eslint;
 wsl code --install-extension golang.go;
+
+Write-Host "Installing Volta in Ubuntu:" -ForegroundColor "Green";
+wsl mkdir -p -v ~/.dotfiles;
+wsl curl -o ~/.dotfiles/volta.sh https://get.volta.sh;
+wsl bash ~/.dotfiles/volta.sh;
