@@ -38,3 +38,24 @@ Write-Host "Installing Volta in Ubuntu:" -ForegroundColor "Green";
 wsl mkdir -p -v ~/.dotfiles;
 wsl curl -o ~/.dotfiles/volta.sh https://get.volta.sh;
 wsl bash ~/.dotfiles/volta.sh;
+
+Write-Host "Installing Node.js LTS in Ubuntu:" -ForegroundColor "Green";
+wsl ~/.volta/bin/volta install node;
+
+Write-Host "Installing NPM in Ubuntu:" -ForegroundColor "Green";
+wsl ~/.volta/bin/volta install npm;
+
+Write-Host "Installing Yarn in Ubuntu:" -ForegroundColor "Green";
+wsl ~/.volta/bin/volta install yarn;
+
+Write-Host "Installing TypeScript in Ubuntu:" -ForegroundColor "Green";
+wsl ~/.volta/bin/volta install typescript;
+
+Write-Host "Installing Yarn-Upgrade-All in Ubuntu:" -ForegroundColor "Green";
+wsl ~/.volta/bin/volta install yarn-upgrade-all;
+
+Write-Host "Installing Angular CLI in Ubuntu:" -ForegroundColor "Green";
+wsl ~/.volta/bin/volta install @angular/cli;
+
+Write-Host "Installing NestJS CLI in Ubuntu:" -ForegroundColor "Green";
+wsl ~/.volta/bin/volta install @nestjs/cli;
