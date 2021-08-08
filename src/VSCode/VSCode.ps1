@@ -16,7 +16,6 @@ refreshenv;
 code --install-extension "akamud.vscode-theme-onedark";
 code --install-extension "akamud.vscode-theme-onelight";
 code --install-extension "coenraads.bracket-pair-colorizer-2";
-code --install-extension "cweijan.vscode-mysql-client2";
 code --install-extension "davidanson.vscode-markdownlint";
 code --install-extension "eamodio.gitlens";
 code --install-extension "esbenp.prettier-vscode";
