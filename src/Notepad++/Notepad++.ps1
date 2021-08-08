@@ -19,13 +19,15 @@ function Set-NotepadPlusPlus-Configuration
 
 function Set-NotepadPlusPlus-Extensions
 {
-  $NotepadPlusPlusExtensions = ".txt", ".xml";
+  $NotepadPlusPlusExePath = "${env:ProgramFiles}\Notepad++\notepad++.exe";
+  $NotepadPlusPlusIcon = "${env:ProgramFiles}\Notepad++\NppShell_06.dll,0";
+  $NotepadPlusPlusExtensions = ".txt", ".xml", ".ini", ".bat", ".cmd", ".ps1";
   
   Write-Host "Configuring Notepad++ as Microsoft Windows default program:" -ForegroundColor "Green";
 
-  foreach($Extension in $NotepadPlusPlusExtensions)
+  foreach ($Extension in $NotepadPlusPlusExtensions)
   {
-    Set-FTA "Applications\notepad++.exe" $Extension;
+    Register-FTA $NotepadPlusPlusExePath $Extension -Icon $NotepadPlusPlusIcon;
   };
 
   Write-Host "Notepad++ was successfully configured as Microsoft Windows default program." -ForegroundColor "Green";
