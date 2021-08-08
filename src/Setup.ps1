@@ -43,6 +43,9 @@ if (-not (Get-Module-Installation-Status -ModuleName "PackageManagement" -Module
   Install-Module -Name "PackageManagement" -Force -MinimumVersion "1.4.6" -Scope "CurrentUser" -AllowClobber -Repository "PSGallery";
 }
 
+# Register the script to start after reboot
+Register-DotfilesScript-As-RunOnce;
+
 # Run scripts
 Invoke-Expression (Join-Path -Path $DotfilesWorkFolder -ChildPath "Chocolatey" | Join-Path -ChildPath "Chocolatey.ps1");
 Invoke-Expression (Join-Path -Path $DotfilesWorkFolder -ChildPath "Fonts" | Join-Path -ChildPath "Fonts.ps1");
@@ -54,9 +57,6 @@ Invoke-Expression (Join-Path -Path $DotfilesWorkFolder -ChildPath "TeraCopy" | J
 Invoke-Expression (Join-Path -Path $DotfilesWorkFolder -ChildPath "Notepad++" | Join-Path -ChildPath "Notepad++.ps1");
 Invoke-Expression (Join-Path -Path $DotfilesWorkFolder -ChildPath "Dotnet" | Join-Path -ChildPath "Dotnet.ps1");
 Invoke-Expression (Join-Path -Path $DotfilesWorkFolder -ChildPath "VisualStudio2019" | Join-Path -ChildPath "VisualStudio2019.ps1");
-
-# Register the script to start after reboot
-Register-DotfilesScript-As-RunOnce;
 
 Invoke-Expression (Join-Path -Path $DotfilesWorkFolder -ChildPath "WSL" | Join-Path -ChildPath "WSL.ps1");
 Invoke-Expression (Join-Path -Path $DotfilesWorkFolder -ChildPath "Docker" | Join-Path -ChildPath "Docker.ps1");
