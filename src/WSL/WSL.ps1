@@ -80,6 +80,13 @@ function Install-Hugo-In-Ubuntu {
   wsl bash $DotfilesHugoWlsScript $HugoVersion;
 }
 
+function Install-Plug-Vim-In-Ubuntu {
+  Write-Host "Installing Vim-Plug in Ubuntu:" -ForegroundColor "Green";
+
+  wsl mkdir -p -v ~/.vim/autoload;
+  wsl curl -L -o ~/.vim/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim;
+}
+
 function Install-OhMyZsh-In-Ubuntu {
   Write-Host "Installing Oh My Zsh in Ubuntu:" -ForegroundColor "Green";
 
@@ -146,6 +153,8 @@ Install-Nodejs-Packages-In-Ubuntu;
 
 Install-Golang-In-Ubuntu;
 Install-Hugo-In-Ubuntu;
+
+Install-Plug-Vim-In-Ubuntu;
 
 Install-OhMyZsh-In-Ubuntu;
 Install-OhMyZsh-Theme-In-Ubuntu;
