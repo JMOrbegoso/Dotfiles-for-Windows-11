@@ -186,6 +186,9 @@ Install-Ubuntu-Package -PackageName "neofetch";
 Install-Ubuntu-Package -PackageName "git";
 Install-Ubuntu-Package -PackageName "vim";
 Install-Ubuntu-Package -PackageName "zsh";
+Install-Ubuntu-Package -PackageName "make";
+Install-Ubuntu-Package -PackageName "g++";
+Install-Ubuntu-Package -PackageName "gcc";
 
 Set-Git-Configuration-In-Ubuntu;
 
