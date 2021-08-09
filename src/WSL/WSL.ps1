@@ -108,6 +108,15 @@ function Install-OhMyZsh-Functions-In-Ubuntu {
   wsl cp -R $WslOhMyZshFunctionsPath ~/.oh-my-zsh/custom/functions;
 }
 
+function Set-OhMyZsh-Configuration-In-Ubuntu {
+  $DotfilesZshrcPath = Join-Path -Path $DotfilesWorkFolder -ChildPath "WSL" | Join-Path -ChildPath ".zshrc";
+  $WslZshrcPath = wsl wslpath $DotfilesZshrcPath.Replace("\", "\\");
+
+  Write-Host "Configuring Zsh in Ubuntu:" -ForegroundColor "Green";
+  
+  wsl cp -R $WslZshrcPath ~;
+}
+
 choco install -y "wsl2" --params "/Version:2 /Retry:true";
 choco install -y "wsl-ubuntu-2004" --params "/InstallRoot:true" --execution-timeout 3600;
 
@@ -133,3 +142,4 @@ Install-Hugo-In-Ubuntu;
 Install-OhMyZsh-In-Ubuntu;
 Install-OhMyZsh-Theme-In-Ubuntu;
 Install-OhMyZsh-Functions-In-Ubuntu;
+Set-OhMyZsh-Configuration-In-Ubuntu;
