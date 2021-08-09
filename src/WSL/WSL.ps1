@@ -121,7 +121,7 @@ function Set-Zsh-As-Default-In-Ubuntu {
   Write-Host "Changing default shell to Zsh in Ubuntu:" -ForegroundColor "Green";
 
   wsl sudo chsh -s $(which zsh);
-  
+
   # Just for current user: sudo chsh -s /bin/zsh $USER;
 }
 
@@ -131,11 +131,11 @@ choco install -y "wsl-ubuntu-2004" --params "/InstallRoot:true" --execution-time
 Update-Ubuntu-Packages-Repository;
 Update-Ubuntu-Packages;
 
-Install-Ubuntu-Package -PackageName curl;
-Install-Ubuntu-Package -PackageName neofetch;
-Install-Ubuntu-Package -PackageName git;
-Install-Ubuntu-Package -PackageName vim;
-Install-Ubuntu-Package -PackageName zsh;
+Install-Ubuntu-Package -PackageName "curl";
+Install-Ubuntu-Package -PackageName "neofetch";
+Install-Ubuntu-Package -PackageName "git";
+Install-Ubuntu-Package -PackageName "vim";
+Install-Ubuntu-Package -PackageName "zsh";
 
 Set-Git-Configuration-In-Ubuntu;
 
