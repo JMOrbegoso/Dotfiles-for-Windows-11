@@ -169,9 +169,10 @@ function Set-OhMyZsh-Configuration-In-Ubuntu {
 function Set-Zsh-As-Default-In-Ubuntu {
   Write-Host "Changing default shell to Zsh in Ubuntu:" -ForegroundColor "Green";
 
-  wsl sudo chsh -s $(which zsh);
+  $WslZshPath = wsl which zsh;
+  wsl sudo chsh -s $WslZshPath;
 
-  # Just for current user: sudo chsh -s /bin/zsh $USER;
+  # Change just for a user: sudo chsh -s $WslZshPath $USER_NAME;
 }
 
 choco install -y "wsl2" --params "/Version:2 /Retry:true";
