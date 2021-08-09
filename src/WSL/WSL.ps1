@@ -37,10 +37,15 @@ function Install-VSCode-Extensions-In-WSL {
 }
 
 function Install-Volta-In-Ubuntu {
+  $DotfilesVoltaInstallerPath = Join-Path -Path $DotfilesWorkFolder -ChildPath "WSL" | Join-Path -ChildPath "volta.sh";
+
+  Invoke-WebRequest -o $DotfilesVoltaInstallerPath https://get.volta.sh;
+
+  $WslVoltaInstallerPath = wsl wslpath $DotfilesVoltaInstallerPath.Replace("\", "\\");
+
   Write-Host "Installing Volta in Ubuntu:" -ForegroundColor "Green";
-  wsl mkdir -p -v ~/.dotfiles;
-  wsl curl -o ~/.dotfiles/volta.sh https://get.volta.sh;
-  wsl bash ~/.dotfiles/volta.sh;
+  
+  wsl bash $WslVoltaInstallerPath;
 }
 
 function Install-Nodejs-Packages-In-Ubuntu {
