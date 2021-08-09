@@ -29,20 +29,20 @@ alias sourcefonts="fc-cache -f -v"
 ##################################################
 
 ### Edit Zsh configuration
-alias editzsh="nvim $HOME/.zshrc"
+alias editzsh="vim $HOME/.zshrc"
 
 ### Refresh Zsh configuration
 alias sourcezsh="source $HOME/.zshrc"
 
 ##################################################
-## NeoVim
+## Vim
 ##################################################
 
 ### Edit init.vim file
-alias editnvim="nvim $HOME/.config/nvim/init.vim"
+alias editvim="vim $HOME/.vimrc"
 
-### Refresh NeoVim configuration
-alias sourcenvim="source $HOME/.config/nvim/init.vim"
+### Refresh Vim configuration
+alias sourcevim="source $HOME/.vimrc"
 
 ##################################################
 ## Git
