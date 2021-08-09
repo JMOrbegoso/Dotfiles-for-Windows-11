@@ -71,6 +71,15 @@ function Invoke-Install-Golang-In-Ubuntu {
   wsl sudo apt install --yes --no-install-recommends golang-go;
 }
 
+function Invoke-Install-Hugo-In-Ubuntu {
+  $DotfilesHugoWindowsScript = Join-Path -Path $DotfilesWorkFolder -ChildPath "WSL" | Join-Path -ChildPath "InstallHugo.sh";
+  $DotfilesHugoWlsScript = wsl wslpath $DotfilesHugoWindowsScript.Replace("\", "\\");
+
+  Write-Host "Installing Hugo in Ubuntu:" -ForegroundColor "Green";
+  $HugoVersion = "0.87.0";
+  wsl bash $DotfilesHugoWlsScript $HugoVersion;
+}
+
 choco install -y "wsl2" --params "/Version:2 /Retry:true";
 choco install -y "wsl-ubuntu-2004" --params "/InstallRoot:true" --execution-timeout 3600;
 
@@ -92,3 +101,5 @@ Invoke-Install-Volta-In-Ubuntu;
 Invoke-Install-Nodejs-Packages-In-Ubuntu;
 
 Invoke-Install-Golang-In-Ubuntu;
+
+Invoke-Install-Hugo-In-Ubuntu;
