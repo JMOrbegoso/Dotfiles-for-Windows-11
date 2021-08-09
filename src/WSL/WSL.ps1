@@ -88,6 +88,15 @@ function Install-OhMyZsh-In-Ubuntu {
   wsl bash ~/.dotfiles/ohmyzsh.sh --unattended;
 }
 
+function Install-OhMyZsh-Theme-In-Ubuntu {
+  $DotfilesOhMyZshThemePath = Join-Path -Path $DotfilesWorkFolder -ChildPath "WSL" | Join-Path -ChildPath "paradox.zsh-theme";
+  $WslOhMyZshThemePath = wsl wslpath $DotfilesOhMyZshThemePath.Replace("\", "\\");
+
+  Write-Host "Installing Paradox theme for Oh My Zsh in Ubuntu:" -ForegroundColor "Green";
+
+  wsl cp -R $WslOhMyZshThemePath ~/.oh-my-zsh/custom/themes;
+}
+
 choco install -y "wsl2" --params "/Version:2 /Retry:true";
 choco install -y "wsl-ubuntu-2004" --params "/InstallRoot:true" --execution-timeout 3600;
 
@@ -111,3 +120,4 @@ Install-Golang-In-Ubuntu;
 Install-Hugo-In-Ubuntu;
 
 Install-OhMyZsh-In-Ubuntu;
+Install-OhMyZsh-Theme-In-Ubuntu;
