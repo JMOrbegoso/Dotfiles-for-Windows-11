@@ -117,6 +117,14 @@ function Set-OhMyZsh-Configuration-In-Ubuntu {
   wsl cp -R $WslZshrcPath ~;
 }
 
+function Set-Zsh-As-Default-In-Ubuntu {
+  Write-Host "Changing default shell to Zsh in Ubuntu:" -ForegroundColor "Green";
+
+  wsl sudo chsh -s $(which zsh);
+  
+  # Just for current user: sudo chsh -s /bin/zsh $USER;
+}
+
 choco install -y "wsl2" --params "/Version:2 /Retry:true";
 choco install -y "wsl-ubuntu-2004" --params "/InstallRoot:true" --execution-timeout 3600;
 
@@ -143,3 +151,4 @@ Install-OhMyZsh-In-Ubuntu;
 Install-OhMyZsh-Theme-In-Ubuntu;
 Install-OhMyZsh-Functions-In-Ubuntu;
 Set-OhMyZsh-Configuration-In-Ubuntu;
+Set-Zsh-As-Default-In-Ubuntu;
