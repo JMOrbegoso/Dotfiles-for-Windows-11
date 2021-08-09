@@ -66,6 +66,11 @@ function Invoke-Install-Nodejs-Packages-In-Ubuntu {
   wsl ~/.volta/bin/volta install @nestjs/cli;
 }
 
+function Invoke-Install-Golang-In-Ubuntu {
+  Write-Host "Installing Golang in Ubuntu:" -ForegroundColor "Green";
+  wsl sudo apt install --yes --no-install-recommends golang-go;
+}
+
 choco install -y "wsl2" --params "/Version:2 /Retry:true";
 choco install -y "wsl-ubuntu-2004" --params "/InstallRoot:true" --execution-timeout 3600;
 
@@ -85,3 +90,5 @@ Invoke-Install-VSCode-Extensions-In-WSL;
 Invoke-Install-Volta-In-Ubuntu;
 
 Invoke-Install-Nodejs-Packages-In-Ubuntu;
+
+Invoke-Install-Golang-In-Ubuntu;
