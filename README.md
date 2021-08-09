@@ -95,12 +95,12 @@ Invoke-Expression (Invoke-RestMethod -Uri "https://raw.githubusercontent.com/${G
 | editzsh   | Edit Zsh configuration    |            | ✅  |
 | sourcezsh | Refresh Zsh configuration |            | ✅  |
 
-### NeoVim
+### Vim
 
-| Alias      | Description                  | PowerShell | Zsh |
-| ---------- | ---------------------------- | ---------- | --- |
-| editnvim   | Edit init.vim file           |            | ✅  |
-| sourcenvim | Refresh NeoVim configuration |            | ✅  |
+| Alias     | Description               | PowerShell | Zsh |
+| --------- | ------------------------- | ---------- | --- |
+| editvim   | Edit .vimrc file          |            | ✅  |
+| sourcevim | Refresh Vim configuration |            | ✅  |
 
 ### Git
 
