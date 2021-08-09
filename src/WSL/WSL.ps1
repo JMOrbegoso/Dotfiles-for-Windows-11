@@ -92,6 +92,15 @@ function Install-Vim-Plugins-In-Ubuntu {
   wsl vim +PlugInstall +qall;
 }
 
+function Copy-Final-Vimrc-In-Ubuntu {
+  $DotfilesFinalVimrcPath = Join-Path -Path $DotfilesWorkFolder -ChildPath "WSL" | Join-Path -ChildPath "final.vimrc";
+  $WslVimrcPath = wsl wslpath $DotfilesFinalVimrcPath.Replace("\", "\\");
+
+  Write-Host "Copying final Vim configuration file in Ubuntu:" -ForegroundColor "Green";
+
+  wsl cp -R $WslVimrcPath ~/.vimrc;
+}
+
 function Install-OhMyZsh-In-Ubuntu {
   Write-Host "Installing Oh My Zsh in Ubuntu:" -ForegroundColor "Green";
 
@@ -162,6 +171,7 @@ Install-Hugo-In-Ubuntu;
 Install-Plug-Vim-In-Ubuntu;
 
 Install-Vim-Plugins-In-Ubuntu;
+Copy-Final-Vimrc-In-Ubuntu;
 
 Install-OhMyZsh-In-Ubuntu;
 Install-OhMyZsh-Theme-In-Ubuntu;
