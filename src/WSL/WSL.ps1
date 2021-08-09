@@ -72,12 +72,20 @@ function Install-Golang-In-Ubuntu {
 }
 
 function Install-Hugo-In-Ubuntu {
-  $DotfilesHugoWindowsScript = Join-Path -Path $DotfilesWorkFolder -ChildPath "WSL" | Join-Path -ChildPath "InstallHugo.sh";
-  $DotfilesHugoWlsScript = wsl wslpath $DotfilesHugoWindowsScript.Replace("\", "\\");
+  $DotfilesHugoInstallerPath = Join-Path -Path $DotfilesWorkFolder -ChildPath "WSL" | Join-Path -ChildPath "hugo-installer.deb";
+  $HugoVersion = "0.87.0";
+  $HugoReleaseUrl = "https://github.com/gohugoio/hugo/releases/download/v${HugoVersion}/hugo_${HugoVersion}_Linux-64bit.deb";
+
+  if (-not (Test-Path $DotfilesHugoInstallerPath)) {
+    Write-Host "Downloading Hugo installer:" -ForegroundColor "Green";
+    Invoke-WebRequest $HugoReleaseUrl -O $DotfilesHugoInstallerPath;
+  }
+
+  $WslHugoInstallerPath = wsl wslpath $DotfilesHugoInstallerPath.Replace("\", "\\");
 
   Write-Host "Installing Hugo in Ubuntu:" -ForegroundColor "Green";
-  $HugoVersion = "0.87.0";
-  wsl bash $DotfilesHugoWlsScript $HugoVersion;
+  wsl sudo dpkg -i $WslHugoInstallerPath;
+  wsl sudo apt install -f $WslHugoInstallerPath;
 }
 
 function Install-Plug-Vim-In-Ubuntu {
