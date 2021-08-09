@@ -52,3 +52,95 @@ Invoke-Expression (Invoke-RestMethod -Uri "https://raw.githubusercontent.com/${G
   - Enable Windows Sandbox.
 - Configure Windows 11 power plan.
 - Rename PC.
+
+## Alias and functions for Zsh in Ubuntu (Windows Subsystem for Linux)
+
+### Directories commands and functions
+
+| Alias | Description                      |
+| ----- | -------------------------------- |
+| mkcd  | Create folder and navigate to it |
+
+### Linux system commands and functions
+
+| Alias       | Description                                    |
+| ----------- | ---------------------------------------------- |
+| pathl       | List the content of PATH environment variables |
+| sourcefonts | Refresh the system fonts cache                 |
+
+### ZSH commands and functions
+
+| Alias     | Description               |
+| --------- | ------------------------- |
+| editzsh   | Edit Zsh configuration    |
+| sourcezsh | Refresh Zsh configuration |
+
+### NeoVim commands and functions
+
+| Alias      | Description                  |
+| ---------- | ---------------------------- |
+| editnvim   | Edit init.vim file           |
+| sourcenvim | Refresh NeoVim configuration |
+
+### Git commands and functions
+
+| Alias | Description                                                      |
+| ----- | ---------------------------------------------------------------- |
+| gcb   | git checkout creating new branch                                 |
+| ga    | git add                                                          |
+| gaa   | git add all                                                      |
+| gsc   | git clone, load submodules and navigate to the repository folder |
+| gst   | git status                                                       |
+| gcmsg | git commit message                                               |
+| ggp   | git push origin current_branch                                   |
+| glg   | git log                                                          |
+| gulc  | Git undo last commit                                             |
+
+### NPM commands and functions
+
+| Alias | Description                       |
+| ----- | --------------------------------- |
+| ngl   | List global NPM packages          |
+| ngo   | List outdated global NPM packages |
+| ngu   | Update global NPM package         |
+
+### Yarn commands and functions
+
+| Alias | Description                                   |
+| ----- | --------------------------------------------- |
+| yi    | Install Yarn package                          |
+| yid   | Install Yarn package as dev dependency        |
+| yl    | List all Yarn packages locally installed      |
+| ylo   | List outdated Yarn packages locally installed |
+| yu    | Update Yarn package                           |
+| yua   | Upgrade all Yarn packages                     |
+| yr    | Remove Yarn package                           |
+
+### Docker commands and functions
+
+| Alias | Description                        |
+| ----- | ---------------------------------- |
+| dlc   | List the Docker containers working |
+| dlca  | List all the Docker containers     |
+| dli   | List all the Docker images         |
+| dsc   | Stop Docker container              |
+| drc   | Delete Docker container            |
+| dri   | Delete Docker image                |
+
+### NestJS commands and functions
+
+| Alias   | Description                      |
+| ------- | -------------------------------- |
+| nestnew | Create a new project with NestJS |
+
+### Angular commands and functions
+
+| Alias | Description                       |
+| ----- | --------------------------------- |
+| ngnew | Create a new project with Angular |
+
+### Go commands and functions
+
+| Alias | Description           |
+| ----- | --------------------- |
+| gmi   | Initialize Go modules |
