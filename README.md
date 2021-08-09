@@ -35,7 +35,7 @@ Invoke-Expression (Invoke-RestMethod -Uri "https://raw.githubusercontent.com/${G
 - Set Notepad++ as the default program to open .txt, .xml, .ini, .bat, .cmd and .ps1 files.
 - Install .NET SDK.
 - Install Visual Studio 2019.
-- Enable Windows Subsystem form Linux.
+- Enable Windows Subsystem for Linux.
 - Install Ubuntu 20.04 LTS in WSL.
 - Install Docker Desktop.
 - Configure File Explorer:
