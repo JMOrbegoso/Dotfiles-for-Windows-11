@@ -126,11 +126,15 @@ function Copy-Final-Vimrc-In-Ubuntu {
 }
 
 function Install-OhMyZsh-In-Ubuntu {
-  Write-Host "Installing Oh My Zsh in Ubuntu:" -ForegroundColor "Green";
+  $DotfilesOhMyZshInstallerPath = Join-Path -Path $DotfilesWorkFolder -ChildPath "WSL" | Join-Path -ChildPath "ohmyzsh.sh";
 
-  wsl mkdir -p -v ~/.dotfiles;
-  wsl curl -L -o ~/.dotfiles/ohmyzsh.sh https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh;
-  wsl bash ~/.dotfiles/ohmyzsh.sh --unattended;
+  Invoke-WebRequest -o $DotfilesOhMyZshInstallerPath https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh;
+
+  $WslOhMyZshInstallerPath = wsl wslpath $DotfilesOhMyZshInstallerPath.Replace("\", "\\");
+  
+  Write-Host "Installing Oh My Zsh in Ubuntu:" -ForegroundColor "Green";
+  
+  wsl bash $WslOhMyZshInstallerPath --unattended;
 }
 
 function Install-OhMyZsh-Theme-In-Ubuntu {
