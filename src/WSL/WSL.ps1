@@ -80,6 +80,14 @@ function Install-Hugo-In-Ubuntu {
   wsl bash $DotfilesHugoWlsScript $HugoVersion;
 }
 
+function Install-OhMyZsh-In-Ubuntu {
+  Write-Host "Installing Oh My Zsh in Ubuntu:" -ForegroundColor "Green";
+
+  wsl mkdir -p -v ~/.dotfiles;
+  wsl curl -L -o ~/.dotfiles/ohmyzsh.sh https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh;
+  wsl bash ~/.dotfiles/ohmyzsh.sh --unattended;
+}
+
 choco install -y "wsl2" --params "/Version:2 /Retry:true";
 choco install -y "wsl-ubuntu-2004" --params "/InstallRoot:true" --execution-timeout 3600;
 
@@ -101,3 +109,5 @@ Install-Nodejs-Packages-In-Ubuntu;
 
 Install-Golang-In-Ubuntu;
 Install-Hugo-In-Ubuntu;
+
+Install-OhMyZsh-In-Ubuntu;
