@@ -87,6 +87,17 @@ function Install-Plug-Vim-In-Ubuntu {
   wsl curl -L -o ~/.vim/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim;
 }
 
+function Copy-Initial-Vimrc-In-Ubuntu {
+  $DotfilesInitialVimrcPath = Join-Path -Path $DotfilesWorkFolder -ChildPath "WSL" | Join-Path -ChildPath "initial.vimrc";
+  $WslVimrcPath = wsl wslpath $DotfilesInitialVimrcPath.Replace("\", "\\");
+
+  if (-not((wsl wslpath -w ~/.vimrc))) {
+    Write-Host "Copying initial Vim configuration file in Ubuntu:" -ForegroundColor "Green";
+    
+    wsl cp -R $WslVimrcPath ~/.vimrc;
+  }
+}
+
 function Install-Vim-Plugins-In-Ubuntu {
   Write-Host "Installing Vim plugins in Ubuntu:" -ForegroundColor "Green";
   wsl vim +PlugInstall +qall;
@@ -169,7 +180,7 @@ Install-Golang-In-Ubuntu;
 Install-Hugo-In-Ubuntu;
 
 Install-Plug-Vim-In-Ubuntu;
-
+Copy-Initial-Vimrc-In-Ubuntu;
 Install-Vim-Plugins-In-Ubuntu;
 Copy-Final-Vimrc-In-Ubuntu;
 
