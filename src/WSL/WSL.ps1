@@ -101,7 +101,7 @@ function Install-Plug-Vim-In-Ubuntu {
 }
 
 function Copy-Initial-Vimrc-In-Ubuntu {
-  $DotfilesInitialVimrcPath = Join-Path -Path $DotfilesWorkFolder -ChildPath "WSL" | Join-Path -ChildPath "initial.vimrc";
+  $DotfilesInitialVimrcPath = Join-Path -Path $DotfilesWorkFolder -ChildPath "Vim" | Join-Path -ChildPath "initial.vimrc";
   $WslVimrcPath = wsl wslpath $DotfilesInitialVimrcPath.Replace("\", "\\");
 
   if (-not((wsl wslpath -w ~/.vimrc))) {
@@ -117,7 +117,7 @@ function Install-Vim-Plugins-In-Ubuntu {
 }
 
 function Copy-Final-Vimrc-In-Ubuntu {
-  $DotfilesFinalVimrcPath = Join-Path -Path $DotfilesWorkFolder -ChildPath "WSL" | Join-Path -ChildPath "final.vimrc";
+  $DotfilesFinalVimrcPath = Join-Path -Path $DotfilesWorkFolder -ChildPath "Vim" | Join-Path -ChildPath "final.vimrc";
   $WslVimrcPath = wsl wslpath $DotfilesFinalVimrcPath.Replace("\", "\\");
 
   Write-Host "Copying final Vim configuration file in Ubuntu:" -ForegroundColor "Green";
