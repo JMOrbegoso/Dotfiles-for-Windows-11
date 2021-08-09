@@ -1,14 +1,14 @@
-function Invoke-Update-Ubuntu-Packages {
+function Update-Ubuntu-Packages-Repository {
   Write-Host "Updating Ubuntu package repository:" -ForegroundColor "Green";
   wsl sudo apt --yes update;
 }
 
-function Invoke-Upgrade-Ubuntu-Packages {
+function Update-Ubuntu-Packages {
   Write-Host "Upgrading Ubuntu packages:" -ForegroundColor "Green";
   wsl sudo apt --yes upgrade;
 }
 
-function Invoke-Install-Ubuntu-Package {
+function Install-Ubuntu-Package {
   [CmdletBinding()]
   param(
     [Parameter(Position = 0, Mandatory = $TRUE)]
@@ -20,7 +20,7 @@ function Invoke-Install-Ubuntu-Package {
   wsl sudo apt install --yes --no-install-recommends $PackageName;
 }
 
-function Invoke-Configure-Git-In-Ubuntu {
+function Set-Git-Configuration-In-Ubuntu {
   Write-Host "Configuring Git in Ubuntu:" -ForegroundColor "Green";
   wsl git config --global init.defaultBranch "main";
   wsl git config --global user.name $Config.GitUserName;
@@ -30,20 +30,20 @@ function Invoke-Configure-Git-In-Ubuntu {
   Write-Host "Git was successfully configured in Ubuntu." -ForegroundColor "Green";
 }
 
-function Invoke-Install-VSCode-Extensions-In-WSL {
+function Install-VSCode-Extensions-In-WSL {
   Write-Host "Installing Visual Studio Code extensions in WSL:" -ForegroundColor "Green";
   wsl code --install-extension dbaeumer.vscode-eslint;
   wsl code --install-extension golang.go;
 }
 
-function Invoke-Install-Volta-In-Ubuntu {
+function Install-Volta-In-Ubuntu {
   Write-Host "Installing Volta in Ubuntu:" -ForegroundColor "Green";
   wsl mkdir -p -v ~/.dotfiles;
   wsl curl -o ~/.dotfiles/volta.sh https://get.volta.sh;
   wsl bash ~/.dotfiles/volta.sh;
 }
 
-function Invoke-Install-Nodejs-Packages-In-Ubuntu {
+function Install-Nodejs-Packages-In-Ubuntu {
   Write-Host "Installing Node.js LTS in Ubuntu:" -ForegroundColor "Green";
   wsl ~/.volta/bin/volta install node;
   
@@ -66,12 +66,12 @@ function Invoke-Install-Nodejs-Packages-In-Ubuntu {
   wsl ~/.volta/bin/volta install @nestjs/cli;
 }
 
-function Invoke-Install-Golang-In-Ubuntu {
+function Install-Golang-In-Ubuntu {
   Write-Host "Installing Golang in Ubuntu:" -ForegroundColor "Green";
   wsl sudo apt install --yes --no-install-recommends golang-go;
 }
 
-function Invoke-Install-Hugo-In-Ubuntu {
+function Install-Hugo-In-Ubuntu {
   $DotfilesHugoWindowsScript = Join-Path -Path $DotfilesWorkFolder -ChildPath "WSL" | Join-Path -ChildPath "InstallHugo.sh";
   $DotfilesHugoWlsScript = wsl wslpath $DotfilesHugoWindowsScript.Replace("\", "\\");
 
@@ -83,23 +83,21 @@ function Invoke-Install-Hugo-In-Ubuntu {
 choco install -y "wsl2" --params "/Version:2 /Retry:true";
 choco install -y "wsl-ubuntu-2004" --params "/InstallRoot:true" --execution-timeout 3600;
 
-Invoke-Update-Ubuntu-Packages;
-Invoke-Upgrade-Ubuntu-Packages;
+Update-Ubuntu-Packages-Repository;
+Update-Ubuntu-Packages;
 
-Invoke-Install-Ubuntu-Package -PackageName curl;
-Invoke-Install-Ubuntu-Package -PackageName neofetch;
-Invoke-Install-Ubuntu-Package -PackageName git;
-Invoke-Install-Ubuntu-Package -PackageName vim;
-Invoke-Install-Ubuntu-Package -PackageName zsh;
+Install-Ubuntu-Package -PackageName curl;
+Install-Ubuntu-Package -PackageName neofetch;
+Install-Ubuntu-Package -PackageName git;
+Install-Ubuntu-Package -PackageName vim;
+Install-Ubuntu-Package -PackageName zsh;
 
-Invoke-Configure-Git-In-Ubuntu;
+Set-Git-Configuration-In-Ubuntu;
 
-Invoke-Install-VSCode-Extensions-In-WSL;
+Install-VSCode-Extensions-In-WSL;
 
-Invoke-Install-Volta-In-Ubuntu;
+Install-Volta-In-Ubuntu;
+Install-Nodejs-Packages-In-Ubuntu;
 
-Invoke-Install-Nodejs-Packages-In-Ubuntu;
-
-Invoke-Install-Golang-In-Ubuntu;
-
-Invoke-Install-Hugo-In-Ubuntu;
+Install-Golang-In-Ubuntu;
+Install-Hugo-In-Ubuntu;
