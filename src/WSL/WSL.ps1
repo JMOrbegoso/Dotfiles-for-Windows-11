@@ -87,6 +87,11 @@ function Install-Plug-Vim-In-Ubuntu {
   wsl curl -L -o ~/.vim/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim;
 }
 
+function Install-Vim-Plugins-In-Ubuntu {
+  Write-Host "Installing Vim plugins in Ubuntu:" -ForegroundColor "Green";
+  wsl vim +PlugInstall +qall;
+}
+
 function Install-OhMyZsh-In-Ubuntu {
   Write-Host "Installing Oh My Zsh in Ubuntu:" -ForegroundColor "Green";
 
@@ -155,6 +160,8 @@ Install-Golang-In-Ubuntu;
 Install-Hugo-In-Ubuntu;
 
 Install-Plug-Vim-In-Ubuntu;
+
+Install-Vim-Plugins-In-Ubuntu;
 
 Install-OhMyZsh-In-Ubuntu;
 Install-OhMyZsh-Theme-In-Ubuntu;
