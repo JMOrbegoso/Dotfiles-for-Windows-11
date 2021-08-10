@@ -29,10 +29,10 @@ alias sourcefonts="fc-cache -f -v"
 ##################################################
 
 ### Edit Zsh configuration
-alias editzsh="vim $HOME/.zshrc"
+alias editprofile="vim $HOME/.zshrc"
 
 ### Refresh Zsh configuration
-alias sourcezsh="source $HOME/.zshrc"
+alias sourceprofile="source $HOME/.zshrc"
 
 ##################################################
 ## Vim

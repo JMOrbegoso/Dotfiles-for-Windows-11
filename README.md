@@ -81,25 +81,24 @@ Invoke-Expression (Invoke-RestMethod -Uri "https://raw.githubusercontent.com/${G
 | ----- | -------------------------------- | ---------- | --- |
 | mkcd  | Create folder and navigate to it | ✅         | ✅  |
 
-### Linux system
+### Environment Variables
 
-| Alias       | Description                                    | PowerShell | Zsh |
-| ----------- | ---------------------------------------------- | ---------- | --- |
-| pathl       | List the content of PATH environment variables |            | ✅  |
-| sourcefonts | Refresh the system fonts cache                 |            | ✅  |
+| Alias | Description                                    | PowerShell | Zsh |
+| ----- | ---------------------------------------------- | ---------- | --- |
+| pathl | List the content of PATH environment variables | ✅         | ✅  |
 
-### ZSH
+### Terminal Profile
 
-| Alias     | Description               | PowerShell | Zsh |
-| --------- | ------------------------- | ---------- | --- |
-| editzsh   | Edit Zsh configuration    |            | ✅  |
-| sourcezsh | Refresh Zsh configuration |            | ✅  |
+| Alias         | Description              | PowerShell | Zsh |
+| ------------- | ------------------------ | ---------- | --- |
+| editprofile   | Edit terminal profile    | ✅         | ✅  |
+| sourceprofile | Refresh terminal profile | ✅         | ✅  |
 
 ### Vim
 
 | Alias     | Description               | PowerShell | Zsh |
 | --------- | ------------------------- | ---------- | --- |
-| editvim   | Edit .vimrc file          |            | ✅  |
+| editvim   | Edit .vimrc file          | ✅         | ✅  |
 | sourcevim | Refresh Vim configuration |            | ✅  |
 
 ### Git
@@ -164,3 +163,15 @@ Invoke-Expression (Invoke-RestMethod -Uri "https://raw.githubusercontent.com/${G
 | Alias | Description           | PowerShell | Zsh |
 | ----- | --------------------- | ---------- | --- |
 | gmi   | Initialize Go modules |            | ✅  |
+
+### Windows system
+
+| Alias        | Description                     |
+| ------------ | ------------------------------- |
+| updatesystem | Update apps and Windows system. |
+
+### Linux system
+
+| Alias       | Description                    |
+| ----------- | ------------------------------ |
+| sourcefonts | Refresh the system fonts cache |

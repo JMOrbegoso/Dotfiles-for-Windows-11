@@ -37,6 +37,20 @@ function New-Folder-Navigate-To-It {
 Set-Alias -Name "mkcd" -Value "New-Folder-Navigate-To-It";
 
 #######################################################################
+##                      WindowsTerminal Profile                      ##
+#######################################################################
+
+function Invoke-Edit-WindowsTerminal-Profile {
+  vim $PROFILE;
+};
+Set-Alias -Name "editprofile" -Value "Invoke-Edit-WindowsTerminal-Profile";
+
+function Invoke-Refresh-WindowsTerminal-Profile {
+  . $PROFILE;
+};
+Set-Alias -Name "sourceprofile" -Value "Invoke-Refresh-WindowsTerminal-Profile";
+
+#######################################################################
 ##                            Git Aliases                            ##
 #######################################################################
 
@@ -107,3 +121,22 @@ function Update-System {
   choco upgrade -y "chocolatey";
   choco upgrade -y all;
 };
+Set-Alias -Name "updatesystem" -Value "Update-System";
+
+#######################################################################
+##                            Vim Aliases                            ##
+#######################################################################
+
+function Invoke-Edit-Vimrc {
+  vim ~/.vimrc;
+};
+Set-Alias -Name "editvim" -Value "Invoke-Edit-Vimrc";
+
+#######################################################################
+##                       Environment Variables                       ##
+#######################################################################
+
+function Invoke-List-Path {
+  $env:Path -split ';';
+};
+Set-Alias -Name "pathl" -Value "Invoke-List-Path";
