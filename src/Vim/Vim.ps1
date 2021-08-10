@@ -28,6 +28,11 @@ function Set-Vim-Configuration {
   Write-Host "Copying final Vim configuration file:" -ForegroundColor "Green";
   Copy-Item $DotfilesFinalVimrcPath -Destination $VimrcPath;
 
+  (Get-Content -path $VimrcPath) -replace "__VIM_PLUGGED__", "~/vimfiles/plugged" | Set-Content -Path $VimrcPath;
+  (Get-Content -path $VimrcPath) -replace "__STARTIFY_BOOKMARKS__", "[ { 'v': '~/.vimrc' } ]" | Set-Content -Path $VimrcPath;
+  (Get-Content -path $VimrcPath) -replace "__VIM_SESSION__", "~/vimfiles/session" | Set-Content -Path $VimrcPath;
+  (Get-Content -path $VimrcPath) -replace "__VIMRC_LOCAL__", "~/vimfiles/local_init.vim" | Set-Content -Path $VimrcPath;
+
   Write-Host "Vim was successfully configured." -ForegroundColor "Green";
 }
 
