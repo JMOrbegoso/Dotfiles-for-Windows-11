@@ -16,7 +16,7 @@ Invoke-Expression (Invoke-RestMethod -Uri "https://raw.githubusercontent.com/${G
 ## What does
 
 - Install Chocolatey.
-- Configure Chocolatey to remembered arguments for upgrades.
+- Configure Chocolatey to remember installation arguments for future updates.
 - Install Hack Nerd Font.
 - Install Git;
 - Configure Git.
