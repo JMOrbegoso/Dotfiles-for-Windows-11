@@ -107,3 +107,12 @@ function Update-System {
   choco upgrade -y "chocolatey";
   choco upgrade -y all;
 };
+
+#######################################################################
+##                            Vim Aliases                            ##
+#######################################################################
+
+function Invoke-Edit-Vimrc {
+  vim ~/.vimrc;
+};
+Set-Alias -Name "editvim" -Value "Invoke-Edit-Vimrc";
