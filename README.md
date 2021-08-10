@@ -87,12 +87,12 @@ Invoke-Expression (Invoke-RestMethod -Uri "https://raw.githubusercontent.com/${G
 | ----- | ---------------------------------------------- | ---------- | --- |
 | pathl | List the content of PATH environment variables |            | ✅  |
 
-### ZSH
+### Terminal Profile
 
-| Alias     | Description               | PowerShell | Zsh |
-| --------- | ------------------------- | ---------- | --- |
-| editzsh   | Edit Zsh configuration    |            | ✅  |
-| sourcezsh | Refresh Zsh configuration |            | ✅  |
+| Alias         | Description              | PowerShell | Zsh |
+| ------------- | ------------------------ | ---------- | --- |
+| editprofile   | Edit terminal profile    | ✅         | ✅  |
+| sourceprofile | Refresh terminal profile | ✅         | ✅  |
 
 ### Vim
 
