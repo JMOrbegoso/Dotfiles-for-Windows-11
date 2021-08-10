@@ -121,6 +121,7 @@ function Update-System {
   choco upgrade -y "chocolatey";
   choco upgrade -y all;
 };
+Set-Alias -Name "updatesystem" -Value "Update-System";
 
 #######################################################################
 ##                            Vim Aliases                            ##
