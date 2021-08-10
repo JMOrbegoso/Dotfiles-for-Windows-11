@@ -108,6 +108,9 @@ function Copy-Initial-Vimrc-In-Ubuntu {
     Write-Host "Copying initial Vim configuration file in Ubuntu:" -ForegroundColor "Green";
     
     wsl cp -R $WslVimrcPath ~/.vimrc;
+    
+    $WindowsVimrcPath = wsl wslpath -w ~/.vimrc;
+    (Get-Content -path $WindowsVimrcPath) -replace "__VIM_PLUGGED__", "~/.vim/plugged" | Set-Content -Path $WindowsVimrcPath;
   }
 }
 
