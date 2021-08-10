@@ -164,6 +164,12 @@ Invoke-Expression (Invoke-RestMethod -Uri "https://raw.githubusercontent.com/${G
 | ----- | --------------------- | ---------- | --- |
 | gmi   | Initialize Go modules |            | ✅  |
 
+### Windows system
+
+| Alias        | Description                     | PowerShell |
+| ------------ | ------------------------------- | ---------- |
+| updatesystem | Update apps and Windows system. | ✅         |
+
 ### Linux system
 
 | Alias       | Description                    | PowerShell | Zsh |
