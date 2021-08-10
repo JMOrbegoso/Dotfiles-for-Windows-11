@@ -115,7 +115,7 @@ function Copy-Initial-Vimrc-In-Ubuntu {
     (Get-Content -path $WindowsVimrcPath) -replace "__VIM_PLUGGED__", "~/.vim/plugged" | Set-Content -Path $WindowsVimrcPath;
 
     # Convert line endings to Linux (CRLF -> LF)
-    (Get-Content -Raw -Path $WindowsVimrcPath) -replace '\r\n', '\n' | Set-Content -Path $WindowsVimrcPath;
+    ((Get-Content $WindowsVimrcPath) -join "`n") + "`n" | Set-Content -NoNewline $WindowsVimrcPath;
   }
 }
 
@@ -141,7 +141,7 @@ function Copy-Final-Vimrc-In-Ubuntu {
   (Get-Content -path $WindowsVimrcPath) -replace "__VIMRC_LOCAL__", "~/.vimrc.local" | Set-Content -Path $WindowsVimrcPath;
 
   # Convert line endings to Linux (CRLF -> LF)
-  (Get-Content -Raw -Path $WindowsVimrcPath) -replace '\r\n', '\n' | Set-Content -Path $WindowsVimrcPath;
+  ((Get-Content $WindowsVimrcPath) -join "`n") + "`n" | Set-Content -NoNewline $WindowsVimrcPath;
 }
 
 function Install-OhMyZsh-In-Ubuntu {
