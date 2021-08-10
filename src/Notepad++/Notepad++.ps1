@@ -15,16 +15,32 @@ function Set-NotepadPlusPlus-Configuration {
 }
 
 function Set-NotepadPlusPlus-Extensions {
-  $NotepadPlusPlusExePath = "${env:ProgramFiles}\Notepad++\notepad++.exe";
-  $NotepadPlusPlusIcon = "${env:ProgramFiles}\Notepad++\NppShell_06.dll,0";
-  $NotepadPlusPlusExtensions = ".txt", ".xml", ".ini", ".bat", ".cmd", ".ps1";
+  $NotepadPlusPlusExePath = Join-Path -Path $env:ProgramFiles -ChildPath "Notepad++" | Join-Path -ChildPath "notepad++.exe";
+  $NotepadPlusPlusIconPath = Join-Path -Path $env:ProgramFiles -ChildPath "Notepad++" | Join-Path -ChildPath "NppShell_06.dll";
+  $PowerShellIconPath = Join-Path -Path $env:SystemRoot -ChildPath "System32" | Join-Path -ChildPath "WindowsPowerShell" | Join-Path -ChildPath "v1.0" | Join-Path -ChildPath "powershell_ise.exe";
+  $Shell32Path = Join-Path -Path $env:SystemRoot -ChildPath "System32" | Join-Path -ChildPath "SHELL32.dll";
+
+  Write-Host "Configuring Microsoft Windows to open files with the .bat extension with Notepad++:" -ForegroundColor "Green";
+  Register-FTA $NotepadPlusPlusExePath ".bat" -Icon "${Shell32Path},71";
+
+  Write-Host "Configuring Microsoft Windows to open files with the .cmd extension with Notepad++:" -ForegroundColor "Green";
+  Register-FTA $NotepadPlusPlusExePath ".cmd" -Icon "${Shell32Path},71";
+
+  Write-Host "Configuring Microsoft Windows to open files with the .ini extension with Notepad++:" -ForegroundColor "Green";
+  Register-FTA $NotepadPlusPlusExePath ".ini" -Icon "${Shell32Path},69";
+
+  Write-Host "Configuring Microsoft Windows to open files with the .ps1 extension with Notepad++:" -ForegroundColor "Green";
+  Register-FTA $NotepadPlusPlusExePath ".ps1" -Icon "${PowerShellIconPath},1";
+
+  Write-Host "Configuring Microsoft Windows to open files with the .sh extension with Notepad++:" -ForegroundColor "Green";
+  Register-FTA $NotepadPlusPlusExePath ".sh" -Icon "${Shell32Path},71";
+
+  Write-Host "Configuring Microsoft Windows to open files with the .txt extension with Notepad++:" -ForegroundColor "Green";
+  Register-FTA $NotepadPlusPlusExePath ".txt" -Icon "${Shell32Path},70";
+
+  Write-Host "Configuring Microsoft Windows to open files with the .xml extension with Notepad++:" -ForegroundColor "Green";
+  Register-FTA $NotepadPlusPlusExePath ".xml" -Icon "${NotepadPlusPlusIconPath},0";
   
-  Write-Host "Configuring Notepad++ as Microsoft Windows default program:" -ForegroundColor "Green";
-
-  foreach ($Extension in $NotepadPlusPlusExtensions) {
-    Register-FTA $NotepadPlusPlusExePath $Extension -Icon $NotepadPlusPlusIcon;
-  };
-
   Write-Host "Notepad++ was successfully configured as Microsoft Windows default program." -ForegroundColor "Green";
 }
 
