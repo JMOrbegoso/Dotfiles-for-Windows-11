@@ -110,6 +110,8 @@ function Copy-Initial-Vimrc-In-Ubuntu {
     wsl cp -R $WslVimrcPath ~/.vimrc;
     
     $WindowsVimrcPath = wsl wslpath -w ~/.vimrc;
+
+    # Convert token strings
     (Get-Content -path $WindowsVimrcPath) -replace "__VIM_PLUGGED__", "~/.vim/plugged" | Set-Content -Path $WindowsVimrcPath;
 
     # Convert line endings to Linux (CRLF -> LF)
@@ -131,6 +133,8 @@ function Copy-Final-Vimrc-In-Ubuntu {
   wsl cp -R $WslVimrcPath ~/.vimrc;
 
   $WindowsVimrcPath = wsl wslpath -w ~/.vimrc;
+
+  # Convert token strings
   (Get-Content -path $WindowsVimrcPath) -replace "__VIM_PLUGGED__", "~/.vim/plugged" | Set-Content -Path $WindowsVimrcPath;
   (Get-Content -path $WindowsVimrcPath) -replace "__STARTIFY_BOOKMARKS__", "[ { 'v': '~/.vimrc' }, { 'z': '~/.zshrc' }, { 'o': '~/.oh-my-zsh' }, { 't': '~/.oh-my-zsh/custom/themes' }, { 'f': '~/.oh-my-zsh/custom/functions' } ]" | Set-Content -Path $WindowsVimrcPath;
   (Get-Content -path $WindowsVimrcPath) -replace "__VIM_SESSION__", "~/.vim/session" | Set-Content -Path $WindowsVimrcPath;
