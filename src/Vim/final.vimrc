@@ -3,7 +3,7 @@
 "*****************************************************************************
 
 "" Required:
-call plug#begin(expand('~/vimfiles/plugged'))
+call plug#begin(expand('__VIM_PLUGGED__'))
 
 "*****************************************************************************
 "" Plug install packages
@@ -103,9 +103,7 @@ set smartcase
 set fileformats=unix,dos,mac
 
 "" Start Page
-let g:startify_bookmarks = [
-          \ { 'v': '~/.vimrc' },
-          \ ]
+let g:startify_bookmarks = __STARTIFY_BOOKMARKS__
 
 let g:startify_lists = [
           \ { 'type': 'bookmarks', 'header': ['   Bookmarks'] },
@@ -116,7 +114,7 @@ let g:startify_lists = [
           \ ]
 
 "" Session management
-let g:session_directory = "~/vimfiles/session"
+let g:session_directory = "__VIM_SESSION__"
 let g:session_autoload = "no"
 let g:session_autosave = "no"
 let g:session_command_aliases = 1
@@ -484,8 +482,8 @@ vnoremap K :m '<-2<CR>gv=gv
 "*****************************************************************************
 
 "" Include user's local vim config
-if filereadable(expand("~/vimfiles/local_init.vim"))
-  source ~/vimfiles/local_init.vim
+if filereadable(expand("__VIMRC_LOCAL__"))
+  source __VIMRC_LOCAL__
 endif
 
 "*****************************************************************************
