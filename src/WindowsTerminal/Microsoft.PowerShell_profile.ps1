@@ -116,3 +116,12 @@ function Invoke-Edit-Vimrc {
   vim ~/.vimrc;
 };
 Set-Alias -Name "editvim" -Value "Invoke-Edit-Vimrc";
+
+#######################################################################
+##                       Environment Variables                       ##
+#######################################################################
+
+function Invoke-List-Path {
+  $env:Path -split ';';
+};
+Set-Alias -Name "pathl" -Value "Invoke-List-Path";
