@@ -85,7 +85,7 @@ Invoke-Expression (Invoke-RestMethod -Uri "https://raw.githubusercontent.com/${G
 
 | Alias | Description                                    | PowerShell | Zsh |
 | ----- | ---------------------------------------------- | ---------- | --- |
-| pathl | List the content of PATH environment variables |            | ✅  |
+| pathl | List the content of PATH environment variables | ✅         | ✅  |
 
 ### Terminal Profile
 
@@ -98,7 +98,7 @@ Invoke-Expression (Invoke-RestMethod -Uri "https://raw.githubusercontent.com/${G
 
 | Alias     | Description               | PowerShell | Zsh |
 | --------- | ------------------------- | ---------- | --- |
-| editvim   | Edit .vimrc file          |            | ✅  |
+| editvim   | Edit .vimrc file          | ✅         | ✅  |
 | sourcevim | Refresh Vim configuration |            | ✅  |
 
 ### Git
