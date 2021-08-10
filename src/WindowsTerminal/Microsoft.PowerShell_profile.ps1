@@ -37,6 +37,20 @@ function New-Folder-Navigate-To-It {
 Set-Alias -Name "mkcd" -Value "New-Folder-Navigate-To-It";
 
 #######################################################################
+##                      WindowsTerminal Profile                      ##
+#######################################################################
+
+function Invoke-Edit-WindowsTerminal-Profile {
+  vim $PROFILE;
+};
+Set-Alias -Name "editprofile" -Value "Invoke-Edit-WindowsTerminal-Profile";
+
+function Invoke-Refresh-WindowsTerminal-Profile {
+  . $PROFILE;
+};
+Set-Alias -Name "sourceprofile" -Value "Invoke-Refresh-WindowsTerminal-Profile";
+
+#######################################################################
 ##                            Git Aliases                            ##
 #######################################################################
 
