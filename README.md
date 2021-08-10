@@ -61,7 +61,7 @@ Invoke-Expression (Invoke-RestMethod -Uri "https://raw.githubusercontent.com/${G
 - Configure File Explorer:
   - Show file extensions.
   - Open file explorer to This PC.
-  - Set as background option only for extended Context Menu.
+  - Set as background option moved to extended Context Menu.
   - Disable recently opened items from JumpList.
 - Microsoft Windows optional features:
   - Disable Windows Media Player.
