@@ -166,12 +166,12 @@ Invoke-Expression (Invoke-RestMethod -Uri "https://raw.githubusercontent.com/${G
 
 ### Windows system
 
-| Alias        | Description                     | PowerShell |
-| ------------ | ------------------------------- | ---------- |
-| updatesystem | Update apps and Windows system. | ✅         |
+| Alias        | Description                     |
+| ------------ | ------------------------------- |
+| updatesystem | Update apps and Windows system. |
 
 ### Linux system
 
-| Alias       | Description                    | PowerShell | Zsh |
-| ----------- | ------------------------------ | ---------- | --- |
-| sourcefonts | Refresh the system fonts cache |            | ✅  |
+| Alias       | Description                    |
+| ----------- | ------------------------------ |
+| sourcefonts | Refresh the system fonts cache |
