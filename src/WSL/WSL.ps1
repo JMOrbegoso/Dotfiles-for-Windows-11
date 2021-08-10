@@ -101,13 +101,21 @@ function Install-Plug-Vim-In-Ubuntu {
 }
 
 function Copy-Initial-Vimrc-In-Ubuntu {
-  $DotfilesInitialVimrcPath = Join-Path -Path $DotfilesWorkFolder -ChildPath "WSL" | Join-Path -ChildPath "initial.vimrc";
+  $DotfilesInitialVimrcPath = Join-Path -Path $DotfilesWorkFolder -ChildPath "Vim" | Join-Path -ChildPath "initial.vimrc";
   $WslVimrcPath = wsl wslpath $DotfilesInitialVimrcPath.Replace("\", "\\");
 
   if (-not((wsl wslpath -w ~/.vimrc))) {
     Write-Host "Copying initial Vim configuration file in Ubuntu:" -ForegroundColor "Green";
     
     wsl cp -R $WslVimrcPath ~/.vimrc;
+    
+    $WindowsVimrcPath = wsl wslpath -w ~/.vimrc;
+
+    # Convert token strings
+    (Get-Content -path $WindowsVimrcPath) -replace "__VIM_PLUGGED__", "~/.vim/plugged" | Set-Content -Path $WindowsVimrcPath;
+
+    # Convert line endings to Linux (CRLF -> LF)
+    ((Get-Content $WindowsVimrcPath) -join "`n") + "`n" | Set-Content -NoNewline $WindowsVimrcPath;
   }
 }
 
@@ -117,12 +125,23 @@ function Install-Vim-Plugins-In-Ubuntu {
 }
 
 function Copy-Final-Vimrc-In-Ubuntu {
-  $DotfilesFinalVimrcPath = Join-Path -Path $DotfilesWorkFolder -ChildPath "WSL" | Join-Path -ChildPath "final.vimrc";
+  $DotfilesFinalVimrcPath = Join-Path -Path $DotfilesWorkFolder -ChildPath "Vim" | Join-Path -ChildPath "final.vimrc";
   $WslVimrcPath = wsl wslpath $DotfilesFinalVimrcPath.Replace("\", "\\");
 
   Write-Host "Copying final Vim configuration file in Ubuntu:" -ForegroundColor "Green";
 
   wsl cp -R $WslVimrcPath ~/.vimrc;
+
+  $WindowsVimrcPath = wsl wslpath -w ~/.vimrc;
+
+  # Convert token strings
+  (Get-Content -path $WindowsVimrcPath) -replace "__VIM_PLUGGED__", "~/.vim/plugged" | Set-Content -Path $WindowsVimrcPath;
+  (Get-Content -path $WindowsVimrcPath) -replace "__STARTIFY_BOOKMARKS__", "[ { 'v': '~/.vimrc' }, { 'z': '~/.zshrc' }, { 'o': '~/.oh-my-zsh' }, { 't': '~/.oh-my-zsh/custom/themes' }, { 'f': '~/.oh-my-zsh/custom/functions' } ]" | Set-Content -Path $WindowsVimrcPath;
+  (Get-Content -path $WindowsVimrcPath) -replace "__VIM_SESSION__", "~/.vim/session" | Set-Content -Path $WindowsVimrcPath;
+  (Get-Content -path $WindowsVimrcPath) -replace "__VIMRC_LOCAL__", "~/.vimrc.local" | Set-Content -Path $WindowsVimrcPath;
+
+  # Convert line endings to Linux (CRLF -> LF)
+  ((Get-Content $WindowsVimrcPath) -join "`n") + "`n" | Set-Content -NoNewline $WindowsVimrcPath;
 }
 
 function Install-OhMyZsh-In-Ubuntu {

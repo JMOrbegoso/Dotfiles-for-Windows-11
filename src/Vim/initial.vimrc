@@ -3,7 +3,7 @@
 "*****************************************************************************
 
 "" Required:
-call plug#begin(expand('~/vimfiles/plugged'))
+call plug#begin(expand('__VIM_PLUGGED__'))
 
 "*****************************************************************************
 "" Plug install packages
