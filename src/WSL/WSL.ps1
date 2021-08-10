@@ -111,6 +111,9 @@ function Copy-Initial-Vimrc-In-Ubuntu {
     
     $WindowsVimrcPath = wsl wslpath -w ~/.vimrc;
     (Get-Content -path $WindowsVimrcPath) -replace "__VIM_PLUGGED__", "~/.vim/plugged" | Set-Content -Path $WindowsVimrcPath;
+
+    # Convert line endings to Linux (CRLF -> LF)
+    (Get-Content -Raw -Path $WindowsVimrcPath) -replace '\r\n', '\n' | Set-Content -Path $WindowsVimrcPath;
   }
 }
 
@@ -132,6 +135,9 @@ function Copy-Final-Vimrc-In-Ubuntu {
   (Get-Content -path $WindowsVimrcPath) -replace "__STARTIFY_BOOKMARKS__", "[ { 'v': '~/.vimrc' }, { 'z': '~/.zshrc' }, { 'o': '~/.oh-my-zsh' }, { 't': '~/.oh-my-zsh/custom/themes' }, { 'f': '~/.oh-my-zsh/custom/functions' } ]" | Set-Content -Path $WindowsVimrcPath;
   (Get-Content -path $WindowsVimrcPath) -replace "__VIM_SESSION__", "~/.vim/session" | Set-Content -Path $WindowsVimrcPath;
   (Get-Content -path $WindowsVimrcPath) -replace "__VIMRC_LOCAL__", "~/.vimrc.local" | Set-Content -Path $WindowsVimrcPath;
+
+  # Convert line endings to Linux (CRLF -> LF)
+  (Get-Content -Raw -Path $WindowsVimrcPath) -replace '\r\n', '\n' | Set-Content -Path $WindowsVimrcPath;
 }
 
 function Install-OhMyZsh-In-Ubuntu {
