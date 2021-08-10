@@ -81,12 +81,11 @@ Invoke-Expression (Invoke-RestMethod -Uri "https://raw.githubusercontent.com/${G
 | ----- | -------------------------------- | ---------- | --- |
 | mkcd  | Create folder and navigate to it | ✅         | ✅  |
 
-### Linux system
+### Environment Variables
 
-| Alias       | Description                                    | PowerShell | Zsh |
-| ----------- | ---------------------------------------------- | ---------- | --- |
-| pathl       | List the content of PATH environment variables |            | ✅  |
-| sourcefonts | Refresh the system fonts cache                 |            | ✅  |
+| Alias | Description                                    | PowerShell | Zsh |
+| ----- | ---------------------------------------------- | ---------- | --- |
+| pathl | List the content of PATH environment variables |            | ✅  |
 
 ### ZSH
 
@@ -164,3 +163,9 @@ Invoke-Expression (Invoke-RestMethod -Uri "https://raw.githubusercontent.com/${G
 | Alias | Description           | PowerShell | Zsh |
 | ----- | --------------------- | ---------- | --- |
 | gmi   | Initialize Go modules |            | ✅  |
+
+### Linux system
+
+| Alias       | Description                    | PowerShell | Zsh |
+| ----------- | ------------------------------ | ---------- | --- |
+| sourcefonts | Refresh the system fonts cache |            | ✅  |
