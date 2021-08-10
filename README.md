@@ -32,7 +32,7 @@ Invoke-Expression (Invoke-RestMethod -Uri "https://raw.githubusercontent.com/${G
 - Install TeraCopy.
 - Install Notepad++.
 - Configure Notepad++.
-- Set Notepad++ as the default program to open .txt, .xml, .ini, .bat, .cmd and .ps1 files.
+- Set Notepad++ as the default program to open .txt, .xml, .ini, .bat, .cmd, .ps1 and .sh files.
 - Install .NET SDK.
 - Install Visual Studio 2019.
 - Enable Windows Subsystem for Linux.
