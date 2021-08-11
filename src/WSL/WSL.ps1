@@ -105,8 +105,10 @@ function Install-Hugo-In-Ubuntu {
   }
 
   if ($DownloadHugo) {
-    Write-Host "Downloading Hugo installer:" -ForegroundColor "Green";
-    Invoke-WebRequest $DownloadUri -O $DotfilesHugoInstallerPath;
+    if (-not (Test-Path $DotfilesHugoInstallerPath)) {
+      Write-Host "Downloading Hugo installer:" -ForegroundColor "Green";
+      Invoke-WebRequest $DownloadUri -O $DotfilesHugoInstallerPath;
+    }
 
     $WslHugoInstallerPath = wsl wslpath $DotfilesHugoInstallerPath.Replace("\", "\\");
 
