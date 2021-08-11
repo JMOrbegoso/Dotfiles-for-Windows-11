@@ -77,12 +77,12 @@ function Install-Golang-In-Ubuntu {
 }
 
 function Install-Hugo-In-Ubuntu {
-  $DotfilesHugoInstallerPath = Join-Path -Path $DotfilesWorkFolder -ChildPath "WSL" | Join-Path -ChildPath "hugo-installer.deb";
   $HugoReleasesUri = "https://api.github.com/repos/gohugoio/hugo/releases";
   $DownloadHugo = $FALSE;
 
   Write-Host "Checking the latest version of Hugo:" -ForegroundColor "Green";
   $HugoLastVersion = (Invoke-WebRequest $HugoReleasesUri | ConvertFrom-Json)[0].tag_name.Replace("v", "");
+  $DotfilesHugoInstallerPath = Join-Path -Path $DotfilesWorkFolder -ChildPath "WSL" | Join-Path -ChildPath "hugo-installer-${HugoLastVersion}.deb";
   $HugoDownloadUri = "https://github.com/gohugoio/hugo/releases/download/v${HugoLastVersion}/hugo_${HugoLastVersion}_Linux-64bit.deb";
   Write-Host "Latest version is ${HugoLastVersion}." -ForegroundColor "Green";
   Write-Host "Download url is ${HugoDownloadUri}." -ForegroundColor "Green";
