@@ -78,19 +78,42 @@ function Install-Golang-In-Ubuntu {
 
 function Install-Hugo-In-Ubuntu {
   $DotfilesHugoInstallerPath = Join-Path -Path $DotfilesWorkFolder -ChildPath "WSL" | Join-Path -ChildPath "hugo-installer.deb";
-  $HugoVersion = "0.87.0";
-  $HugoReleaseUrl = "https://github.com/gohugoio/hugo/releases/download/v${HugoVersion}/hugo_${HugoVersion}_Linux-64bit.deb";
+  $HugoReleasesUri = "https://api.github.com/repos/gohugoio/hugo/releases";
+  $DownloadHugo = $FALSE;
 
-  if (-not (Test-Path $DotfilesHugoInstallerPath)) {
-    Write-Host "Downloading Hugo installer:" -ForegroundColor "Green";
-    Invoke-WebRequest $HugoReleaseUrl -O $DotfilesHugoInstallerPath;
+  Write-Host "Checking the latest version of Hugo:" -ForegroundColor "Green";
+  $HugoLastVersion = (Invoke-WebRequest $HugoReleasesUri | ConvertFrom-Json)[0].tag_name.Replace("v", "");
+  $DownloadUri = "https://github.com/gohugoio/hugo/releases/download/v${HugoLastVersion}/hugo_${HugoLastVersion}_Linux-64bit.deb";
+  Write-Host "Latest version is ${HugoLastVersion}." -ForegroundColor "Green";
+  Write-Host "Download url is ${DownloadUri}." -ForegroundColor "Green";
+
+  if (-not (wsl hugo version)) {
+    $DownloadHugo = $TRUE;
+    Write-Host "Hugo is not installed in Ubuntu." -ForegroundColor "Green";
+  }
+  else {
+    $InstalledHugoFullVersion = wsl hugo version;
+    $InstalledHugoFullVersion -match "(\d\.[\d]+\.\d)";
+    $InstalledHugoVersion = $Matches[1];
+
+    Write-Host "Installed Hugo version is ${InstalledHugoVersion}." -ForegroundColor "Green";
+
+    if (-not ($InstalledHugoVersion -ge $HugoLastVersion)) {
+      $DownloadHugo = $TRUE;
+      Write-Host "Hugo must be updated." -ForegroundColor "Green";
+    }
   }
 
-  $WslHugoInstallerPath = wsl wslpath $DotfilesHugoInstallerPath.Replace("\", "\\");
+  if ($DownloadHugo) {
+    Write-Host "Downloading Hugo installer:" -ForegroundColor "Green";
+    Invoke-WebRequest $DownloadUri -O $DotfilesHugoInstallerPath;
 
-  Write-Host "Installing Hugo in Ubuntu:" -ForegroundColor "Green";
-  wsl sudo dpkg -i $WslHugoInstallerPath;
-  wsl sudo apt install -f $WslHugoInstallerPath;
+    $WslHugoInstallerPath = wsl wslpath $DotfilesHugoInstallerPath.Replace("\", "\\");
+
+    Write-Host "Installing Hugo in Ubuntu:" -ForegroundColor "Green";
+    wsl sudo dpkg -i $WslHugoInstallerPath;
+    wsl sudo apt install -f $WslHugoInstallerPath;
+  }
 }
 
 function Install-Plug-Vim-In-Ubuntu {
