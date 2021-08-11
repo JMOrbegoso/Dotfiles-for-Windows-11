@@ -83,9 +83,9 @@ function Install-Hugo-In-Ubuntu {
 
   Write-Host "Checking the latest version of Hugo:" -ForegroundColor "Green";
   $HugoLastVersion = (Invoke-WebRequest $HugoReleasesUri | ConvertFrom-Json)[0].tag_name.Replace("v", "");
-  $DownloadUri = "https://github.com/gohugoio/hugo/releases/download/v${HugoLastVersion}/hugo_${HugoLastVersion}_Linux-64bit.deb";
+  $HugoDownloadUri = "https://github.com/gohugoio/hugo/releases/download/v${HugoLastVersion}/hugo_${HugoLastVersion}_Linux-64bit.deb";
   Write-Host "Latest version is ${HugoLastVersion}." -ForegroundColor "Green";
-  Write-Host "Download url is ${DownloadUri}." -ForegroundColor "Green";
+  Write-Host "Download url is ${HugoDownloadUri}." -ForegroundColor "Green";
 
   if (-not (wsl hugo version)) {
     $DownloadHugo = $TRUE;
@@ -107,7 +107,7 @@ function Install-Hugo-In-Ubuntu {
   if ($DownloadHugo) {
     if (-not (Test-Path $DotfilesHugoInstallerPath)) {
       Write-Host "Downloading Hugo installer:" -ForegroundColor "Green";
-      Invoke-WebRequest $DownloadUri -O $DotfilesHugoInstallerPath;
+      Invoke-WebRequest $HugoDownloadUri -O $DotfilesHugoInstallerPath;
     }
 
     $WslHugoInstallerPath = wsl wslpath $DotfilesHugoInstallerPath.Replace("\", "\\");
