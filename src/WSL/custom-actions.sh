@@ -103,6 +103,9 @@ alias yr="yarn remove"
 ## Docker
 ##################################################
 
+### Download Docker image
+alias dpl="docker pull"
+
 ### List the Docker containers working
 alias dlc="docker container ls"
 

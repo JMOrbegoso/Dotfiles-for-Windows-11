@@ -115,6 +115,18 @@ Invoke-Expression (Invoke-RestMethod -Uri "https://raw.githubusercontent.com/${G
 | glg   | git log                                                          | ✅         | ✅  |
 | gulc  | Git undo last commit                                             | ✅         | ✅  |
 
+### Docker
+
+| Alias | Description                        | PowerShell | Zsh |
+| ----- | ---------------------------------- | ---------- | --- |
+| dpl   | Docker pull                        | ✅         | ✅  |
+| dlc   | List the Docker containers working | ✅         | ✅  |
+| dlca  | List all the Docker containers     | ✅         | ✅  |
+| dli   | List all the Docker images         | ✅         | ✅  |
+| dsc   | Stop Docker container              | ✅         | ✅  |
+| drc   | Delete Docker container            | ✅         | ✅  |
+| dri   | Delete Docker image                | ✅         | ✅  |
+
 ### NPM
 
 | Alias | Description                       | PowerShell | Zsh |
@@ -134,17 +146,6 @@ Invoke-Expression (Invoke-RestMethod -Uri "https://raw.githubusercontent.com/${G
 | yu    | Update Yarn package                           |            | ✅  |
 | yua   | Upgrade all Yarn packages                     |            | ✅  |
 | yr    | Remove Yarn package                           |            | ✅  |
-
-### Docker
-
-| Alias | Description                        | PowerShell | Zsh |
-| ----- | ---------------------------------- | ---------- | --- |
-| dlc   | List the Docker containers working |            | ✅  |
-| dlca  | List all the Docker containers     |            | ✅  |
-| dli   | List all the Docker images         |            | ✅  |
-| dsc   | Stop Docker container              |            | ✅  |
-| drc   | Delete Docker container            |            | ✅  |
-| dri   | Delete Docker image                |            | ✅  |
 
 ### NestJS
 
