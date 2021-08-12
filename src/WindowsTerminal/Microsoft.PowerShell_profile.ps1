@@ -140,3 +140,49 @@ function Invoke-List-Path {
   $env:Path -split ';';
 };
 Set-Alias -Name "pathl" -Value "Invoke-List-Path";
+
+#######################################################################
+##                               Docker                              ##
+#######################################################################
+
+# Download Docker image
+function Invoke-Docker-Pull {
+  docker pull;
+};
+Set-Alias -Name "dpl" -Value "Invoke-Docker-Pull";
+
+# List the Docker containers working
+function Invoke-Docker-List-Working-Containers {
+  docker container ls;
+};
+Set-Alias -Name "dlc" -Value "Invoke-Docker-List-Working-Containers";
+
+# List all the Docker containers
+function Invoke-Docker-List-Containers {
+  docker container ls -a;
+};
+Set-Alias -Name "dlca" -Value "Invoke-Docker-List-Containers";
+
+# List all the Docker images
+function Invoke-Docker-Images {
+  docker images;
+};
+Set-Alias -Name "dli" -Value "Invoke-Docker-Images";
+
+# Stop Docker container
+function Invoke-Docker-Stop-Container {
+  docker container stop;
+};
+Set-Alias -Name "dsc" -Value "Invoke-Docker-Stop-Container";
+
+# Delete Docker container
+function Invoke-Docker-Delete-Container {
+  docker container rm;
+};
+Set-Alias -Name "drc" -Value "Invoke-Docker-Delete-Container";
+
+# Delete Docker image
+function Invoke-Docker-Delete-Image {
+  docker image rm;
+};
+Set-Alias -Name "dri" -Value "Invoke-Docker-Delete-Image";
