@@ -78,9 +78,7 @@
 	"[markdown]": {
 		"editor.formatOnSave": true,
 		"editor.defaultFormatter": "esbenp.prettier-vscode",
-		"editor.wordWrap": "on",
 		"editor.renderWhitespace": "all",
-		"editor.acceptSuggestionOnEnter": "on",
 		"editor.quickSuggestions": {
 			"other": true,
 			"comments": true,
