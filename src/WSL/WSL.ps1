@@ -32,8 +32,17 @@ function Set-Git-Configuration-In-Ubuntu {
 
 function Install-VSCode-Extensions-In-WSL {
   Write-Host "Installing Visual Studio Code extensions in WSL:" -ForegroundColor "Green";
+
+  wsl code --install-extension davidanson.vscode-markdownlint;
   wsl code --install-extension dbaeumer.vscode-eslint;
+  wsl code --install-extension eamodio.gitlens;
+  wsl code --install-extension esbenp.prettier-vscode;
   wsl code --install-extension golang.go;
+  wsl code --install-extension jock.svg;
+  wsl code --install-extension mervin.markdown-formatter;
+  wsl code --install-extension ms-azuretools.vscode-docker;
+  wsl code --install-extension oderwat.indent-rainbow;
+  wsl code --install-extension ue.alphabetical-sorter;
 }
 
 function Install-Volta-In-Ubuntu {
