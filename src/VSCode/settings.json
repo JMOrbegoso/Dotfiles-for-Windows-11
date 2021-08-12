@@ -49,7 +49,6 @@
 	"diffEditor.ignoreTrimWhitespace": false,
 	"explorer.confirmDelete": false,
 	"search.showLineNumbers": true,
-	"terminal.integrated.fontFamily": "'Hack Nerd Font Mono'",
 	"zenMode.centerLayout": false,
 
 	// Language specific settings
