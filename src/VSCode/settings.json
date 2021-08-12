@@ -84,9 +84,5 @@
 	},
 	"[powershell]": {
 		"editor.formatOnSave": true
-	},
-	"[cpp]": {
-		"editor.formatOnSave": true
-	},
-	"C_Cpp.clang_format_fallbackStyle": "Google"
+	}
 }
