@@ -1,10 +1,4 @@
 {
-	"diffEditor.ignoreTrimWhitespace": false,
-	"explorer.confirmDelete": false,
-	"search.showLineNumbers": true,
-	"terminal.integrated.fontFamily": "'Hack Nerd Font Mono'",
-	"zenMode.centerLayout": false,
-
 	// Editor settings
 	"editor.autoIndent": "full",
 	"editor.cursorBlinking": "solid",
@@ -50,6 +44,13 @@
 	"workbench.colorCustomizations": {},
 	"workbench.colorTheme": "Atom One Dark",
 	"workbench.iconTheme": "material-icon-theme",
+
+	// Other settings
+	"diffEditor.ignoreTrimWhitespace": false,
+	"explorer.confirmDelete": false,
+	"search.showLineNumbers": true,
+	"terminal.integrated.fontFamily": "'Hack Nerd Font Mono'",
+	"zenMode.centerLayout": false,
 
 	// Language specific settings:
 	"[css]": {
