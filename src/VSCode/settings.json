@@ -16,6 +16,16 @@
 	"editor.tabSize": 2,
 	"editor.wordWrap": "on",
 	"explorer.confirmDelete": false,
+	"search.showLineNumbers": true,
+	"terminal.integrated.fontFamily": "'Hack Nerd Font Mono'",
+	"window.restoreWindows": "none",
+	"window.zoomLevel": 1,
+	"workbench.colorCustomizations": {},
+	"workbench.colorTheme": "Atom One Dark",
+	"workbench.iconTheme": "material-icon-theme",
+	"zenMode.centerLayout": false,
+
+	// Prettier settings
 	"prettier.arrowParens": "always",
 	"prettier.bracketSpacing": true,
 	"prettier.embeddedLanguageFormatting": "auto",
@@ -34,14 +44,6 @@
 	"prettier.trailingComma": "all",
 	"prettier.useTabs": true,
 	"prettier.vueIndentScriptAndStyle": false,
-	"search.showLineNumbers": true,
-	"terminal.integrated.fontFamily": "'Hack Nerd Font Mono'",
-	"window.restoreWindows": "none",
-	"window.zoomLevel": 1,
-	"workbench.colorCustomizations": {},
-	"workbench.colorTheme": "Atom One Dark",
-	"workbench.iconTheme": "material-icon-theme",
-	"zenMode.centerLayout": false,
 
 	// Language specific settings:
 	"[css]": {
