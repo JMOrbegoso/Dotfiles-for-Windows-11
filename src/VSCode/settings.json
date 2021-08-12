@@ -3,8 +3,6 @@
 	"explorer.confirmDelete": false,
 	"search.showLineNumbers": true,
 	"terminal.integrated.fontFamily": "'Hack Nerd Font Mono'",
-	"window.restoreWindows": "none",
-	"window.zoomLevel": 1,
 	"zenMode.centerLayout": false,
 
 	// Editor settings
@@ -43,6 +41,10 @@
 	"prettier.trailingComma": "all",
 	"prettier.useTabs": true,
 	"prettier.vueIndentScriptAndStyle": false,
+
+	// Window settings
+	"window.restoreWindows": "none",
+	"window.zoomLevel": 1,
 
 	// Workbench settings
 	"workbench.colorCustomizations": {},
