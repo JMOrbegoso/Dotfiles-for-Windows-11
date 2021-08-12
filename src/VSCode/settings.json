@@ -5,9 +5,6 @@
 	"terminal.integrated.fontFamily": "'Hack Nerd Font Mono'",
 	"window.restoreWindows": "none",
 	"window.zoomLevel": 1,
-	"workbench.colorCustomizations": {},
-	"workbench.colorTheme": "Atom One Dark",
-	"workbench.iconTheme": "material-icon-theme",
 	"zenMode.centerLayout": false,
 
 	// Editor settings
@@ -46,6 +43,11 @@
 	"prettier.trailingComma": "all",
 	"prettier.useTabs": true,
 	"prettier.vueIndentScriptAndStyle": false,
+
+	// Workbench settings
+	"workbench.colorCustomizations": {},
+	"workbench.colorTheme": "Atom One Dark",
+	"workbench.iconTheme": "material-icon-theme",
 
 	// Language specific settings:
 	"[css]": {
