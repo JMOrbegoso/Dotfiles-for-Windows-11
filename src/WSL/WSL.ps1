@@ -82,7 +82,7 @@ function Install-Hugo-In-Ubuntu {
 
   Write-Host "Checking the latest version of Hugo:" -ForegroundColor "Green";
   $HugoLastVersion = (Invoke-WebRequest $HugoReleasesUri | ConvertFrom-Json)[0].tag_name.Replace("v", "");
-  Write-Host "Latest version is ${HugoLastVersion}" -ForegroundColor "Green";
+  Write-Host "Latest Hugo version is ${HugoLastVersion}" -ForegroundColor "Green";
 
   $HugoDownloadUri = "https://github.com/gohugoio/hugo/releases/download/v${HugoLastVersion}/hugo_${HugoLastVersion}_Linux-64bit.deb";
   Write-Host "Download url is ${HugoDownloadUri}" -ForegroundColor "Green";
