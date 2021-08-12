@@ -1,10 +1,10 @@
 {
-	"diffEditor.ignoreTrimWhitespace": false,
+	// Editor settings
 	"editor.autoIndent": "full",
 	"editor.cursorBlinking": "solid",
 	"editor.cursorSmoothCaretAnimation": true,
 	"editor.cursorStyle": "line",
-	"editor.fontFamily": "'Hack Nerd Font', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+	"editor.fontFamily": "'Hack Nerd Font', 'Hack Nerd Font Mono'",
 	"editor.fontLigatures": true,
 	"editor.fontSize": 13,
 	"editor.letterSpacing": 0.3,
@@ -15,7 +15,8 @@
 	"editor.tabCompletion": "on",
 	"editor.tabSize": 2,
 	"editor.wordWrap": "on",
-	"explorer.confirmDelete": false,
+
+	// Prettier settings
 	"prettier.arrowParens": "always",
 	"prettier.bracketSpacing": true,
 	"prettier.embeddedLanguageFormatting": "auto",
@@ -34,15 +35,37 @@
 	"prettier.trailingComma": "all",
 	"prettier.useTabs": true,
 	"prettier.vueIndentScriptAndStyle": false,
-	"search.showLineNumbers": true,
-	"terminal.integrated.fontFamily": "'Hack Nerd Font Mono'",
+
+	// Window settings
 	"window.restoreWindows": "none",
 	"window.zoomLevel": 1,
+
+	// Workbench settings
 	"workbench.colorCustomizations": {},
 	"workbench.colorTheme": "Atom One Dark",
 	"workbench.iconTheme": "material-icon-theme",
+
+	// Other settings
+	"diffEditor.ignoreTrimWhitespace": false,
+	"explorer.confirmDelete": false,
+	"search.showLineNumbers": true,
 	"zenMode.centerLayout": false,
 
+	// Language specific settings
+	"[css]": {
+		"editor.formatOnSave": true,
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[html]": {
+		"editor.formatOnSave": false,
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.rulers": [80]
+	},
+	"[javascript]": {
+		"editor.formatOnSave": true,
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.rulers": [80]
+	},
 	"[json]": {
 		"editor.formatOnSave": true,
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -51,31 +74,10 @@
 		"editor.formatOnSave": true,
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
-	"[javascript]": {
-		"editor.formatOnSave": true,
-		"editor.defaultFormatter": "esbenp.prettier-vscode",
-		"editor.rulers": [80]
-	},
-	"[typescript]": {
-		"editor.formatOnSave": true,
-		"editor.defaultFormatter": "esbenp.prettier-vscode",
-		"editor.rulers": [80]
-	},
-	"[html]": {
-		"editor.formatOnSave": false,
-		"editor.defaultFormatter": "esbenp.prettier-vscode",
-		"editor.rulers": [80]
-	},
-	"[css]": {
-		"editor.formatOnSave": true,
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	},
 	"[markdown]": {
 		"editor.formatOnSave": true,
 		"editor.defaultFormatter": "esbenp.prettier-vscode",
-		"editor.wordWrap": "on",
 		"editor.renderWhitespace": "all",
-		"editor.acceptSuggestionOnEnter": "on",
 		"editor.quickSuggestions": {
 			"other": true,
 			"comments": true,
@@ -85,8 +87,9 @@
 	"[powershell]": {
 		"editor.formatOnSave": true
 	},
-	"[cpp]": {
-		"editor.formatOnSave": true
-	},
-	"C_Cpp.clang_format_fallbackStyle": "Google"
+	"[typescript]": {
+		"editor.formatOnSave": true,
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.rulers": [80]
+	}
 }
