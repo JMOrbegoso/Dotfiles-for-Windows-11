@@ -40,6 +40,7 @@ function Install-VSCode-Extensions-In-WSL {
   wsl code --install-extension jock.svg;
   wsl code --install-extension ms-azuretools.vscode-docker;
   wsl code --install-extension oderwat.indent-rainbow;
+  wsl code --install-extension robole.markdown-snippets;
   wsl code --install-extension ue.alphabetical-sorter;
 }
 

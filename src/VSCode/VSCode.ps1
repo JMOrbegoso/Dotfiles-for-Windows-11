@@ -26,5 +26,6 @@ code --install-extension "ms-vscode-remote.remote-wsl";
 code --install-extension "ms-vscode.powershell";
 code --install-extension "oderwat.indent-rainbow";
 code --install-extension "pkief.material-icon-theme";
+code --install-extension "robole.markdown-snippets";
 code --install-extension "ue.alphabetical-sorter";
 code --install-extension "usernamehw.errorlens";
