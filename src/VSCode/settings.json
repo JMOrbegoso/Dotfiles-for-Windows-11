@@ -4,7 +4,7 @@
 	"editor.cursorBlinking": "solid",
 	"editor.cursorSmoothCaretAnimation": true,
 	"editor.cursorStyle": "line",
-	"editor.fontFamily": "'Hack Nerd Font', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+	"editor.fontFamily": "'Hack Nerd Font', 'Hack Nerd Font Mono'",
 	"editor.fontLigatures": true,
 	"editor.fontSize": 13,
 	"editor.letterSpacing": 0.3,
@@ -52,7 +52,7 @@
 	"terminal.integrated.fontFamily": "'Hack Nerd Font Mono'",
 	"zenMode.centerLayout": false,
 
-	// Language specific settings:
+	// Language specific settings
 	"[css]": {
 		"editor.formatOnSave": true,
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
