@@ -1,5 +1,16 @@
 {
 	"diffEditor.ignoreTrimWhitespace": false,
+	"explorer.confirmDelete": false,
+	"search.showLineNumbers": true,
+	"terminal.integrated.fontFamily": "'Hack Nerd Font Mono'",
+	"window.restoreWindows": "none",
+	"window.zoomLevel": 1,
+	"workbench.colorCustomizations": {},
+	"workbench.colorTheme": "Atom One Dark",
+	"workbench.iconTheme": "material-icon-theme",
+	"zenMode.centerLayout": false,
+
+	// Editor settings
 	"editor.autoIndent": "full",
 	"editor.cursorBlinking": "solid",
 	"editor.cursorSmoothCaretAnimation": true,
@@ -15,15 +26,6 @@
 	"editor.tabCompletion": "on",
 	"editor.tabSize": 2,
 	"editor.wordWrap": "on",
-	"explorer.confirmDelete": false,
-	"search.showLineNumbers": true,
-	"terminal.integrated.fontFamily": "'Hack Nerd Font Mono'",
-	"window.restoreWindows": "none",
-	"window.zoomLevel": 1,
-	"workbench.colorCustomizations": {},
-	"workbench.colorTheme": "Atom One Dark",
-	"workbench.iconTheme": "material-icon-theme",
-	"zenMode.centerLayout": false,
 
 	// Prettier settings
 	"prettier.arrowParens": "always",
