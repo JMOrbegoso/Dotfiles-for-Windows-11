@@ -25,7 +25,6 @@ code --install-extension "mervin.markdown-formatter";
 code --install-extension "ms-azuretools.vscode-docker";
 code --install-extension "ms-vscode-remote.remote-containers";
 code --install-extension "ms-vscode-remote.remote-wsl";
-code --install-extension "ms-vscode.cpptools";
 code --install-extension "ms-vscode.powershell";
 code --install-extension "oderwat.indent-rainbow";
 code --install-extension "pkief.material-icon-theme";
