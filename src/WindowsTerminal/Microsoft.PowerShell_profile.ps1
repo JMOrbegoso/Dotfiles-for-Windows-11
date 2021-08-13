@@ -1,13 +1,13 @@
-#######################################################################
-##                             Oh my Posh                            ##
-#######################################################################
+################################################################################
+#                                  Oh my Posh!                                 #
+################################################################################
 
 Import-Module "oh-my-posh";
 Set-PoshPrompt -Theme "~/.oh-my-posh-custom-theme.omp.json";
 
-#######################################################################
-##                             Chocolatey                            ##
-#######################################################################
+################################################################################
+#                                  Chocolatey                                  #
+################################################################################
 
 # Chocolatey profile
 $ChocolateyProfile = Join-Path -Path $env:ChocolateyInstall -ChildPath "helpers" | Join-Path -ChildPath "chocolateyProfile.psm1";
@@ -15,9 +15,23 @@ if (Test-Path($ChocolateyProfile)) {
   Import-Module $ChocolateyProfile;
 };
 
-#######################################################################
-##                         Directory Aliases                         ##
-#######################################################################
+################################################################################
+#                        WindowsTerminal Profile Aliases                       #
+################################################################################
+
+function Invoke-Edit-WindowsTerminal-Profile {
+  vim $PROFILE;
+};
+Set-Alias -Name "editprofile" -Value "Invoke-Edit-WindowsTerminal-Profile";
+
+function Invoke-Refresh-WindowsTerminal-Profile {
+  . $PROFILE;
+};
+Set-Alias -Name "sourceprofile" -Value "Invoke-Refresh-WindowsTerminal-Profile";
+
+################################################################################
+#                              Directories Aliases                             #
+################################################################################
 
 function Set-Location-One-Time { Set-Location ".."; };
 Set-Alias -Name ".." -Value "Set-Location-One-Time";
@@ -36,23 +50,33 @@ function New-Folder-Navigate-To-It {
 };
 Set-Alias -Name "mkcd" -Value "New-Folder-Navigate-To-It";
 
-#######################################################################
-##                      WindowsTerminal Profile                      ##
-#######################################################################
+################################################################################
+#                          System Maintenance Aliases                          #
+################################################################################
 
-function Invoke-Edit-WindowsTerminal-Profile {
-  vim $PROFILE;
+function Update-System {
+  Install-WindowsUpdate -IgnoreUserInput -IgnoreReboot -AcceptAll;
+  Update-Module;
+  Update-Help -Force;
+  choco upgrade -y "chocolatey";
+  choco upgrade -y all;
+  wsl sudo apt --yes update;
+  wsl sudo apt --yes upgrade;
 };
-Set-Alias -Name "editprofile" -Value "Invoke-Edit-WindowsTerminal-Profile";
+Set-Alias -Name "updsys" -Value "Update-System";
 
-function Invoke-Refresh-WindowsTerminal-Profile {
-  . $PROFILE;
+################################################################################
+#                         Environment Variables Aliases                        #
+################################################################################
+
+function Invoke-List-Path {
+  $env:Path -split ';';
 };
-Set-Alias -Name "sourceprofile" -Value "Invoke-Refresh-WindowsTerminal-Profile";
+Set-Alias -Name "pathl" -Value "Invoke-List-Path";
 
-#######################################################################
-##                            Git Aliases                            ##
-#######################################################################
+################################################################################
+#                                  Git Aliases                                 #
+################################################################################
 
 function Invoke-Git-Super-Clone {
   param($repositoryName);
@@ -105,45 +129,28 @@ function Invoke-Git-Log-Stat {
 };
 Set-Alias -Name "glg" -Value "Invoke-Git-Log-Stat";
 
-function Invoke-Git-Undo-Last-Commit {
+function Invoke-Git-Soft-Reset-Last-Commit {
   git reset --soft HEAD^1;
 };
-Set-Alias -Name "gulc" -Value "Invoke-Git-Undo-Last-Commit";
+Set-Alias -Name "gsrlc" -Value "Invoke-Git-Soft-Reset-Last-Commit";
 
-#######################################################################
-##                     System Management Aliases                     ##
-#######################################################################
-
-function Update-System {
-  Install-WindowsUpdate -IgnoreUserInput -IgnoreReboot -AcceptAll;
-  Update-Module;
-  Update-Help -Force;
-  choco upgrade -y "chocolatey";
-  choco upgrade -y all;
+function Invoke-Git-Hard-Reset-Last-Commit {
+  git reset --hard HEAD~1;
 };
-Set-Alias -Name "updatesystem" -Value "Update-System";
+Set-Alias -Name "ghrlc" -Value "Invoke-Git-Hard-Reset-Last-Commit";
 
-#######################################################################
-##                            Vim Aliases                            ##
-#######################################################################
+################################################################################
+#                                  Vim Aliases                                 #
+################################################################################
 
 function Invoke-Edit-Vimrc {
   vim ~/.vimrc;
 };
 Set-Alias -Name "editvim" -Value "Invoke-Edit-Vimrc";
 
-#######################################################################
-##                       Environment Variables                       ##
-#######################################################################
-
-function Invoke-List-Path {
-  $env:Path -split ';';
-};
-Set-Alias -Name "pathl" -Value "Invoke-List-Path";
-
-#######################################################################
-##                               Docker                              ##
-#######################################################################
+################################################################################
+#                                Docker Aliases                                #
+################################################################################
 
 # Download Docker image
 function Invoke-Docker-Pull {

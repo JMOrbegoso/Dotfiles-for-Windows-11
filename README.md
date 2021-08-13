@@ -77,18 +77,6 @@ This dotfiles script does:
 
 ## Alias and functions for PowerShell & Zsh
 
-### Directories
-
-| Alias | Description                      | PowerShell | Zsh |
-| ----- | -------------------------------- | ---------- | --- |
-| mkcd  | Create folder and navigate to it | ✅         | ✅  |
-
-### Environment Variables
-
-| Alias | Description                                    | PowerShell | Zsh |
-| ----- | ---------------------------------------------- | ---------- | --- |
-| pathl | List the content of PATH environment variables | ✅         | ✅  |
-
 ### Terminal Profile
 
 | Alias         | Description              | PowerShell | Zsh |
@@ -96,12 +84,23 @@ This dotfiles script does:
 | editprofile   | Edit terminal profile    | ✅         | ✅  |
 | sourceprofile | Refresh terminal profile | ✅         | ✅  |
 
-### Vim
+### Directories
 
-| Alias     | Description               | PowerShell | Zsh |
-| --------- | ------------------------- | ---------- | --- |
-| editvim   | Edit .vimrc file          | ✅         | ✅  |
-| sourcevim | Refresh Vim configuration |            | ✅  |
+| Alias | Description                      | PowerShell | Zsh |
+| ----- | -------------------------------- | ---------- | --- |
+| mkcd  | Create folder and navigate to it | ✅         | ✅  |
+
+### System Maintenance
+
+| Alias  | Description             | PowerShell | Zsh |
+| ------ | ----------------------- | ---------- | --- |
+| updsys | Update apps and system. | ✅         | ✅  |
+
+### Environment Variables
+
+| Alias | Description                                    | PowerShell | Zsh |
+| ----- | ---------------------------------------------- | ---------- | --- |
+| pathl | List the content of PATH environment variables | ✅         | ✅  |
 
 ### Git
 
@@ -115,7 +114,15 @@ This dotfiles script does:
 | gcmsg | git commit message                                               | ✅         | ✅  |
 | ggp   | git push origin current_branch                                   | ✅         | ✅  |
 | glg   | git log                                                          | ✅         | ✅  |
-| gulc  | Git undo last commit                                             | ✅         | ✅  |
+| gsrlc | Git soft reset last commit                                       | ✅         | ✅  |
+| ghrlc | Git hard reset last commit                                       | ✅         | ✅  |
+
+### Vim
+
+| Alias     | Description               | PowerShell | Zsh |
+| --------- | ------------------------- | ---------- | --- |
+| editvim   | Edit .vimrc file          | ✅         | ✅  |
+| sourcevim | Refresh Vim configuration |            | ✅  |
 
 ### Docker
 
@@ -166,15 +173,3 @@ This dotfiles script does:
 | Alias | Description           | PowerShell | Zsh |
 | ----- | --------------------- | ---------- | --- |
 | gmi   | Initialize Go modules |            | ✅  |
-
-### Windows system
-
-| Alias        | Description                     |
-| ------------ | ------------------------------- |
-| updatesystem | Update apps and Windows system. |
-
-### Linux system
-
-| Alias       | Description                    |
-| ----------- | ------------------------------ |
-| sourcefonts | Refresh the system fonts cache |
