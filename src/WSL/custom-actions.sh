@@ -151,3 +151,13 @@ ngnew() {
 
 ### Initialize Go modules
 alias gmi="go mod init"
+
+##################################################
+## System Maintenance Aliases
+##################################################
+
+### Update system
+updsys() {
+  sudo apt --yes update;
+  sudo apt --yes upgrade;
+}
