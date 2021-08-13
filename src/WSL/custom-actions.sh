@@ -2,7 +2,7 @@
 #                              Directories Aliases                             #
 ################################################################################
 
-### Create folder and navigate to it
+## Create folder and navigate to it
 mkcd() {
   mkdir -p -v "$1"
   cd "$1"
@@ -12,37 +12,37 @@ mkcd() {
 #                         Environment Variables Aliases                        #
 ################################################################################
 
-### List the content of PATH environment variables
+## List the content of PATH environment variables
 alias pathl="echo '$PATH' | tr ':' '\n' | nl"
 
 ################################################################################
 #                                  ZSH Aliases                                 #
 ################################################################################
 
-### Edit Zsh configuration
+## Edit Zsh configuration
 alias editprofile="vim $HOME/.zshrc"
 
-### Refresh Zsh configuration
+## Refresh Zsh configuration
 alias sourceprofile="source $HOME/.zshrc"
 
 ################################################################################
 #                                  Vim Aliases                                 #
 ################################################################################
 
-### Edit init.vim file
+## Edit init.vim file
 alias editvim="vim $HOME/.vimrc"
 
-### Refresh Vim configuration
+## Refresh Vim configuration
 alias sourcevim="source $HOME/.vimrc"
 
 ################################################################################
 #                                  Git Aliases                                 #
 ################################################################################
 
-### Git undo last commit
+## Git undo last commit
 alias gulc="git reset --soft HEAD^1"
 
-### Git clone, load submodules and navigate to the repository folder
+## Git clone, load submodules and navigate to the repository folder
 gsc() {
   git clone "$1";
   cd "$(basename "$1" .git)";
@@ -54,72 +54,72 @@ gsc() {
 #                                  NPM Aliases                                 #
 ################################################################################
 
-### List global NPM packages
+## List global NPM packages
 alias ngl="npm list -g"
 
-### List outdated global NPM packages
+## List outdated global NPM packages
 alias ngo="npm outdated -g"
 
-### Update global NPM package
+## Update global NPM package
 alias ngu="sudo npm update -g"
 
 ################################################################################
 #                                 Yarn Aliases                                 #
 ################################################################################
 
-### Install Yarn package
+## Install Yarn package
 alias yi="yarn add"
 
-### Install Yarn package as dev dependency
+## Install Yarn package as dev dependency
 yid() {
   yarn add "$1" -D
 }
 
-### List all Yarn packages locally installed
+## List all Yarn packages locally installed
 alias yl="yarn list"
 
-### List outdated Yarn packages locally installed
+## List outdated Yarn packages locally installed
 alias ylo="yarn outdated"
 
-### Update Yarn package
+## Update Yarn package
 alias yu="yarn upgrade"
 
-### Upgrade all Yarn packages
+## Upgrade all Yarn packages
 alias yua="yarn-upgrade-all"
 
-### Remove Yarn package
+## Remove Yarn package
 alias yr="yarn remove"
 
 ################################################################################
 #                                Docker Aliases                                #
 ################################################################################
 
-### Download Docker image
+## Download Docker image
 alias dpl="docker pull"
 
-### List the Docker containers working
+## List the Docker containers working
 alias dlc="docker container ls"
 
-### List all the Docker containers
+## List all the Docker containers
 alias dlca="docker container ls -a"
 
-### List all the Docker images
+## List all the Docker images
 alias dli="docker images"
 
-### Stop Docker container
+## Stop Docker container
 alias dsc="docker container stop"
 
-### Delete Docker container
+## Delete Docker container
 alias drc="docker container rm"
 
-### Delete Docker image
+## Delete Docker image
 alias dri="docker image rm"
 
 ################################################################################
 #                                NestJS Aliases                                #
 ################################################################################
 
-### Create a new project with NestJS
+## Create a new project with NestJS
 nestnew() {
   nest new "$1" --package-manager 'yarn' --skip-install --language 'TS'
   cd "$1"
@@ -131,7 +131,7 @@ nestnew() {
 #                                Angular Aliases                               #
 ################################################################################
 
-### Create a new project with Angular
+## Create a new project with Angular
 ngnew() {
   ng new --package-manager 'yarn' --skip-install --strict --style 'css' --commit false --routing "$1"
   cd "$1"
@@ -143,14 +143,14 @@ ngnew() {
 #                                  Go Aliases                                  #
 ################################################################################
 
-### Initialize Go modules
+## Initialize Go modules
 alias gmi="go mod init"
 
 ################################################################################
 #                          System Maintenance Aliases                          #
 ################################################################################
 
-### Update system
+## Update system
 updsys() {
   sudo apt --yes update;
   sudo apt --yes upgrade;
