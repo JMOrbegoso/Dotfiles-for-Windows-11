@@ -13,7 +13,9 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass; `
 Invoke-Expression (Invoke-RestMethod -Uri "https://raw.githubusercontent.com/${GitHubRepositoryAuthor}/${GitHubRepositoryName}/main/Download.ps1");
 ```
 
-## What does
+## What does?
+
+This dotfiles script does:
 
 - Install Chocolatey.
 - Configure Chocolatey to remember installation arguments for future updates.
