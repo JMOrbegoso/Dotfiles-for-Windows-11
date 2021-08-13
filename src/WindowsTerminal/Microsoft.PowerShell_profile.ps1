@@ -111,19 +111,6 @@ function Invoke-Git-Undo-Last-Commit {
 Set-Alias -Name "gulc" -Value "Invoke-Git-Undo-Last-Commit";
 
 #######################################################################
-##                     System Management Aliases                     ##
-#######################################################################
-
-function Update-System {
-  Install-WindowsUpdate -IgnoreUserInput -IgnoreReboot -AcceptAll;
-  Update-Module;
-  Update-Help -Force;
-  choco upgrade -y "chocolatey";
-  choco upgrade -y all;
-};
-Set-Alias -Name "updatesystem" -Value "Update-System";
-
-#######################################################################
 ##                            Vim Aliases                            ##
 #######################################################################
 
@@ -186,3 +173,18 @@ function Invoke-Docker-Delete-Image {
   docker image rm;
 };
 Set-Alias -Name "dri" -Value "Invoke-Docker-Delete-Image";
+
+#######################################################################
+##                     System Maintenance Aliases                    ##
+#######################################################################
+
+function Update-System {
+  Install-WindowsUpdate -IgnoreUserInput -IgnoreReboot -AcceptAll;
+  Update-Module;
+  Update-Help -Force;
+  choco upgrade -y "chocolatey";
+  choco upgrade -y all;
+  wsl sudo apt --yes update;
+  wsl sudo apt --yes upgrade;
+};
+Set-Alias -Name "updsys" -Value "Update-System";
