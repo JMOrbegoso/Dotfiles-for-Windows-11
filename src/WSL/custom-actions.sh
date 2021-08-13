@@ -39,12 +39,6 @@ alias pathl="echo '$PATH' | tr ':' '\n' | nl"
 #                                  Git Aliases                                 #
 ################################################################################
 
-## Git soft reset last commit
-alias gsrlc="git reset --soft HEAD^1"
-
-## Git hard reset last commit
-alias ghrlc="git reset --hard HEAD~1"
-
 ## Git clone, load submodules and navigate to the repository folder
 gsc() {
   git clone "$1";
@@ -52,6 +46,12 @@ gsc() {
   git submodule init;
   git submodule update;
 }
+
+## Git soft reset last commit
+alias gsrlc="git reset --soft HEAD^1"
+
+## Git hard reset last commit
+alias ghrlc="git reset --hard HEAD~1"
 
 ################################################################################
 #                                  Vim Aliases                                 #
