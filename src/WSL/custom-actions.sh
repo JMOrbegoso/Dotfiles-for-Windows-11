@@ -42,6 +42,9 @@ alias pathl="echo '$PATH' | tr ':' '\n' | nl"
 ## Git soft reset last commit
 alias gsrlc="git reset --soft HEAD^1"
 
+## Git hard reset last commit
+alias ghrlc="git reset --hard HEAD~1"
+
 ## Git clone, load submodules and navigate to the repository folder
 gsc() {
   git clone "$1";

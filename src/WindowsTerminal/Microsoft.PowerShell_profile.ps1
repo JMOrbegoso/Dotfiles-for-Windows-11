@@ -134,6 +134,11 @@ function Invoke-Git-Soft-Reset-Last-Commit {
 };
 Set-Alias -Name "gsrlc" -Value "Invoke-Git-Soft-Reset-Last-Commit";
 
+function Invoke-Git-Hard-Reset-Last-Commit {
+  git reset --hard HEAD~1;
+};
+Set-Alias -Name "ghrlc" -Value "Invoke-Git-Hard-Reset-Last-Commit";
+
 ################################################################################
 #                                  Vim Aliases                                 #
 ################################################################################

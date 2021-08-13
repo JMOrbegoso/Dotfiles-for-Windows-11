@@ -115,6 +115,7 @@ This dotfiles script does:
 | ggp   | git push origin current_branch                                   | ✅         | ✅  |
 | glg   | git log                                                          | ✅         | ✅  |
 | gsrlc | Git soft reset last commit                                       | ✅         | ✅  |
+| ghrlc | Git hard reset last commit                                       | ✅         | ✅  |
 
 ### Vim
 
