@@ -167,8 +167,8 @@ This dotfiles script does:
 | ----- | --------------------- | ---------- | --- |
 | gmi   | Initialize Go modules |            | ✅  |
 
-### Windows system
+### System Maintenance
 
-| Alias        | Description                     |
-| ------------ | ------------------------------- |
-| updatesystem | Update apps and Windows system. |
+| Alias  | Description             | PowerShell | Zsh |
+| ------ | ----------------------- | ---------- | --- |
+| updsys | Update apps and system. | ✅         | ✅  |
