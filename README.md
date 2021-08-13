@@ -172,9 +172,3 @@ This dotfiles script does:
 | Alias        | Description                     |
 | ------------ | ------------------------------- |
 | updatesystem | Update apps and Windows system. |
-
-### Linux system
-
-| Alias       | Description                    |
-| ----------- | ------------------------------ |
-| sourcefonts | Refresh the system fonts cache |
