@@ -21,9 +21,6 @@ mkcd() {
 ### List the content of PATH environment variables
 alias pathl="echo '$PATH' | tr ':' '\n' | nl"
 
-### Refresh the system fonts cache
-alias sourcefonts="fc-cache -f -v"
-
 ##################################################
 ## ZSH
 ##################################################
