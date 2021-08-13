@@ -6,6 +6,7 @@ $DotfilesHelpersFolder = Join-Path -Path $DotfilesWorkFolder -ChildPath "Helpers
 $DotfilesConfigFile = Join-Path -Path $DotfilesFolder -ChildPath "${GitHubRepositoryName}-main" | Join-Path -ChildPath "config.json";
 
 Write-Host "Welcome to Dotfiles for Microsoft Windows 11" -ForegroundColor "Yellow";
+Write-Host "Please don't use your device while the script is running." -ForegroundColor "Yellow";
 
 # Load helpers
 Write-Host "Loading helpers:" -ForegroundColor "Green";
