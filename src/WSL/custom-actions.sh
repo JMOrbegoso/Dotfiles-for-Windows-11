@@ -1,21 +1,4 @@
 ################################################################################
-#                              Directories Aliases                             #
-################################################################################
-
-## Create folder and navigate to it
-mkcd() {
-  mkdir -p -v "$1"
-  cd "$1"
-}
-
-################################################################################
-#                         Environment Variables Aliases                        #
-################################################################################
-
-## List the content of PATH environment variables
-alias pathl="echo '$PATH' | tr ':' '\n' | nl"
-
-################################################################################
 #                                  ZSH Aliases                                 #
 ################################################################################
 
@@ -26,14 +9,31 @@ alias editprofile="vim $HOME/.zshrc"
 alias sourceprofile="source $HOME/.zshrc"
 
 ################################################################################
-#                                  Vim Aliases                                 #
+#                              Directories Aliases                             #
 ################################################################################
 
-## Edit init.vim file
-alias editvim="vim $HOME/.vimrc"
+## Create folder and navigate to it
+mkcd() {
+  mkdir -p -v "$1"
+  cd "$1"
+}
 
-## Refresh Vim configuration
-alias sourcevim="source $HOME/.vimrc"
+################################################################################
+#                          System Maintenance Aliases                          #
+################################################################################
+
+## Update system
+updsys() {
+  sudo apt --yes update;
+  sudo apt --yes upgrade;
+}
+
+################################################################################
+#                         Environment Variables Aliases                        #
+################################################################################
+
+## List the content of PATH environment variables
+alias pathl="echo '$PATH' | tr ':' '\n' | nl"
 
 ################################################################################
 #                                  Git Aliases                                 #
@@ -49,6 +49,41 @@ gsc() {
   git submodule init;
   git submodule update;
 }
+
+################################################################################
+#                                  Vim Aliases                                 #
+################################################################################
+
+## Edit init.vim file
+alias editvim="vim $HOME/.vimrc"
+
+## Refresh Vim configuration
+alias sourcevim="source $HOME/.vimrc"
+
+################################################################################
+#                                Docker Aliases                                #
+################################################################################
+
+## Download Docker image
+alias dpl="docker pull"
+
+## List the Docker containers working
+alias dlc="docker container ls"
+
+## List all the Docker containers
+alias dlca="docker container ls -a"
+
+## List all the Docker images
+alias dli="docker images"
+
+## Stop Docker container
+alias dsc="docker container stop"
+
+## Delete Docker container
+alias drc="docker container rm"
+
+## Delete Docker image
+alias dri="docker image rm"
 
 ################################################################################
 #                                  NPM Aliases                                 #
@@ -91,31 +126,6 @@ alias yua="yarn-upgrade-all"
 alias yr="yarn remove"
 
 ################################################################################
-#                                Docker Aliases                                #
-################################################################################
-
-## Download Docker image
-alias dpl="docker pull"
-
-## List the Docker containers working
-alias dlc="docker container ls"
-
-## List all the Docker containers
-alias dlca="docker container ls -a"
-
-## List all the Docker images
-alias dli="docker images"
-
-## Stop Docker container
-alias dsc="docker container stop"
-
-## Delete Docker container
-alias drc="docker container rm"
-
-## Delete Docker image
-alias dri="docker image rm"
-
-################################################################################
 #                                NestJS Aliases                                #
 ################################################################################
 
@@ -145,13 +155,3 @@ ngnew() {
 
 ## Initialize Go modules
 alias gmi="go mod init"
-
-################################################################################
-#                          System Maintenance Aliases                          #
-################################################################################
-
-## Update system
-updsys() {
-  sudo apt --yes update;
-  sudo apt --yes upgrade;
-}
