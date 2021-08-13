@@ -39,8 +39,8 @@ alias pathl="echo '$PATH' | tr ':' '\n' | nl"
 #                                  Git Aliases                                 #
 ################################################################################
 
-## Git undo last commit
-alias gulc="git reset --soft HEAD^1"
+## Git soft reset last commit
+alias gsrlc="git reset --soft HEAD^1"
 
 ## Git clone, load submodules and navigate to the repository folder
 gsc() {

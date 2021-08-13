@@ -129,10 +129,10 @@ function Invoke-Git-Log-Stat {
 };
 Set-Alias -Name "glg" -Value "Invoke-Git-Log-Stat";
 
-function Invoke-Git-Undo-Last-Commit {
+function Invoke-Git-Soft-Reset-Last-Commit {
   git reset --soft HEAD^1;
 };
-Set-Alias -Name "gulc" -Value "Invoke-Git-Undo-Last-Commit";
+Set-Alias -Name "gsrlc" -Value "Invoke-Git-Soft-Reset-Last-Commit";
 
 ################################################################################
 #                                  Vim Aliases                                 #
