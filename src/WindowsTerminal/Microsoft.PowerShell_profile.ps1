@@ -16,6 +16,20 @@ if (Test-Path($ChocolateyProfile)) {
 };
 
 ################################################################################
+#                        WindowsTerminal Profile Aliases                       #
+################################################################################
+
+function Invoke-Edit-WindowsTerminal-Profile {
+  vim $PROFILE;
+};
+Set-Alias -Name "editprofile" -Value "Invoke-Edit-WindowsTerminal-Profile";
+
+function Invoke-Refresh-WindowsTerminal-Profile {
+  . $PROFILE;
+};
+Set-Alias -Name "sourceprofile" -Value "Invoke-Refresh-WindowsTerminal-Profile";
+
+################################################################################
 #                              Directories Aliases                             #
 ################################################################################
 
@@ -37,18 +51,28 @@ function New-Folder-Navigate-To-It {
 Set-Alias -Name "mkcd" -Value "New-Folder-Navigate-To-It";
 
 ################################################################################
-#                        WindowsTerminal Profile Aliases                       #
+#                          System Maintenance Aliases                          #
 ################################################################################
 
-function Invoke-Edit-WindowsTerminal-Profile {
-  vim $PROFILE;
+function Update-System {
+  Install-WindowsUpdate -IgnoreUserInput -IgnoreReboot -AcceptAll;
+  Update-Module;
+  Update-Help -Force;
+  choco upgrade -y "chocolatey";
+  choco upgrade -y all;
+  wsl sudo apt --yes update;
+  wsl sudo apt --yes upgrade;
 };
-Set-Alias -Name "editprofile" -Value "Invoke-Edit-WindowsTerminal-Profile";
+Set-Alias -Name "updsys" -Value "Update-System";
 
-function Invoke-Refresh-WindowsTerminal-Profile {
-  . $PROFILE;
+################################################################################
+#                         Environment Variables Aliases                        #
+################################################################################
+
+function Invoke-List-Path {
+  $env:Path -split ';';
 };
-Set-Alias -Name "sourceprofile" -Value "Invoke-Refresh-WindowsTerminal-Profile";
+Set-Alias -Name "pathl" -Value "Invoke-List-Path";
 
 ################################################################################
 #                                  Git Aliases                                 #
@@ -120,15 +144,6 @@ function Invoke-Edit-Vimrc {
 Set-Alias -Name "editvim" -Value "Invoke-Edit-Vimrc";
 
 ################################################################################
-#                         Environment Variables Aliases                        #
-################################################################################
-
-function Invoke-List-Path {
-  $env:Path -split ';';
-};
-Set-Alias -Name "pathl" -Value "Invoke-List-Path";
-
-################################################################################
 #                                Docker Aliases                                #
 ################################################################################
 
@@ -173,18 +188,3 @@ function Invoke-Docker-Delete-Image {
   docker image rm;
 };
 Set-Alias -Name "dri" -Value "Invoke-Docker-Delete-Image";
-
-################################################################################
-#                          System Maintenance Aliases                          #
-################################################################################
-
-function Update-System {
-  Install-WindowsUpdate -IgnoreUserInput -IgnoreReboot -AcceptAll;
-  Update-Module;
-  Update-Help -Force;
-  choco upgrade -y "chocolatey";
-  choco upgrade -y all;
-  wsl sudo apt --yes update;
-  wsl sudo apt --yes upgrade;
-};
-Set-Alias -Name "updsys" -Value "Update-System";
