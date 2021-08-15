@@ -34,7 +34,8 @@ function Set-WindowsTerminal-Settings {
   Copy-Item $DotfilesWindowsTerminalSettingsPath -Destination $WindowsTerminalSettingsFilePath;
 
   Write-Host "Configuring Windows Terminal starting directory:" -ForegroundColor "Green";
-  (Get-Content -path $WindowsTerminalSettingsFilePath) -replace "__STARTING_DIRECTORY__", ($WorkspaceFolder | ConvertTo-Json) | Set-Content -Path $WindowsTerminalSettingsFilePath;
+  
+  (Get-Content -path $WindowsTerminalSettingsFilePath) -replace "__STARTING_WINDOWS_DIRECTORY__", ($WorkspaceFolder | ConvertTo-Json) | Set-Content -Path $WindowsTerminalSettingsFilePath;
 
   Write-Host "Windows Terminal was successfully configured." -ForegroundColor "Green";
 }
