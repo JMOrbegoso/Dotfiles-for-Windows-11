@@ -44,6 +44,7 @@ if (-not (Get-Module-Installation-Status -ModuleName "PackageManagement" -Module
 Register-DotfilesScript-As-RunOnce;
 
 # Run scripts
+Invoke-Expression (Join-Path -Path $DotfilesWorkFolder -ChildPath "WorkspaceFolder" | Join-Path -ChildPath "WorkspaceFolder.ps1");
 Invoke-Expression (Join-Path -Path $DotfilesWorkFolder -ChildPath "Chocolatey" | Join-Path -ChildPath "Chocolatey.ps1");
 Invoke-Expression (Join-Path -Path $DotfilesWorkFolder -ChildPath "Fonts" | Join-Path -ChildPath "Fonts.ps1");
 Invoke-Expression (Join-Path -Path $DotfilesWorkFolder -ChildPath "Git" | Join-Path -ChildPath "Git.ps1");
