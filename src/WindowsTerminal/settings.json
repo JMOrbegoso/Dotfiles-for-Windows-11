@@ -54,7 +54,7 @@
 				"name": "Windows PowerShell",
 				"commandline": "powershell.exe",
 				"hidden": false,
-				"startingDirectory": __STARTING_DIRECTORY__
+				"startingDirectory": __STARTING_WINDOWS_DIRECTORY__
 			},
 			{
 				"guid": "{07b52e3e-de2c-5db4-bd2d-ba144ed6c273}",
