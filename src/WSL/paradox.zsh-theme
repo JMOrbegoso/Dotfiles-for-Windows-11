@@ -204,18 +204,24 @@ prompt_virtualenv() {
   fi
 }
 
+prompt_os() {
+  prompt_segment red yellow "\uF31b"
+}
+
 # Status:
-# - was there an error
 # - am I root
 # - are there background jobs?
 prompt_status() {
   local -a symbols
 
-  [[ $RETVAL -ne 0 ]] && symbols+="%{%F{red}%}✘"
   [[ $UID -eq 0 ]] && symbols+="%{%F{yellow}%}⚡"
   [[ $(jobs -l | wc -l) -gt 0 ]] && symbols+="%{%F{cyan}%}⚙"
 
   [[ -n "$symbols" ]] && prompt_segment black default "$symbols"
+}
+
+prompt_error() {
+  [[ $RETVAL -ne 0 ]] && prompt_segment red white "✘Error"
 }
 
 #AWS Profile:
@@ -234,6 +240,7 @@ prompt_aws() {
 ## Main prompt
 build_prompt() {
   RETVAL=$?
+  prompt_os
   prompt_status
   prompt_virtualenv
   prompt_aws
@@ -242,6 +249,7 @@ build_prompt() {
   prompt_git
   prompt_bzr
   prompt_hg
+  prompt_error
   prompt_end
 }
 
