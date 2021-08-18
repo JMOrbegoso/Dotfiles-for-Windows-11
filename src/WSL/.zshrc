@@ -52,6 +52,9 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 source "$ZSH/custom/functions/custom-actions.sh"
 
+# Disable software flow control (allows Ctrl+S to save in Vim)
+stty stop ""
+
 # Volta
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
