@@ -89,6 +89,7 @@ This dotfiles script does:
 | Alias | Description                      | PowerShell | Zsh |
 | ----- | -------------------------------- | ---------- | --- |
 | mkcd  | Create folder and navigate to it | ✅         | ✅  |
+| trash | Open the recycle bin folder      | ✅         |     |
 
 ### System Maintenance
 

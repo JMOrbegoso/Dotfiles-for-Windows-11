@@ -50,6 +50,11 @@ function New-Folder-Navigate-To-It {
 };
 Set-Alias -Name "mkcd" -Value "New-Folder-Navigate-To-It";
 
+function Open-Recycle-Bin {
+  explorer.exe Shell:RecycleBinFolder;
+}
+Set-Alias -Name "trash" -Value "Open-Recycle-Bin";
+
 ################################################################################
 #                          System Maintenance Aliases                          #
 ################################################################################
