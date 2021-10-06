@@ -60,11 +60,10 @@ Set-Alias -Name "trash" -Value "Open-Recycle-Bin";
 ################################################################################
 
 function Update-System {
-  Install-WindowsUpdate -IgnoreUserInput -IgnoreReboot -AcceptAll;
   Update-Module;
   Update-Help -Force;
   choco upgrade -y "chocolatey";
-  choco upgrade -y all;
+  choco upgrade -y all --execution-timeout 7200;
   wsl sudo apt --yes update;
   wsl sudo apt --yes upgrade;
 };
