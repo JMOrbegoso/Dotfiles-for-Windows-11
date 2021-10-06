@@ -73,6 +73,12 @@ This dotfiles script does:
   - Enable Microsoft Hyper-V.
   - Enable Windows Sandbox.
 - Configure Windows 11 power plan.
+- Configure Windows 11 regional format:
+  - First day of week: Monday.
+  - Short date: 2017-04-05.
+  - Long date: Wednesday, 5 April, 2017.
+  - Short time: 19:40.
+  - Long time: 19:40:07.
 - Rename PC.
 
 ## Alias and functions for PowerShell & Zsh
