@@ -64,6 +64,20 @@ function Set-Power-Configuration {
   Write-Host "Power plan successfully updated." -ForegroundColor "Green";
 }
 
+function Set-Custom-Regional-Format {
+  Write-Host "Configuring Regional format:" -ForegroundColor "Green";
+
+  $RegPath = "HKCU:\Control Panel\International";
+
+  Set-ItemProperty -Path $RegPath -Name "iFirstDayOfWeek" -Value "0";
+  Set-ItemProperty -Path $RegPath -Name "sShortDate" -Value "yyyy-MM-dd";
+  Set-ItemProperty -Path $RegPath -Name "sLongDate" -Value "dddd, d MMMM, yyyy";
+  Set-ItemProperty -Path $RegPath -Name "sShortTime" -Value "HH:mm";
+  Set-ItemProperty -Path $RegPath -Name "sTimeFormat" -Value "HH:mm:ss";
+
+  Write-Host "Regional format successfully updated." -ForegroundColor "Green";
+}
+
 function Rename-PC {
   if ($env:COMPUTERNAME -ne $Config.ComputerName) {
     Write-Host "Renaming PC:" -ForegroundColor "Green";
@@ -89,4 +103,5 @@ Set-WindowsFileExplorer-StartFolder;
 Set-SetAsBackground-To-Extended-ContextMenu;
 Disable-RecentlyOpenedItems-From-JumpList;
 Set-Power-Configuration;
+Set-Custom-Regional-Format;
 Rename-PC;
