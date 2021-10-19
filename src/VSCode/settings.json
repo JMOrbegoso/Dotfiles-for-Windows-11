@@ -7,6 +7,10 @@
 	"editor.fontFamily": "'Hack Nerd Font', 'Hack Nerd Font Mono'",
 	"editor.fontLigatures": true,
 	"editor.fontSize": 13,
+	"editor.formatOnSave": true,
+	"editor.formatOnPaste": true,
+	"editor.formatOnType": false,
+	"editor.guides.bracketPairs": true,
 	"editor.letterSpacing": 0.3,
 	"editor.lineHeight": 25,
 	"editor.minimap.enabled": false,
@@ -51,48 +55,36 @@
 	"zenMode.centerLayout": false,
 
 	// Language specific settings
-	"[powershell]": {
-		"editor.formatOnSave": true
-	},
 	"[html]": {
-		"editor.formatOnSave": false,
 		"editor.defaultFormatter": "esbenp.prettier-vscode",
 		"editor.rulers": [80]
 	},
 	"[css]": {
-		"editor.formatOnSave": true,
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
 	"[json]": {
-		"editor.formatOnSave": true,
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
 	"[jsonc]": {
-		"editor.formatOnSave": true,
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
 	"[javascript]": {
-		"editor.formatOnSave": true,
 		"editor.defaultFormatter": "esbenp.prettier-vscode",
 		"editor.rulers": [80]
 	},
 	"[javascriptreact]": {
-		"editor.formatOnSave": true,
 		"editor.defaultFormatter": "esbenp.prettier-vscode",
 		"editor.rulers": [80]
 	},
 	"[typescript]": {
-		"editor.formatOnSave": true,
 		"editor.defaultFormatter": "esbenp.prettier-vscode",
 		"editor.rulers": [80]
 	},
 	"[typescriptreact]": {
-		"editor.formatOnSave": true,
 		"editor.defaultFormatter": "esbenp.prettier-vscode",
 		"editor.rulers": [80]
 	},
 	"[markdown]": {
-		"editor.formatOnSave": true,
 		"editor.defaultFormatter": "esbenp.prettier-vscode",
 		"editor.renderWhitespace": "all",
 		"editor.quickSuggestions": {
