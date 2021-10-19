@@ -51,19 +51,17 @@
 	"zenMode.centerLayout": false,
 
 	// Language specific settings
-	"[css]": {
-		"editor.formatOnSave": true,
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	"[powershell]": {
+		"editor.formatOnSave": true
 	},
 	"[html]": {
 		"editor.formatOnSave": false,
 		"editor.defaultFormatter": "esbenp.prettier-vscode",
 		"editor.rulers": [80]
 	},
-	"[javascript]": {
+	"[css]": {
 		"editor.formatOnSave": true,
-		"editor.defaultFormatter": "esbenp.prettier-vscode",
-		"editor.rulers": [80]
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
 	"[json]": {
 		"editor.formatOnSave": true,
@@ -72,6 +70,26 @@
 	"[jsonc]": {
 		"editor.formatOnSave": true,
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[javascript]": {
+		"editor.formatOnSave": true,
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.rulers": [80]
+	},
+	"[javascriptreact]": {
+		"editor.formatOnSave": true,
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.rulers": [80]
+	},
+	"[typescript]": {
+		"editor.formatOnSave": true,
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.rulers": [80]
+	},
+	"[typescriptreact]": {
+		"editor.formatOnSave": true,
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.rulers": [80]
 	},
 	"[markdown]": {
 		"editor.formatOnSave": true,
@@ -82,13 +100,5 @@
 			"comments": true,
 			"strings": true
 		}
-	},
-	"[powershell]": {
-		"editor.formatOnSave": true
-	},
-	"[typescript]": {
-		"editor.formatOnSave": true,
-		"editor.defaultFormatter": "esbenp.prettier-vscode",
-		"editor.rulers": [80]
 	}
 }
