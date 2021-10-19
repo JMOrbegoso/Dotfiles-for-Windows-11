@@ -45,7 +45,6 @@
 
 	// Workbench settings
 	"workbench.colorCustomizations": {},
-	"workbench.colorTheme": "Atom One Dark",
 	"workbench.iconTheme": "material-icon-theme",
 
 	// Other settings
