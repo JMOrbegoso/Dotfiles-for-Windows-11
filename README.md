@@ -49,7 +49,6 @@ This dotfiles script does:
     - Install Yarn using Volta in Ubuntu.
     - Install TypeScript using Volta in Ubuntu.
     - Install Yarn-Upgrade-All using Volta in Ubuntu.
-    - Install Angular CLI using Volta in Ubuntu.
     - Install NestJS CLI using Volta in Ubuntu.
   - Install Golang in Ubuntu.
   - Install HUGO in Ubuntu.
@@ -168,12 +167,6 @@ This dotfiles script does:
 | Alias   | Description                      | PowerShell | Zsh |
 | ------- | -------------------------------- | ---------- | --- |
 | nestnew | Create a new project with NestJS |            | ✅  |
-
-### Angular
-
-| Alias | Description                       | PowerShell | Zsh |
-| ----- | --------------------------------- | ---------- | --- |
-| ngnew | Create a new project with Angular |            | ✅  |
 
 ### Go
 
