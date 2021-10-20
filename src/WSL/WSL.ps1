@@ -72,9 +72,6 @@ function Install-Nodejs-Packages-In-Ubuntu {
   Write-Host "Installing Yarn-Upgrade-All in Ubuntu:" -ForegroundColor "Green";
   wsl ~/.volta/bin/volta install yarn-upgrade-all;
   
-  Write-Host "Installing Angular CLI in Ubuntu:" -ForegroundColor "Green";
-  wsl ~/.volta/bin/volta install @angular/cli;
-  
   Write-Host "Installing NestJS CLI in Ubuntu:" -ForegroundColor "Green";
   wsl ~/.volta/bin/volta install @nestjs/cli;
 }

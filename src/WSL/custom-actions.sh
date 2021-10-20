@@ -12,6 +12,9 @@ alias sourceprofile="source $HOME/.zshrc"
 #                              Directories Aliases                             #
 ################################################################################
 
+## Alias for explorer.exe
+alias explorer="explorer.exe"
+
 ## Create folder and navigate to it
 mkcd() {
   mkdir -p -v "$1"
@@ -135,18 +138,6 @@ alias yr="yarn remove"
 ## Create a new project with NestJS
 nestnew() {
   nest new "$1" --package-manager 'yarn' --skip-install --language 'TS'
-  cd "$1"
-  gaa
-  gcmsg "Initial commit"
-}
-
-################################################################################
-#                                Angular Aliases                               #
-################################################################################
-
-## Create a new project with Angular
-ngnew() {
-  ng new --package-manager 'yarn' --skip-install --strict --style 'css' --commit false --routing "$1"
   cd "$1"
   gaa
   gcmsg "Initial commit"
