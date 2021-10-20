@@ -13,8 +13,6 @@ function Set-VSCode-Configuration {
 choco install -y "vscode" --params "/NoDesktopIcon /NoQuicklaunchIcon /NoContextMenuFiles /NoContextMenuFolders";
 Set-VSCode-Configuration;
 refreshenv;
-code --install-extension "akamud.vscode-theme-onedark";
-code --install-extension "akamud.vscode-theme-onelight";
 code --install-extension "coenraads.bracket-pair-colorizer-2";
 code --install-extension "eamodio.gitlens";
 code --install-extension "esbenp.prettier-vscode";
