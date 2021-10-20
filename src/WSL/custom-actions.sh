@@ -12,6 +12,9 @@ alias sourceprofile="source $HOME/.zshrc"
 #                              Directories Aliases                             #
 ################################################################################
 
+## Alias for explorer.exe
+alias explorer="explorer.exe"
+
 ## Create folder and navigate to it
 mkcd() {
   mkdir -p -v "$1"
