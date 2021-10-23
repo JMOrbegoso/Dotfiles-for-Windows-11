@@ -17,6 +17,28 @@ function Set-WindowsFileExplorer-StartFolder {
   Set-ItemProperty -Path $RegPath -Name "LaunchTo" -Value 1; # [This PC: 1], [Quick access: 2], [Downloads: 3]
 }
 
+function Set-Multitasking-Configuration {
+  Write-Host "Configuring Multitasking settings (Snap layouts):" -ForegroundColor "Green";
+  
+  $RegPath = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced";
+
+  # When I snap a window, show what I can snap next to it.
+  Set-ItemProperty -Path $RegPath -Name "SnapAssist" -Value 0;
+  # Show snap layouts that the app is part of when I hover over the taskbar buttons.
+  Set-ItemProperty -Path $RegPath -Name "EnableTaskGroups" -Value 0;
+  # When I resize a snapped window, simultaneously resize any adjacent snapped window.
+  Set-ItemProperty -Path $RegPath -Name "JointResize" -Value 0;
+
+  # Show snap layout when I hover over a window's maximize button.
+  Set-ItemProperty -Path $RegPath -Name "EnableSnapAssistFlyout" -Value 1;
+  # When I drag a window, let me snap it without dragging all the way to the screen edge.
+  Set-ItemProperty -Path $RegPath -Name "DITest" -Value 1;
+  # When I snap a window, automatically size it to fill available space.
+  Set-ItemProperty -Path $RegPath -Name "SnapFill" -Value 1;
+
+  Write-Host "Multitasking successfully updated." -ForegroundColor "Green";
+}
+
 function Set-SetAsBackground-To-Extended-ContextMenu {
   Write-Host "Configuring Context Menu to show the option 'Set as Background' just in Extended Context Menu:" -ForegroundColor "Green";
 
@@ -100,6 +122,7 @@ Enable-WindowsFeature "Containers-DisposableClientVM" "Windows Sandbox";
 
 Set-WindowsExplorer-ShowFileExtensions;
 Set-WindowsFileExplorer-StartFolder;
+Set-Multitasking-Configuration;
 Set-SetAsBackground-To-Extended-ContextMenu;
 Disable-RecentlyOpenedItems-From-JumpList;
 Set-Power-Configuration;
