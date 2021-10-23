@@ -39,6 +39,30 @@ function Set-Multitasking-Configuration {
   Write-Host "Multitasking successfully updated." -ForegroundColor "Green";
 }
 
+function Set-Classic-ContextMenu-Configuration {
+  Write-Host "Activating classic Context Menu:" -ForegroundColor "Green";
+
+  $RegPath = "HKCU:\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}";
+  $RegKey = "(Default)";
+
+  if (-not (Test-Path -Path $RegPath)) {
+    New-Item -Path $RegPath;
+  }
+  
+  $RegPath = $RegPath | Join-Path -ChildPath "InprocServer32";
+
+  if (-not (Test-Path -Path $RegPath)) {
+    New-Item -Path $RegPath;
+  }
+
+  if (-not (Test-PathRegistryKey -Path $RegPath -Name $RegKey)) {
+    New-ItemProperty -Path $RegPath -Name $RegKey -PropertyType String;
+  }
+  Set-ItemProperty -Path $RegPath -Name $RegKey -Value "";
+  
+  Write-Host "Classic Context Menu successfully activated." -ForegroundColor "Green";
+}
+
 function Set-SetAsBackground-To-Extended-ContextMenu {
   Write-Host "Configuring Context Menu to show the option 'Set as Background' just in Extended Context Menu:" -ForegroundColor "Green";
 
@@ -123,6 +147,7 @@ Enable-WindowsFeature "Containers-DisposableClientVM" "Windows Sandbox";
 Set-WindowsExplorer-ShowFileExtensions;
 Set-WindowsFileExplorer-StartFolder;
 Set-Multitasking-Configuration;
+Set-Classic-ContextMenu-Configuration;
 Set-SetAsBackground-To-Extended-ContextMenu;
 Disable-RecentlyOpenedItems-From-JumpList;
 Set-Power-Configuration;
