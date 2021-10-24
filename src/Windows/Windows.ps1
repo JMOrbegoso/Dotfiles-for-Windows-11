@@ -141,7 +141,6 @@ Disable-WindowsFeature "WindowsMediaPlayer" "Windows Media Player";
 Disable-WindowsFeature "Internet-Explorer-Optional-amd64" "Internet Explorer";
 Disable-WindowsFeature "Printing-XPSServices-Features" "Microsoft XPS Document Writer";
 Disable-WindowsFeature "WorkFolders-Client" "WorkFolders-Client";
-Enable-WindowsFeature "Microsoft-Hyper-V" "Microsoft Hyper-V";
 Enable-WindowsFeature "Containers-DisposableClientVM" "Windows Sandbox";
 
 Uninstall-AppPackage "Microsoft.Getstarted";

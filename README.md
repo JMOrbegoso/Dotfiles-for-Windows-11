@@ -69,7 +69,6 @@ This dotfiles script does:
   - Disable Internet Explorer.
   - Disable Microsoft XPS Document Writer.
   - Disable WorkFolders Client.
-  - Enable Microsoft Hyper-V.
   - Enable Windows Sandbox.
 - Configure Windows 11 power plan.
 - Configure Windows 11 regional format:
