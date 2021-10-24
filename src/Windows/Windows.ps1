@@ -17,6 +17,52 @@ function Set-WindowsFileExplorer-StartFolder {
   Set-ItemProperty -Path $RegPath -Name "LaunchTo" -Value 1; # [This PC: 1], [Quick access: 2], [Downloads: 3]
 }
 
+function Set-Multitasking-Configuration {
+  Write-Host "Configuring Multitasking settings (Snap layouts):" -ForegroundColor "Green";
+  
+  $RegPath = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced";
+
+  # When I snap a window, show what I can snap next to it.
+  Set-ItemProperty -Path $RegPath -Name "SnapAssist" -Value 0;
+  # Show snap layouts that the app is part of when I hover over the taskbar buttons.
+  Set-ItemProperty -Path $RegPath -Name "EnableTaskGroups" -Value 0;
+  # When I resize a snapped window, simultaneously resize any adjacent snapped window.
+  Set-ItemProperty -Path $RegPath -Name "JointResize" -Value 0;
+
+  # Show snap layout when I hover over a window's maximize button.
+  Set-ItemProperty -Path $RegPath -Name "EnableSnapAssistFlyout" -Value 1;
+  # When I drag a window, let me snap it without dragging all the way to the screen edge.
+  Set-ItemProperty -Path $RegPath -Name "DITest" -Value 1;
+  # When I snap a window, automatically size it to fill available space.
+  Set-ItemProperty -Path $RegPath -Name "SnapFill" -Value 1;
+
+  Write-Host "Multitasking successfully updated." -ForegroundColor "Green";
+}
+
+function Set-Classic-ContextMenu-Configuration {
+  Write-Host "Activating classic Context Menu:" -ForegroundColor "Green";
+
+  $RegPath = "HKCU:\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}";
+  $RegKey = "(Default)";
+
+  if (-not (Test-Path -Path $RegPath)) {
+    New-Item -Path $RegPath;
+  }
+  
+  $RegPath = $RegPath | Join-Path -ChildPath "InprocServer32";
+
+  if (-not (Test-Path -Path $RegPath)) {
+    New-Item -Path $RegPath;
+  }
+
+  if (-not (Test-PathRegistryKey -Path $RegPath -Name $RegKey)) {
+    New-ItemProperty -Path $RegPath -Name $RegKey -PropertyType String;
+  }
+  Set-ItemProperty -Path $RegPath -Name $RegKey -Value "";
+  
+  Write-Host "Classic Context Menu successfully activated." -ForegroundColor "Green";
+}
+
 function Set-SetAsBackground-To-Extended-ContextMenu {
   Write-Host "Configuring Context Menu to show the option 'Set as Background' just in Extended Context Menu:" -ForegroundColor "Green";
 
@@ -48,18 +94,26 @@ function Set-Power-Configuration {
   # AC: Alternating Current (Wall socket).
   # DC: Direct Current (Battery).
 
-  # Turn off disk timeout
+  # Set turn off disk timeout (in minutes / 0: never)
   powercfg -change "disk-timeout-ac" 0;
   powercfg -change "disk-timeout-dc" 0;
-  # Hibernate timeout
+  
+  # Set hibernate timeout (in minutes / 0: never)
   powercfg -change "hibernate-timeout-ac" 0;
   powercfg -change "hibernate-timeout-dc" 0;
-  # Sleep timeout
+
+  # Set sleep timeout (in minutes / 0: never)
   powercfg -change "standby-timeout-ac" 0;
   powercfg -change "standby-timeout-dc" 0;
-  # Turn off screen timeout
-  powercfg -change "monitor-timeout-ac" 5;
-  powercfg -change "monitor-timeout-dc" 5;
+
+  # Set turn off screen timeout (in minutes / 0: never)
+  powercfg -change "monitor-timeout-ac" 10;
+  powercfg -change "monitor-timeout-dc" 10;
+
+  # Set turn off screen timeout on lock screen (in seconds / 0: never)
+  powercfg /SETACVALUEINDEX SCHEME_CURRENT SUB_VIDEO VIDEOCONLOCK 30;
+  powercfg /SETDCVALUEINDEX SCHEME_CURRENT SUB_VIDEO VIDEOCONLOCK 30;
+  powercfg /SETACTIVE SCHEME_CURRENT;
 
   Write-Host "Power plan successfully updated." -ForegroundColor "Green";
 }
@@ -95,11 +149,17 @@ Disable-WindowsFeature "WindowsMediaPlayer" "Windows Media Player";
 Disable-WindowsFeature "Internet-Explorer-Optional-amd64" "Internet Explorer";
 Disable-WindowsFeature "Printing-XPSServices-Features" "Microsoft XPS Document Writer";
 Disable-WindowsFeature "WorkFolders-Client" "WorkFolders-Client";
-Enable-WindowsFeature "Microsoft-Hyper-V" "Microsoft Hyper-V";
 Enable-WindowsFeature "Containers-DisposableClientVM" "Windows Sandbox";
+
+Uninstall-AppPackage "Microsoft.Getstarted";
+Uninstall-AppPackage "Microsoft.GetHelp";
+Uninstall-AppPackage "Microsoft.WindowsFeedbackHub";
+Uninstall-AppPackage "Microsoft.MicrosoftSolitaireCollection";
 
 Set-WindowsExplorer-ShowFileExtensions;
 Set-WindowsFileExplorer-StartFolder;
+Set-Multitasking-Configuration;
+Set-Classic-ContextMenu-Configuration;
 Set-SetAsBackground-To-Extended-ContextMenu;
 Disable-RecentlyOpenedItems-From-JumpList;
 Set-Power-Configuration;
