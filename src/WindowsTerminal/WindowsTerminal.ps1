@@ -55,6 +55,7 @@ function Open-Close-WindowsTerminal {
 }
 
 Install-Module -Name "oh-my-posh";
+Install-Module -Name "posh-git" -Repository "PSGallery";
 Set-OhMyPosh-Theme;
 Set-PowerShell-Profile;
 Set-WindowsTerminal-Settings;
