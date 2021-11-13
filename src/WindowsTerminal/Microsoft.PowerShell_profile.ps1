@@ -4,6 +4,7 @@
 
 Import-Module "oh-my-posh";
 Import-Module "posh-git";
+Import-Module "Terminal-Icons";
 Set-PoshPrompt -Theme "~/.oh-my-posh-custom-theme.omp.json";
 
 ################################################################################

@@ -30,6 +30,7 @@ This dotfiles script does:
 - Install Visual Studio Code extensions.
 - Install Oh My Posh for PowerShell.
 - Install Posh-Git for Oh My Posh.
+- Install Terminal-Icons for Oh My Posh.
 - Configure Oh My Posh theme.
 - Configure Windows Terminal.
 - Install TeraCopy.
