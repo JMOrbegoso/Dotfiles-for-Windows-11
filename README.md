@@ -59,6 +59,7 @@ This dotfiles script does:
   - Install Vim plugins in Ubuntu.
   - Install Zsh in Ubuntu.
   - Install Oh My Zsh in Ubuntu.
+  - Install Zsh-Autosuggestions for Oh My Zsh in Ubuntu.
   - Configure Oh My Zsh in Ubuntu.
 - Install Docker Desktop.
 - Configure File Explorer:

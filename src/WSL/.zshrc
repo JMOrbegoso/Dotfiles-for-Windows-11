@@ -25,7 +25,10 @@ export UPDATE_ZSH_DAYS=7
 # Standard plugins can be found in $ZSH/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(
+  git
+  zsh-autosuggestions
+)
 
 source $ZSH/oh-my-zsh.sh
 

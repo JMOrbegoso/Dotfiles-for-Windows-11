@@ -191,6 +191,16 @@ function Install-OhMyZsh-In-Ubuntu {
   wsl bash $WslOhMyZshInstallerPath --unattended;
 }
 
+function Install-Zsh-Autosuggestions {
+  $ZshAutosuggestionsWslPath = "~/.oh-my-zsh/custom/plugins/zsh-autosuggestions";
+
+  Write-Host "Installing Zsh-Autosuggestions in Ubuntu:" -ForegroundColor "Green";
+
+  wsl rm -rf $ZshAutosuggestionsWslPath;
+
+  wsl git clone https://github.com/zsh-users/zsh-autosuggestions $ZshAutosuggestionsWslPath;
+}
+
 function Install-OhMyZsh-Theme-In-Ubuntu {
   $DotfilesOhMyZshThemePath = Join-Path -Path $DotfilesWorkFolder -ChildPath "WSL" | Join-Path -ChildPath "paradox.zsh-theme";
   $WslOhMyZshThemePath = wsl wslpath $DotfilesOhMyZshThemePath.Replace("\", "\\");
