@@ -139,6 +139,25 @@ prompt_git() {
   fi
 }
 
+# Get the initial timestamp for cmd_exec_time
+preexec() {
+  cmd_timestamp=`date +%s`
+}
+
+# Displays the exec time of the last command if set threshold was exceeded
+prompt_execution_time() {
+  local -a symbols
+
+  local stop=`date +%s`
+    local start=${cmd_timestamp:-$stop}
+    let local elapsed=$stop-$start
+    [ $elapsed -gt 1 ] && symbols+="%{%F{white}%} [ ${elapsed}s ]"
+
+  unset cmd_timestamp #Reset cmd exec time.
+
+  [[ -n "$symbols" ]] && prompt_segment black default "$symbols"
+}
+
 prompt_error() {
   local -a symbols
 
@@ -156,6 +175,7 @@ build_prompt() {
   prompt_ssh_client
   prompt_path
   prompt_git
+  prompt_execution_time
   prompt_error
   prompt_end
 }
