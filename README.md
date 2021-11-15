@@ -29,10 +29,11 @@ This dotfiles script does:
 - Configure Visual Studio Code.
 - Install Visual Studio Code extensions.
 - Install Oh My Posh for PowerShell.
-- Install Posh-Git for Oh My Posh.
-- Install Terminal-Icons for Oh My Posh.
-- Configure PSReadLine.
 - Configure Oh My Posh theme.
+- Install Posh-Git for Oh My Posh.
+- Install Terminal-Icons for PowerShell.
+- Configure PSWebSearch for PowerShell.
+- Configure PSReadLine for PowerShell.
 - Configure Windows Terminal.
 - Install TeraCopy.
 - Install Notepad++.
