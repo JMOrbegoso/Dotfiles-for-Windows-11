@@ -58,6 +58,7 @@ Install-Module -Name "oh-my-posh";
 Install-Module -Name "posh-git" -Repository "PSGallery";
 Install-Module -Name "Terminal-Icons" -Repository "PSGallery";
 Install-Module -Name "PSWebSearch" -Repository "PSGallery";
+Install-Module -Name "PSReadLine" -Repository "PSGallery" -RequiredVersion 2.1.0;
 Set-OhMyPosh-Theme;
 Set-PowerShell-Profile;
 Set-WindowsTerminal-Settings;
