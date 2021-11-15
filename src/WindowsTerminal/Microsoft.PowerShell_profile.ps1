@@ -24,7 +24,7 @@ if (Test-Path($ChocolateyProfile)) {
 function Invoke-Edit-WindowsTerminal-Profile {
   vim $PROFILE;
 };
-Set-Alias -Name "editprofile" -Value "Invoke-Edit-WindowsTerminal-Profile";
+Set-Alias -Name "edt" -Value "Invoke-Edit-WindowsTerminal-Profile";
 
 function Invoke-Refresh-WindowsTerminal-Profile {
   . $PROFILE;
