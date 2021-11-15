@@ -11,7 +11,6 @@ Clear-Host;
 Import-Module "oh-my-posh";
 Import-Module "posh-git";
 Import-Module "Terminal-Icons";
-Import-Module "PSWebSearch";
 Import-Module "PSReadLine";
 Set-PoshPrompt -Theme "~/.oh-my-posh-custom-theme.omp.json";
 
