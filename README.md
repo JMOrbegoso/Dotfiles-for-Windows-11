@@ -175,3 +175,14 @@ This dotfiles script does:
 | Alias | Description           | PowerShell | Zsh |
 | ----- | --------------------- | ---------- | --- |
 | gmi   | Initialize Go modules |            | ✅  |
+
+### Web search from the console
+
+| Alias         | Example                    | PowerShell | Zsh |
+| ------------- | -------------------------- | ---------- | --- |
+| bing          | bing "Windows 11"          | ✅         | ✅  |
+| google        | google "Windows 11"        | ✅         | ✅  |
+| duckduckgo    | duckduckgo "Windows 11"    | ✅         | ✅  |
+| youtube       | youtube "Windows 11"       | ✅         | ✅  |
+| github        | github "Windows 11"        | ✅         | ✅  |
+| stackoverflow | stackoverflow "Windows 11" | ✅         | ✅  |

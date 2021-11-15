@@ -27,6 +27,7 @@ export UPDATE_ZSH_DAYS=7
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
+  web-search
   zsh-autosuggestions
 )
 
