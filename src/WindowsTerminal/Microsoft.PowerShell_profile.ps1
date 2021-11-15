@@ -29,7 +29,7 @@ Set-Alias -Name "editprofile" -Value "Invoke-Edit-WindowsTerminal-Profile";
 function Invoke-Refresh-WindowsTerminal-Profile {
   . $PROFILE;
 };
-Set-Alias -Name "sourceprofile" -Value "Invoke-Refresh-WindowsTerminal-Profile";
+Set-Alias -Name "src" -Value "Invoke-Refresh-WindowsTerminal-Profile";
 
 ################################################################################
 #                              Directories Aliases                             #

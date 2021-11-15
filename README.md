@@ -86,10 +86,10 @@ This dotfiles script does:
 
 ### Terminal Profile
 
-| Alias         | Description              | PowerShell | Zsh |
-| ------------- | ------------------------ | ---------- | --- |
-| editprofile   | Edit terminal profile    | ✅         | ✅  |
-| sourceprofile | Refresh terminal profile | ✅         | ✅  |
+| Alias       | Description              | PowerShell | Zsh |
+| ----------- | ------------------------ | ---------- | --- |
+| editprofile | Edit terminal profile    | ✅         | ✅  |
+| src         | Refresh terminal profile | ✅         | ✅  |
 
 ### Directories
 
