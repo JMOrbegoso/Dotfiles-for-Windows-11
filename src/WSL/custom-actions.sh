@@ -3,10 +3,10 @@
 ################################################################################
 
 ## Edit Zsh configuration
-alias editprofile="vim $HOME/.zshrc $HOME/.oh-my-zsh/custom/functions/custom-actions.sh"
+alias edt="vim $HOME/.zshrc $HOME/.oh-my-zsh/custom/functions/custom-actions.sh"
 
 ## Refresh Zsh configuration
-alias sourceprofile="source $HOME/.zshrc"
+alias src="source $HOME/.zshrc"
 
 ################################################################################
 #                              Directories Aliases                             #

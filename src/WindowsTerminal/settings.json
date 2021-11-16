@@ -1,79 +1,66 @@
 {
 	"$schema": "https://aka.ms/terminal-profiles-schema",
-	// Add custom actions and keybindings to this array.
-	// To unbind a key combination from your defaults.json, set the command to "unbound".
-	// To learn more about actions and keybindings, visit https://aka.ms/terminal-keybindings
 	"actions": [
-		// Copy and paste are bound to Ctrl+Shift+C and Ctrl+Shift+V in your defaults.json.
-		// These two lines additionally bind them to Ctrl+C and Ctrl+V.
-		// To learn more about selection, visit https://aka.ms/terminal-selection
-		{
-			"command": {
-				"action": "copy",
-				"singleLine": false
-			},
-			"keys": "ctrl+c"
-		},
-		{
-			"command": "paste",
-			"keys": "ctrl+v"
-		},
-		// Press Ctrl+Shift+F to open the search box
-		{
-			"command": "find",
-			"keys": "ctrl+shift+f"
-		},
-		// Press Alt+Shift+D to open a new pane.
-		// - "split": "auto" makes this pane open in the direction that provides the most surface area.
-		// - "splitMode": "duplicate" makes the new pane use the focused pane's profile.
-		// To learn more about panes, visit https://aka.ms/terminal-panes
 		{
 			"command": {
 				"action": "splitPane",
-				"split": "auto",
-				"splitMode": "duplicate"
+				"split": "vertical"
 			},
-			"keys": "alt+shift+d"
+			"keys": "alt+shift+v"
+		},
+		{
+			"command": {
+				"action": "splitPane",
+				"split": "horizontal"
+			},
+			"keys": "alt+shift+h"
 		}
 	],
 	"copyFormatting": "none",
 	"copyOnSelect": false,
 	"defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+	"experimental.detectURLs": false,
+	"focusFollowMouse": true,
 	"profiles": {
 		"defaults": {
+			"acrylicOpacity": 0.6,
+			"antialiasingMode": "cleartype",
+			"bellStyle": "taskbar",
 			"colorScheme": "One Half Dark",
-			"bellStyle": "none",
-			"fontFace": "Hack Nerd Font",
-			"fontSize": 12,
-			"useAcrylic": true,
-			"acrylicOpacity": 0.8
+			"cursorShape": "bar",
+			"experimental.retroTerminalEffect": false,
+			"font": {
+				"face": "Hack Nerd Font",
+				"size": 12
+			},
+			"useAcrylic": true
 		},
 		"list": [
 			{
+				"commandline": "powershell.exe -nologo",
 				"guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
-				"name": "Windows PowerShell",
-				"commandline": "powershell.exe",
 				"hidden": false,
+				"name": "Windows PowerShell",
 				"startingDirectory": __STARTING_WINDOWS_DIRECTORY__
 			},
 			{
 				"guid": "{07b52e3e-de2c-5db4-bd2d-ba144ed6c273}",
+				"hidden": false,
 				"name": "Ubuntu-20.04",
 				"source": "Windows.Terminal.Wsl",
-				"hidden": false,
 				"startingDirectory": __STARTING_UBUNTU_DIRECTORY__
 			},
 			{
-				"guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
-				"name": "Command Prompt",
 				"commandline": "cmd.exe",
-				"hidden": true
+				"guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+				"hidden": true,
+				"name": "Command Prompt"
 			},
 			{
 				"guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
+				"hidden": true,
 				"name": "Azure Cloud Shell",
-				"source": "Windows.Terminal.Azure",
-				"hidden": true
+				"source": "Windows.Terminal.Azure"
 			}
 		]
 	},
@@ -128,23 +115,23 @@
 			"background": "#282C34",
 			"black": "#282C34",
 			"blue": "#61AFEF",
-			"brightBlack": "#5A6374",
+			"brightBlack": "#BFBFBF",
 			"brightBlue": "#61AFEF",
 			"brightCyan": "#56B6C2",
 			"brightGreen": "#98C379",
 			"brightPurple": "#C678DD",
-			"brightRed": "#E06C75",
+			"brightRed": "#FF7B85",
 			"brightWhite": "#DCDFE4",
-			"brightYellow": "#E5C07B",
+			"brightYellow": "#FFD689",
 			"cursorColor": "#FFFFFF",
 			"cyan": "#56B6C2",
-			"foreground": "#DCDFE4",
+			"foreground": "#F2F2F2",
 			"green": "#98C379",
 			"name": "One Half Dark",
 			"purple": "#C678DD",
 			"red": "#E06C75",
 			"selectionBackground": "#FFFFFF",
-			"white": "#DCDFE4",
+			"white": "#F2F2F2",
 			"yellow": "#E5C07B"
 		},
 		{
@@ -285,5 +272,6 @@
 			"white": "#C0C0C0",
 			"yellow": "#808000"
 		}
-	]
+	],
+	"useAcrylicInTabRow": true
 }

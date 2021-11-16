@@ -1,9 +1,30 @@
 ################################################################################
+#                                Initial Commands                              #
+################################################################################
+
+Clear-Host;
+
+################################################################################
 #                                  Oh my Posh!                                 #
 ################################################################################
 
 Import-Module "oh-my-posh";
+Import-Module "posh-git";
+Import-Module "Terminal-Icons";
+Import-Module "PSReadLine";
 Set-PoshPrompt -Theme "~/.oh-my-posh-custom-theme.omp.json";
+
+################################################################################
+#                                  PSReadLine                                  #
+################################################################################
+
+Set-PSReadlineOption -BellStyle "None";
+Set-PSReadLineOption -PredictionSource "History";
+Set-PSReadLineKeyHandler -Chord "Tab" -Function "MenuComplete";
+
+Set-PSReadLineOption -Colors @{
+  "InlinePrediction" = [ConsoleColor]::DarkGray;
+}
 
 ################################################################################
 #                                  Chocolatey                                  #
@@ -22,12 +43,12 @@ if (Test-Path($ChocolateyProfile)) {
 function Invoke-Edit-WindowsTerminal-Profile {
   vim $PROFILE;
 };
-Set-Alias -Name "editprofile" -Value "Invoke-Edit-WindowsTerminal-Profile";
+Set-Alias -Name "edt" -Value "Invoke-Edit-WindowsTerminal-Profile";
 
 function Invoke-Refresh-WindowsTerminal-Profile {
   . $PROFILE;
 };
-Set-Alias -Name "sourceprofile" -Value "Invoke-Refresh-WindowsTerminal-Profile";
+Set-Alias -Name "src" -Value "Invoke-Refresh-WindowsTerminal-Profile";
 
 ################################################################################
 #                              Directories Aliases                             #

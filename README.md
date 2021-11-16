@@ -30,6 +30,10 @@ This dotfiles script does:
 - Install Visual Studio Code extensions.
 - Install Oh My Posh for PowerShell.
 - Configure Oh My Posh theme.
+- Install Posh-Git for Oh My Posh.
+- Install Terminal-Icons for PowerShell.
+- Configure PSWebSearch for PowerShell.
+- Configure PSReadLine for PowerShell.
 - Configure Windows Terminal.
 - Install TeraCopy.
 - Install Notepad++.
@@ -57,6 +61,7 @@ This dotfiles script does:
   - Install Vim plugins in Ubuntu.
   - Install Zsh in Ubuntu.
   - Install Oh My Zsh in Ubuntu.
+  - Install Zsh-Autosuggestions for Oh My Zsh in Ubuntu.
   - Configure Oh My Zsh in Ubuntu.
 - Install Docker Desktop.
 - Configure File Explorer:
@@ -83,10 +88,10 @@ This dotfiles script does:
 
 ### Terminal Profile
 
-| Alias         | Description              | PowerShell | Zsh |
-| ------------- | ------------------------ | ---------- | --- |
-| editprofile   | Edit terminal profile    | ✅         | ✅  |
-| sourceprofile | Refresh terminal profile | ✅         | ✅  |
+| Alias | Description              | PowerShell | Zsh |
+| ----- | ------------------------ | ---------- | --- |
+| edt   | Edit terminal profile    | ✅         | ✅  |
+| src   | Refresh terminal profile | ✅         | ✅  |
 
 ### Directories
 
@@ -172,3 +177,14 @@ This dotfiles script does:
 | Alias | Description           | PowerShell | Zsh |
 | ----- | --------------------- | ---------- | --- |
 | gmi   | Initialize Go modules |            | ✅  |
+
+### Web search from the console
+
+| Alias         | Example                    | PowerShell | Zsh |
+| ------------- | -------------------------- | ---------- | --- |
+| bing          | bing "Windows 11"          | ✅         | ✅  |
+| google        | google "Windows 11"        | ✅         | ✅  |
+| duckduckgo    | duckduckgo "Windows 11"    | ✅         | ✅  |
+| youtube       | youtube "Windows 11"       | ✅         | ✅  |
+| github        | github "Windows 11"        | ✅         | ✅  |
+| stackoverflow | stackoverflow "Windows 11" | ✅         | ✅  |

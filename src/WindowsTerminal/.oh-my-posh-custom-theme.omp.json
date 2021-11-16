@@ -8,24 +8,27 @@
 				{
 					"type": "os",
 					"style": "powerline",
-					"foreground": "#26C6DA",
-					"background": "#546E7A"
+					"background": "white",
+					"foreground": "blue"
 				},
 				{
 					"type": "root",
 					"style": "powerline",
 					"powerline_symbol": "",
-					"background": "#ffe9aa",
-					"foreground": "#100e23"
+					"background": "yellow",
+					"foreground": "black",
+					"properties": { "root_icon": "" }
 				},
 				{
 					"type": "path",
 					"style": "powerline",
 					"powerline_symbol": "",
-					"background": "#91ddff",
-					"foreground": "#100e23",
+					"background": "blue",
+					"foreground": "black",
 					"properties": {
-						"folder_icon": "",
+						"enable_hyperlink": true,
+						"home_icon": "",
+						"folder_icon": "",
 						"folder_separator_icon": "  ",
 						"style": "full"
 					}
@@ -34,42 +37,37 @@
 					"type": "git",
 					"style": "powerline",
 					"powerline_symbol": "",
-					"foreground": "#100e23",
-					"background": "#5CFF5C",
+					"background": "green",
+					"foreground": "black",
 					"properties": {
 						"display_status": true,
 						"display_stash_count": true,
 						"display_upstream_icon": true,
 						"status_colors_enabled": true,
-						"local_changes_color": "#ffeb3b"
+						"local_changes_color": "yellow"
+					}
+				},
+				{
+					"type": "executiontime",
+					"style": "powerline",
+					"powerline_symbol": "",
+					"background": "white",
+					"foreground": "black",
+					"properties": {
+						"threshold": 100,
+						"style": "roundrock",
+						"prefix": "  [ ",
+						"postfix": " ] "
 					}
 				},
 				{
 					"type": "exit",
 					"style": "powerline",
 					"powerline_symbol": "",
-					"background": "#ff8080",
-					"foreground": "#ffffff",
+					"background": "red",
+					"foreground": "black",
 					"properties": {
-						"prefix": " "
-					}
-				}
-			]
-		},
-		{
-			"type": "prompt",
-			"alignment": "right",
-			"segments": [
-				{
-					"type": "executiontime",
-					"style": "powerline",
-					"foreground": "#D4E157",
-					"background": "transparent",
-					"properties": {
-						"threshold": 200,
-						"style": "roundrock",
-						"prefix": " [ ",
-						"postfix": " ]"
+						"prefix": "  "
 					}
 				}
 			]
@@ -82,7 +80,8 @@
 				{
 					"type": "text",
 					"style": "plain",
-					"foreground": "#007ACC",
+					"background": "transparent",
+					"foreground": "blue",
 					"properties": {
 						"prefix": "",
 						"text": "❯"
