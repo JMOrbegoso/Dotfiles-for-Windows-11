@@ -148,19 +148,19 @@ prompt_execution_time() {
   local stop=`date +%s`
     local start=${cmd_timestamp:-$stop}
     let local elapsed=$stop-$start
-    [ $elapsed -gt 1 ] && symbols+="%{%F{white}%} [ ${elapsed}s ]"
+    [ $elapsed -gt 1 ] && symbols+="%{%F{black}%} [ ${elapsed}s ]"
 
   unset cmd_timestamp #Reset cmd exec time.
 
-  [[ -n "$symbols" ]] && prompt_segment black default "$symbols"
+  [[ -n "$symbols" ]] && prompt_segment white default "$symbols"
 }
 
 prompt_error() {
   local -a symbols
 
-  [[ $RETVAL -ne 0 ]] && symbols+="%{%F{red}%}"
+  [[ $RETVAL -ne 0 ]] && symbols+="%{%F{black}%}"
 
-  [[ -n "$symbols" ]] && prompt_segment black default "$symbols"
+  [[ -n "$symbols" ]] && prompt_segment red default "$symbols"
 }
 
 ## Main prompt
