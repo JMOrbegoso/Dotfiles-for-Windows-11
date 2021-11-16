@@ -26,6 +26,7 @@
 					"background": "blue",
 					"foreground": "black",
 					"properties": {
+						"enable_hyperlink": true,
 						"home_icon": "",
 						"folder_icon": "",
 						"folder_separator_icon": "  ",
