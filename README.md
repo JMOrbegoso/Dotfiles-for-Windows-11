@@ -40,7 +40,6 @@ This dotfiles script does:
 - Configure Notepad++.
 - Set Notepad++ as the default program to open .bat, .cmd, .ini, .ps1, .sh, .txt and .xml files.
 - Install .NET SDK.
-- Install Visual Studio 2019.
 - Enable Windows Subsystem for Linux.
 - Install Ubuntu 20.04 LTS in WSL.
   - Install curl.
