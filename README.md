@@ -4,7 +4,7 @@ Repeatable, reboot resilient Dotfiles script to setup a development environment 
 
 ## Usage
 
-Open a PowerShell console as administrator and run:
+Open any Windows PowerShell host console **(Except Windows Terminal)** with administrator rights and run:
 
 ```Powershell
 $GitHubRepositoryAuthor = "JMOrbegoso"; `
@@ -40,7 +40,6 @@ This dotfiles script does:
 - Configure Notepad++.
 - Set Notepad++ as the default program to open .bat, .cmd, .ini, .ps1, .sh, .txt and .xml files.
 - Install .NET SDK.
-- Install Visual Studio 2019.
 - Enable Windows Subsystem for Linux.
 - Install Ubuntu 20.04 LTS in WSL.
   - Install curl.
