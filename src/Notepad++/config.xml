@@ -6,5 +6,6 @@
         <GUIConfig name="globalOverride" fg="no" bg="no" font="yes" fontSize="yes" bold="no" italic="no" underline="no" />
         <GUIConfig name="ScintillaGlobalSettings" enableMultiSelection="yes" />
         <GUIConfig name="ScintillaPrimaryView" scrollBeyondLastLine="no" Wrap="yes" />
+        <GUIConfig name="Backup" action="0" useCustumDir="no" dir="" isSnapshotMode="yes" snapshotBackupTiming="7000" />
     </GUIConfigs>
 </NotepadPlus>
