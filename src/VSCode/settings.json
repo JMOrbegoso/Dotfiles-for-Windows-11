@@ -34,9 +34,9 @@
 	"prettier.requirePragma": false,
 	"prettier.semi": true,
 	"prettier.singleQuote": true,
-	"prettier.tabWidth": 2,
 	"prettier.trailingComma": "all",
-	"prettier.useTabs": true,
+	"prettier.useTabs": false,
+	"prettier.tabWidth": 2,
 	"prettier.vueIndentScriptAndStyle": false,
 
 	// Window settings
