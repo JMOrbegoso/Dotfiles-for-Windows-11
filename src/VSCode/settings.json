@@ -1,116 +1,116 @@
 {
-	// Editor settings
-	"editor.autoIndent": "full",
-	"editor.cursorBlinking": "solid",
-	"editor.cursorSmoothCaretAnimation": true,
-	"editor.cursorStyle": "line",
-	"editor.fontFamily": "'Hack Nerd Font', 'Hack Nerd Font Mono'",
-	"editor.fontLigatures": true,
-	"editor.fontSize": 13,
-	"editor.formatOnSave": true,
-	"editor.formatOnPaste": true,
-	"editor.formatOnType": false,
-	"editor.guides.bracketPairs": true,
-	"editor.letterSpacing": 0.3,
-	"editor.lineHeight": 25,
-	"editor.minimap.enabled": false,
-	"editor.multiCursorModifier": "ctrlCmd",
-	"editor.suggestSelection": "first",
-	"editor.tabCompletion": "on",
-	"editor.tabSize": 2,
-	"editor.wordWrap": "on",
+  // Editor settings
+  "editor.autoIndent": "full",
+  "editor.cursorBlinking": "solid",
+  "editor.cursorSmoothCaretAnimation": true,
+  "editor.cursorStyle": "line",
+  "editor.fontFamily": "'Hack Nerd Font', 'Hack Nerd Font Mono'",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 13,
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.formatOnType": false,
+  "editor.guides.bracketPairs": true,
+  "editor.letterSpacing": 0.3,
+  "editor.lineHeight": 25,
+  "editor.minimap.enabled": false,
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.suggestSelection": "first",
+  "editor.tabCompletion": "on",
+  "editor.tabSize": 2,
+  "editor.wordWrap": "on",
 
-	// Prettier settings
-	"prettier.arrowParens": "always",
-	"prettier.bracketSpacing": true,
-	"prettier.embeddedLanguageFormatting": "auto",
-	"prettier.htmlWhitespaceSensitivity": "css",
-	"prettier.insertPragma": false,
-	"prettier.bracketSameLine": false,
-	"prettier.jsxSingleQuote": false,
-	"prettier.printWidth": 80,
-	"prettier.proseWrap": "preserve",
-	"prettier.quoteProps": "as-needed",
-	"prettier.requirePragma": false,
-	"prettier.semi": true,
-	"prettier.singleQuote": true,
-	"prettier.trailingComma": "all",
-	"prettier.useTabs": false,
-	"prettier.tabWidth": 2,
-	"prettier.vueIndentScriptAndStyle": false,
+  // Prettier settings
+  "prettier.arrowParens": "always",
+  "prettier.bracketSpacing": true,
+  "prettier.embeddedLanguageFormatting": "auto",
+  "prettier.htmlWhitespaceSensitivity": "css",
+  "prettier.insertPragma": false,
+  "prettier.bracketSameLine": false,
+  "prettier.jsxSingleQuote": false,
+  "prettier.printWidth": 80,
+  "prettier.proseWrap": "preserve",
+  "prettier.quoteProps": "as-needed",
+  "prettier.requirePragma": false,
+  "prettier.semi": true,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "all",
+  "prettier.useTabs": false,
+  "prettier.tabWidth": 2,
+  "prettier.vueIndentScriptAndStyle": false,
 
-	// Window settings
-	"window.restoreWindows": "none",
-	"window.zoomLevel": 1,
+  // Window settings
+  "window.restoreWindows": "none",
+  "window.zoomLevel": 1,
 
-	// Workbench settings
-	"workbench.iconTheme": "material-icon-theme",
-	"workbench.colorCustomizations": {
-		"terminalCursor.background": "#FFFFFF",
-		"terminalCursor.foreground": "#FFFFFF",
-		"terminal.background": "#282C34",
-		"terminal.foreground": "#F2F2F2",
-		"terminal.ansiBlack": "#282C34",
-		"terminal.ansiBlue": "#61AFEF",
-		"terminal.ansiBrightBlack": "#BFBFBF",
-		"terminal.ansiBrightBlue": "#61AFEF",
-		"terminal.ansiBrightCyan": "#56B6C2",
-		"terminal.ansiBrightGreen": "#98C379",
-		"terminal.ansiBrightMagenta": "#C678DD",
-		"terminal.ansiBrightRed": "#FF7B85",
-		"terminal.ansiBrightWhite": "#DCDFE4",
-		"terminal.ansiBrightYellow": "#FFD689",
-		"terminal.ansiCyan": "#56B6C2",
-		"terminal.ansiGreen": "#98C379",
-		"terminal.ansiMagenta": "#C678DD",
-		"terminal.ansiRed": "#E06C75",
-		"terminal.ansiWhite": "#F2F2F2",
-		"terminal.ansiYellow": "#E5C07B"
-	},
+  // Workbench settings
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.colorCustomizations": {
+    "terminalCursor.background": "#FFFFFF",
+    "terminalCursor.foreground": "#FFFFFF",
+    "terminal.background": "#282C34",
+    "terminal.foreground": "#F2F2F2",
+    "terminal.ansiBlack": "#282C34",
+    "terminal.ansiBlue": "#61AFEF",
+    "terminal.ansiBrightBlack": "#BFBFBF",
+    "terminal.ansiBrightBlue": "#61AFEF",
+    "terminal.ansiBrightCyan": "#56B6C2",
+    "terminal.ansiBrightGreen": "#98C379",
+    "terminal.ansiBrightMagenta": "#C678DD",
+    "terminal.ansiBrightRed": "#FF7B85",
+    "terminal.ansiBrightWhite": "#DCDFE4",
+    "terminal.ansiBrightYellow": "#FFD689",
+    "terminal.ansiCyan": "#56B6C2",
+    "terminal.ansiGreen": "#98C379",
+    "terminal.ansiMagenta": "#C678DD",
+    "terminal.ansiRed": "#E06C75",
+    "terminal.ansiWhite": "#F2F2F2",
+    "terminal.ansiYellow": "#E5C07B"
+  },
 
-	// Other settings
-	"diffEditor.ignoreTrimWhitespace": false,
-	"explorer.confirmDelete": false,
-	"search.showLineNumbers": true,
-	"zenMode.centerLayout": false,
+  // Other settings
+  "diffEditor.ignoreTrimWhitespace": false,
+  "explorer.confirmDelete": false,
+  "search.showLineNumbers": true,
+  "zenMode.centerLayout": false,
 
-	// Language specific settings
-	"[html]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode",
-		"editor.rulers": [80]
-	},
-	"[css]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	},
-	"[json]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	},
-	"[jsonc]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	},
-	"[javascript]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode",
-		"editor.rulers": [80]
-	},
-	"[javascriptreact]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode",
-		"editor.rulers": [80]
-	},
-	"[typescript]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode",
-		"editor.rulers": [80]
-	},
-	"[typescriptreact]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode",
-		"editor.rulers": [80]
-	},
-	"[markdown]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode",
-		"editor.renderWhitespace": "all",
-		"editor.quickSuggestions": {
-			"other": true,
-			"comments": true,
-			"strings": true
-		}
-	}
+  // Language specific settings
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.rulers": [80]
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.rulers": [80]
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.rulers": [80]
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.rulers": [80]
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.rulers": [80]
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.renderWhitespace": "all",
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": true,
+      "strings": true
+    }
+  }
 }
