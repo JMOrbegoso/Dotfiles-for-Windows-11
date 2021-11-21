@@ -35,7 +35,6 @@ This dotfiles script does:
 - Configure PSWebSearch for PowerShell.
 - Configure PSReadLine for PowerShell.
 - Configure Windows Terminal.
-- Install TeraCopy.
 - Install Notepad++.
 - Configure Notepad++.
 - Install .NET SDK.
