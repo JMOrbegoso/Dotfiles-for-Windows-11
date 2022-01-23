@@ -30,3 +30,4 @@ code --install-extension "ms-vscode-remote.remote-containers";
 code --install-extension "ms-vscode-remote.remote-wsl";
 code --install-extension "jock.svg";
 code --install-extension "bradlc.vscode-tailwindcss";
+code --install-extension "rangav.vscode-thunder-client";

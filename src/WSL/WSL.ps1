@@ -44,6 +44,7 @@ function Install-VSCode-Extensions-In-WSL {
   wsl code --install-extension esbenp.prettier-vscode;
   wsl code --install-extension jock.svg;
   wsl code --install-extension bradlc.vscode-tailwindcss;
+  wsl code --install-extension rangav.vscode-thunder-client;
 }
 
 function Install-Volta-In-Ubuntu {
