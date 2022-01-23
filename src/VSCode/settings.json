@@ -10,7 +10,8 @@
   "editor.formatOnSave": true,
   "editor.formatOnPaste": true,
   "editor.formatOnType": false,
-  "editor.guides.bracketPairs": true,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": "active",
   "editor.letterSpacing": 0.3,
   "editor.lineHeight": 25,
   "editor.minimap.enabled": false,
@@ -69,7 +70,7 @@
   },
 
   // Other settings
-  "diffEditor.ignoreTrimWhitespace": false,
+  "diffEditor.ignoreTrimWhitespace": true,
   "explorer.confirmDelete": false,
   "search.showLineNumbers": true,
   "zenMode.centerLayout": false,

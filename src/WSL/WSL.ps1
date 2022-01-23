@@ -39,10 +39,12 @@ function Install-VSCode-Extensions-In-WSL {
   wsl code --install-extension eamodio.gitlens;
   wsl code --install-extension golang.go;
   wsl code --install-extension oderwat.indent-rainbow;
+  wsl code --install-extension ritwickdey.liveserver;
   wsl code --install-extension davidanson.vscode-markdownlint;
   wsl code --install-extension esbenp.prettier-vscode;
-  wsl code --install-extension humao.rest-client;
   wsl code --install-extension jock.svg;
+  wsl code --install-extension bradlc.vscode-tailwindcss;
+  wsl code --install-extension rangav.vscode-thunder-client;
 }
 
 function Install-Volta-In-Ubuntu {
