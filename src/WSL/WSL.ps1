@@ -41,7 +41,6 @@ function Install-VSCode-Extensions-In-WSL {
   wsl code --install-extension oderwat.indent-rainbow;
   wsl code --install-extension davidanson.vscode-markdownlint;
   wsl code --install-extension esbenp.prettier-vscode;
-  wsl code --install-extension humao.rest-client;
   wsl code --install-extension jock.svg;
 }
 
