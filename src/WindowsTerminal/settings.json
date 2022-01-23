@@ -23,7 +23,7 @@
 	"focusFollowMouse": true,
 	"profiles": {
 		"defaults": {
-			"acrylicOpacity": 0.6,
+			"acrylicOpacity": 0.85,
 			"antialiasingMode": "cleartype",
 			"bellStyle": "taskbar",
 			"colorScheme": "One Half Dark",
