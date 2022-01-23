@@ -29,3 +29,4 @@ code --install-extension "esbenp.prettier-vscode";
 code --install-extension "ms-vscode-remote.remote-containers";
 code --install-extension "ms-vscode-remote.remote-wsl";
 code --install-extension "jock.svg";
+code --install-extension "bradlc.vscode-tailwindcss";
