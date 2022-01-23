@@ -81,6 +81,15 @@ This dotfiles script does:
   - Long time: 19:40:07.
 - Rename PC.
 
+## Custom Windows Terminal keyboard shortcuts
+
+| Action                | Keyboard Shortcut |
+| --------------------- | ----------------- |
+| New Tab               | ctrl+t            |
+| Close Pane            | ctrl+w            |
+| Split Horizontal Pane | alt+shift+h       |
+| Split Vertical Pane   | alt+shift+v       |
+
 ## Alias and functions for PowerShell & Zsh
 
 ### Terminal Profile
