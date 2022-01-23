@@ -19,6 +19,7 @@ code --install-extension "ms-azuretools.vscode-docker";
 code --install-extension "usernamehw.errorlens";
 code --install-extension "eamodio.gitlens";
 code --install-extension "oderwat.indent-rainbow";
+code --install-extension "ritwickdey.liveserver";
 code --install-extension "davidanson.vscode-markdownlint";
 code --install-extension "robole.markdown-snippets";
 code --install-extension "pkief.material-icon-theme";
