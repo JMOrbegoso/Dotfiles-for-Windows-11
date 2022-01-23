@@ -15,7 +15,6 @@ Set-VSCode-Configuration;
 refreshenv;
 code --install-extension "ue.alphabetical-sorter";
 code --install-extension "formulahendry.auto-rename-tag";
-code --install-extension "coenraads.bracket-pair-colorizer-2";
 code --install-extension "ms-azuretools.vscode-docker";
 code --install-extension "usernamehw.errorlens";
 code --install-extension "eamodio.gitlens";
