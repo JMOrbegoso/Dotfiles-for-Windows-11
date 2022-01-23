@@ -23,6 +23,7 @@ code --install-extension "ritwickdey.liveserver";
 code --install-extension "davidanson.vscode-markdownlint";
 code --install-extension "robole.markdown-snippets";
 code --install-extension "pkief.material-icon-theme";
+code --install-extension "ms-edgedevtools.vscode-edge-devtools";
 code --install-extension "ms-vscode.powershell";
 code --install-extension "esbenp.prettier-vscode";
 code --install-extension "ms-vscode-remote.remote-containers";
