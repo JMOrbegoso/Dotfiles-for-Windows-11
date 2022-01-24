@@ -53,9 +53,6 @@ This dotfiles script does:
     - Install NestJS CLI using Volta in Ubuntu.
   - Install Golang in Ubuntu.
   - Install HUGO in Ubuntu.
-  - Install Vim in Ubuntu.
-  - Install Vim-Plug in Ubuntu.
-  - Install Vim plugins in Ubuntu.
   - Install Zsh in Ubuntu.
   - Install Oh My Zsh in Ubuntu.
   - Install Zsh-Autosuggestions for Oh My Zsh in Ubuntu.
@@ -135,10 +132,10 @@ This dotfiles script does:
 
 ### Vim
 
-| Alias     | Description               | PowerShell | Zsh |
-| --------- | ------------------------- | ---------- | --- |
-| editvim   | Edit .vimrc file          | ✅         | ✅  |
-| sourcevim | Refresh Vim configuration |            | ✅  |
+| Alias     | Description                 | PowerShell | Zsh |
+| --------- | --------------------------- | ---------- | --- |
+| editvim   | Edit Vim configuration file | ✅         |     |
+| sourcevim | Refresh Vim configuration   |            |     |
 
 ### Docker
 
