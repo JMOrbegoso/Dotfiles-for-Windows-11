@@ -10,33 +10,30 @@ function Install-VimPlug {
   }
 }
 
-function Set-Vim-Configuration {
+function Copy-Initial-Vim-Configuration-File {
   $DotfilesInitialVimrcPath = Join-Path -Path $DotfilesWorkFolder -ChildPath "Vim" | Join-Path -ChildPath "initial.vimrc";
+  $VimrcPath = Join-Path -Path $HOME -ChildPath ".vimrc";
+  
+  Write-Host "Copying initial Vim configuration file:" -ForegroundColor "Green";
+  Copy-Item $DotfilesInitialVimrcPath -Destination $VimrcPath;
+}
+
+function Install-Vim-Plugins {
+  Write-Host "Installing Vim plugins:" -ForegroundColor "Green";
+  vim +PlugInstall +qall;
+}
+
+function Copy-Final-Vim-Configuration-File {
   $DotfilesFinalVimrcPath = Join-Path -Path $DotfilesWorkFolder -ChildPath "Vim" | Join-Path -ChildPath "final.vimrc";
   $VimrcPath = Join-Path -Path $HOME -ChildPath ".vimrc";
 
-  if (-not (Test-Path -Path $VimrcPath)) {
-    Write-Host "Copying initial Vim configuration file:" -ForegroundColor "Green";
-    Copy-Item $DotfilesInitialVimrcPath -Destination $VimrcPath;
-
-    (Get-Content -path $VimrcPath) -replace "__VIM_PLUGGED__", "~/vimfiles/plugged" | Set-Content -Path $VimrcPath;
-  }
-
-  Write-Host "Installing Vim plugins:" -ForegroundColor "Green";
-  vim +PlugInstall +qall;
-
   Write-Host "Copying final Vim configuration file:" -ForegroundColor "Green";
   Copy-Item $DotfilesFinalVimrcPath -Destination $VimrcPath;
-
-  (Get-Content -path $VimrcPath) -replace "__VIM_PLUGGED__", "~/vimfiles/plugged" | Set-Content -Path $VimrcPath;
-  (Get-Content -path $VimrcPath) -replace "__STARTIFY_BOOKMARKS__", "[ { 'v': '~/.vimrc' } ]" | Set-Content -Path $VimrcPath;
-  (Get-Content -path $VimrcPath) -replace "__VIM_SESSION__", "~/vimfiles/session" | Set-Content -Path $VimrcPath;
-  (Get-Content -path $VimrcPath) -replace "__VIMRC_LOCAL__", "~/vimfiles/local_init.vim" | Set-Content -Path $VimrcPath;
-
-  Write-Host "Vim was successfully configured." -ForegroundColor "Green";
 }
 
 choco install -y "vim" --params "/NoDesktopShortcuts /NoContextmenu /InstallDir:${env:ProgramFiles}";
 refreshenv;
 Install-VimPlug;
-Set-Vim-Configuration;
+Copy-Initial-Vim-Configuration-File;
+Install-Vim-Plugins;
+Copy-Final-Vim-Configuration-File;
