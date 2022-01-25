@@ -3,7 +3,7 @@
 "*****************************************************************************
 
 "" Required:
-call plug#begin(expand('__VIM_PLUGGED__'))
+call plug#begin(expand('~/vimfiles/plugged'))
 
 "*****************************************************************************
 "" Plug install packages
@@ -16,7 +16,7 @@ Plug 'majutsushi/tagbar'
 Plug 'vim-scripts/CSApprox'
 
 "" Visual Themes
-Plug 'morhetz/gruvbox'
+Plug 'rakr/vim-one'
 
 "" Start Page
 Plug 'mhinz/vim-startify'
@@ -50,15 +50,9 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'preservim/nerdcommenter'
 
 "*****************************************************************************
-"" Custom bundles
 "*****************************************************************************
-
-"*****************************************************************************
-"*****************************************************************************
-
-"" Include user's extra bundle
-if filereadable(expand("~/.vimrc.local.bundles"))
-  source ~/.vimrc.local.bundles
-endif
 
 call plug#end()
+
+let g:session_autosave = 'no'
+let g:session_autoload = 'no'
