@@ -215,6 +215,8 @@ Install-Nodejs-Packages-In-Ubuntu;
 Install-Golang-In-Ubuntu;
 Install-Hugo-In-Ubuntu;
 
+Invoke-Expression (Join-Path -Path $DotfilesWorkFolder -ChildPath "WSL" | Join-Path -ChildPath "Neovim" | Join-Path -ChildPath "Neovim.ps1");
+
 Install-OhMyZsh-In-Ubuntu;
 Install-OhMyZsh-Theme-In-Ubuntu;
 Install-OhMyZsh-Functions-In-Ubuntu;
