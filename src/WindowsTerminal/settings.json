@@ -2,9 +2,7 @@
   "$schema": "https://aka.ms/terminal-profiles-schema",
   "actions": [
     {
-      "command": {
-        "action": "newTab"
-      },
+      "command": "duplicateTab",
       "keys": "ctrl+t"
     },
     {
@@ -14,14 +12,16 @@
     {
       "command": {
         "action": "splitPane",
-        "split": "horizontal"
+        "split": "horizontal",
+        "splitMode": "duplicate"
       },
       "keys": "alt+shift+h"
     },
     {
       "command": {
         "action": "splitPane",
-        "split": "vertical"
+        "split": "vertical",
+        "splitMode": "duplicate"
       },
       "keys": "alt+shift+v"
     }
