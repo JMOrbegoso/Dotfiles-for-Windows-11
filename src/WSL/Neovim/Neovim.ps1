@@ -7,6 +7,7 @@ function Install-Neovim-In-Ubuntu {
   Install-Ubuntu-Package -PackageName "neovim";
   Install-Ubuntu-Package -PackageName "python3-neovim";
   Install-Ubuntu-Package -PackageName "ctags";
+  choco install -y "win32yank";
 }
 
 function Install-Plug-Vim-For-Neovim-In-Ubuntu {
