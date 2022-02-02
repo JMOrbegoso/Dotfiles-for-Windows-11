@@ -12,7 +12,6 @@ call plug#begin(expand('~/vimfiles/plugged'))
 "" Visual interface
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'majutsushi/tagbar'
 Plug 'vim-scripts/CSApprox'
 
 "" Visual Themes
