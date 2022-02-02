@@ -12,7 +12,7 @@ call plug#begin(expand('~/.config/nvim/plugged'))
 "" Visual interface
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'majutsushi/tagbar'
+Plug 'preservim/tagbar'
 Plug 'vim-scripts/CSApprox'
 
 "" Visual Themes
