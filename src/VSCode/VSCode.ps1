@@ -10,7 +10,7 @@ function Set-VSCode-Configuration {
   Get-ChildItem -Path "${DotfilesVSCodeSettingsFolder}\*" -Include "*.json" -Recurse | Copy-Item -Destination $VSCodeSettingsPath;
 }
 
-choco install -y "vscode" --params "/NoDesktopIcon /NoQuicklaunchIcon /NoContextMenuFiles /NoContextMenuFolders";
+winget install --silent --accept-package-agreements --accept-source-agreements Microsoft.VisualStudioCode
 Set-VSCode-Configuration;
 refreshenv;
 code --install-extension "ue.alphabetical-sorter";
@@ -26,5 +26,5 @@ code --install-extension "ms-vscode.powershell";
 code --install-extension "esbenp.prettier-vscode";
 code --install-extension "ms-vscode-remote.remote-containers";
 code --install-extension "ms-vscode-remote.remote-wsl";
-code --install-extension "jock.svg";
-code --install-extension "rangav.vscode-thunder-client";
+code --install-extension "ms-vscode-remote.remote-ssh";
+code --install-extension "golang.go";

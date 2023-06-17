@@ -6,5 +6,5 @@ function Set-Git-Configuration {
   Write-Host "Git was successfully configured." -ForegroundColor "Green";
 }
 
-choco install -y "git" --params "/NoAutoCrlf /WindowsTerminal /NoShellIntegration /SChannel";
+winget install --silent --accept-package-agreements --accept-source-agreements Git.Git;
 Set-Git-Configuration;
